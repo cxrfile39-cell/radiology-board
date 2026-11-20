@@ -79,6 +79,7 @@ main{display:grid;gap:12px;padding:14px 18px 40px;grid-template-columns:repeat(v
   .panel{max-height:none}
   .colsw{display:none}
 }
+.credit{font:12px "IBM Plex Mono",monospace;color:var(--mut);margin-top:3px}
 footer{color:var(--dim);font-size:11.5px;padding:0 18px 30px;max-width:900px}
 
 .art{padding:7px 0;border-bottom:1px dashed var(--line)}
@@ -94,6 +95,7 @@ footer{color:var(--dim);font-size:11.5px;padding:0 18px 30px;max-width:900px}
 <body>
 <header>
   <h1>Radiology Guideline & Journal Board<small id="sub">loading…</small></h1>
+  <div class="credit">製作者：JH CHIU MD · Claude Opus 5.5</div>
   <button id="chipToggle" type="button"></button>
   <div class="bar" id="chips"></div>
   <div class="ctrl">
@@ -103,7 +105,7 @@ footer{color:var(--dim);font-size:11.5px;padding:0 18px 30px;max-width:900px}
   </div>
 </header>
 <main id="grid"></main>
-<footer>「重點指引」每週一更新，經人工核對的 guideline / RADS / consensus；勾選「保留」的項目存在你這個瀏覽器，更新後仍會留著，沒勾選的在下次更新後消失。「最新文章」直接從 PubMed 即時抓取（依發表日期排序，6 小時快取）。請以原文為準。</footer>
+<footer>「重點指引」每週一更新，經人工核對的 guideline / RADS / consensus；勾選「保留」的項目存在你這個瀏覽器，更新後仍會留著，沒勾選的在下次更新後消失。「最新文章」直接從 PubMed 即時抓取（依發表日期排序，6 小時快取）。請以原文為準。<br>製作者：JH CHIU MD · 以 Claude Opus 5.5 協助開發</footer>
 
 <script>
 const PM = t => "https://pubmed.ncbi.nlm.nih.gov/?term=" + encodeURIComponent(t) + "&sort=date";
