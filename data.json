@@ -1,235 +1,920 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Radiology Guideline & Journal Board</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#0f1316; --panel:#161b1f; --line:#262d33; --ink:#e6e9eb; --mut:#8a959e; --dim:#5d6870;
-  --acc:#7cc4b0; --acc2:#e3b26b; --new:#e3b26b;
-}
-@media (prefers-color-scheme: light){
-  :root{--bg:#f3f4f2;--panel:#ffffff;--line:#e1e4e2;--ink:#1b2125;--mut:#5c676e;--dim:#8c969c;--acc:#2f7f6c;--acc2:#a86b12;--new:#a86b12;}
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 "IBM Plex Sans","Noto Sans TC",system-ui,sans-serif}
-header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:14px 18px 10px}
-h1{margin:0;font-size:17px;font-weight:600;letter-spacing:.01em}
-h1 small{font:400 12px "IBM Plex Mono",monospace;color:var(--mut);margin-left:8px}
-.bar{display:flex;flex-direction:column;gap:6px;margin-top:10px}
-.grp{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.gl{font:11px "IBM Plex Mono",monospace;color:var(--dim);text-transform:uppercase;letter-spacing:.06em;min-width:220px}
-@media (max-width:700px){.gl{min-width:100%}}
-.chip.none{border-color:var(--acc2);color:var(--acc2)}
-.chip.all{border-style:dashed;font-size:11.5px}
-.chip{border:1px solid var(--line);background:transparent;color:var(--mut);border-radius:999px;padding:4px 11px;font:inherit;font-size:12.5px;cursor:pointer}
-.chip.on{border-color:var(--acc);color:var(--ink);background:color-mix(in srgb,var(--acc) 14%,transparent)}
-.ctrl{display:flex;flex-wrap:wrap;gap:14px;margin-top:9px;font-size:12px;color:var(--mut);align-items:center}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:7px;overflow:hidden}
-.seg button{background:none;border:0;color:var(--mut);font:12px "IBM Plex Mono",monospace;padding:3px 9px;cursor:pointer}
-.seg button.on{background:var(--acc);color:var(--bg)}
-.custom{display:flex;gap:6px}
-.custom input{background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:7px;padding:4px 8px;font:inherit;font-size:12.5px;width:190px}
-.custom button{background:none;border:1px solid var(--acc);color:var(--acc);border-radius:7px;padding:4px 10px;font:inherit;font-size:12.5px;cursor:pointer}
-main{display:grid;gap:12px;padding:14px 18px 40px;grid-template-columns:repeat(var(--cols,3),minmax(0,1fr))}
-@media (max-width:1100px){main{--cols:2 !important}}
-@media (max-width:700px){main{--cols:1 !important;padding:12px}}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:10px;display:flex;flex-direction:column;min-height:260px;max-height:620px}
-.ph{display:flex;align-items:baseline;justify-content:space-between;padding:11px 13px 8px;border-bottom:1px solid var(--line)}
-.ph h2{margin:0;font-size:14.5px;font-weight:600}
-.ph .tag{font:11px "IBM Plex Mono",monospace;color:var(--dim)}
-.ph .x{background:none;border:0;color:var(--dim);cursor:pointer;font-size:15px;padding:0 0 0 8px}
-.tabs{display:flex;gap:2px;padding:6px 10px 0}
-.tabs button{background:none;border:0;border-bottom:2px solid transparent;color:var(--mut);font:inherit;font-size:12.5px;padding:4px 7px;cursor:pointer}
-.tabs button.on{color:var(--ink);border-color:var(--acc)}
-.body{overflow:auto;padding:8px 13px 12px;flex:1}
-.item{padding:8px 0;border-bottom:1px dashed var(--line)}
-.item:last-child{border-bottom:0}
-.meta{font:11px "IBM Plex Mono",monospace;color:var(--dim);display:flex;gap:8px;flex-wrap:wrap}
-.meta .d{color:var(--acc)}
-.meta .n{color:var(--new)}
-.item a{color:var(--ink);text-decoration:none;font-weight:500;display:block;margin-top:2px}
-.item a:hover{color:var(--acc);text-decoration:underline}
-.item p{margin:3px 0 0;color:var(--mut);font-size:12.5px}
-.live a.btn{display:block;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:7px 0;color:var(--ink);text-decoration:none}
-.live a.btn:hover{border-color:var(--acc)}
-.live a.btn b{font-weight:500}
-.live a.btn span{display:block;font-size:11.5px;color:var(--mut)}
-.jl{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
-.jl a{font:11.5px "IBM Plex Mono",monospace;border:1px solid var(--line);border-radius:6px;padding:3px 7px;color:var(--mut);text-decoration:none}
-.jl a:hover{color:var(--acc);border-color:var(--acc)}
-.lbl{font:11px "IBM Plex Mono",monospace;color:var(--dim);text-transform:uppercase;letter-spacing:.06em;margin:12px 0 2px}
-.empty{color:var(--dim);font-size:12.5px;padding:10px 0}
-.keep{margin-left:auto;display:inline-flex;align-items:center;gap:4px;cursor:pointer;color:var(--mut);font:11px "IBM Plex Mono",monospace}
-.keep input{accent-color:var(--acc);margin:0;cursor:pointer}
-.item.pinned{background:color-mix(in srgb,var(--acc) 7%,transparent);margin:0 -13px;padding:8px 13px}
-.sync{font:11px "IBM Plex Mono",monospace;color:var(--dim)}
-#chipToggle{display:none;margin-top:8px;border:1px solid var(--acc);color:var(--ink);background:color-mix(in srgb,var(--acc) 14%,transparent);border-radius:8px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer}
-@media (max-width:700px){
-  header{position:static;padding:12px 12px 8px}
-  h1{font-size:15px} h1 small{display:block;margin:2px 0 0}
-  #chipToggle{display:inline-flex}
-  header:not(.open) #chips{display:none}
-  .gl{min-width:0 !important;width:100%;margin-top:4px}
-  .ctrl{gap:8px 12px}
-  .custom input{width:150px}
-  .panel{max-height:none}
-  .colsw{display:none}
-}
-footer{color:var(--dim);font-size:11.5px;padding:0 18px 30px;max-width:900px}
-
-.art{padding:7px 0;border-bottom:1px dashed var(--line)}
-.art:last-child{border-bottom:0}
-.art a{color:var(--ink);text-decoration:none;font-weight:500;font-size:13.5px}
-.art a:hover{color:var(--acc);text-decoration:underline}
-.art .meta{margin-top:2px}
-.ldg{color:var(--dim);font-size:12.5px;padding:10px 0}
-.refresh{background:none;border:0;color:var(--acc);font:11.5px "IBM Plex Mono",monospace;cursor:pointer;padding:0}
-.item.gone a{opacity:.85}
-</style>
-</head>
-<body>
-<header>
-  <h1>Radiology Guideline & Journal Board<small id="sub">loading…</small></h1>
-  <button id="chipToggle" type="button"></button>
-  <div class="bar" id="chips"></div>
-  <div class="ctrl">
-    <span>期間 <span class="seg" id="win"></span></span>
-    <span class="colsw">欄數 <span class="seg" id="cols"></span></span>
-    <span class="custom"><input id="kw" placeholder="自訂主題，如 photon-counting CT"><button id="add">+ 面板</button></span>
-  </div>
-</header>
-<main id="grid"></main>
-<footer>「重點指引」每週一更新，經人工核對的 guideline / RADS / consensus；勾選「保留」的項目存在你這個瀏覽器，更新後仍會留著，沒勾選的在下次更新後消失。「最新文章」直接從 PubMed 即時抓取（依發表日期排序，6 小時快取）。請以原文為準。</footer>
-
-<script>
-const PM = t => "https://pubmed.ncbi.nlm.nih.gov/?term=" + encodeURIComponent(t) + "&sort=date";
-const GUIDE = '(guideline[pt] OR practice guideline[pt] OR consensus[ti] OR "appropriateness criteria"[ti] OR recommendation*[ti] OR "reporting and data system"[ti] OR statement[ti])';
-const IMG = '(imaging OR radiolog* OR CT OR MRI OR ultrasound OR PET)';
-const EU = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/";
-let D = {latest:"",groups:[],gen:[],panels:[]};
-const LS = {get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}, set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
-let state = Object.assign({sel:["neuro","chest","abd","vir","io","ai"],win:30,cols:3,custom:[],tab:{}}, LS.get("rb_state",{}));
-let pins = LS.get("rb_pins",{}); // key -> {panel, item}
-const save=()=>LS.set("rb_state",state);
-const esc = s => String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const keyOf = t => { let h=5381; for(const c of t) h=((h<<5)+h+c.codePointAt(0))|0; return "k"+(h>>>0).toString(36); };
-const jq = arr => "(" + arr.map(j=>`"${j}"[ta]`).join(" OR ") + ")";
-const winQ = () => state.win ? ` AND "last ${state.win} days"[edat]` : "";
-function recent(d){ if(!D.latest) return false; const [Y,M]=D.latest.split("-").map(Number); const y=+d.slice(0,4), m=+(d.slice(5,7)||6); return (Y-y)*12+(M-m) <= 6; }
-const allJ = s => [...new Set([...(s.j||[]),...D.gen])];
-
-/* ---------- PubMed live feed ---------- */
-let q = Promise.resolve();
-const throttled = url => (q = q.then(()=>new Promise(r=>setTimeout(r,380))).then(()=>fetch(url).then(r=>{if(!r.ok) throw new Error(r.status); return r.json();})));
-const feeds = {}; // id -> {status, items, at}
-async function loadFeed(s, force){
-  const term = `${s.q} AND ${jq(allJ(s))}`;
-  const ck = "rb_feed_"+keyOf(term+"|"+state.win);
-  const c = LS.get(ck,null);
-  if(!force && c && Date.now()-c.at < 6*3600e3){ feeds[s.id]={status:"ok",items:c.items,at:c.at}; return; }
-  feeds[s.id]={status:"loading"}; render();
-  try{
-    let u = EU+"esearch.fcgi?db=pubmed&retmode=json&retmax=12&sort=pub_date&term="+encodeURIComponent(term);
-    if(state.win) u += "&datetype=edat&reldate="+state.win;
-    const ids = (await throttled(u)).esearchresult?.idlist || [];
-    let items=[];
-    if(ids.length){
-      const sm = (await throttled(EU+"esummary.fcgi?db=pubmed&retmode=json&id="+ids.join(","))).result || {};
-      items = ids.map(id=>sm[id]).filter(Boolean).map(a=>({id:a.uid,t:a.title,j:a.source,d:a.sortpubdate?.slice(0,10)||a.pubdate,au:(a.authors?.[0]?.name||"")+(a.authors?.length>1?" et al.":""),pt:(a.pubtype||[]).join(", ")}))
-        .sort((x,y)=>String(y.d).localeCompare(String(x.d)));
+{
+ "latest": "2026-11-19",
+ "groups": [
+  [
+   "dx",
+   "Diagnostic Radiology"
+  ],
+  [
+   "ir",
+   "Interventional Radiology"
+  ],
+  [
+   "adv",
+   "Advanced Imaging & Emerging Fields"
+  ],
+  [
+   "safe",
+   "Safety & Quality"
+  ]
+ ],
+ "gen": [
+  "Radiology",
+  "AJR Am J Roentgenol",
+  "Eur Radiol",
+  "Radiographics",
+  "J Am Coll Radiol",
+  "Korean J Radiol",
+  "Insights Imaging"
+ ],
+ "panels": [
+  {
+   "grp": "dx",
+   "id": "neuro",
+   "name": "Neuroradiology",
+   "q": "(brain OR neuro* OR stroke OR spine OR cerebr* OR head and neck)",
+   "j": [
+    "AJNR Am J Neuroradiol",
+    "Neuroradiology",
+    "Clin Neuroradiol"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026-01",
+     "o": "AHA/ASA · Stroke",
+     "t": "2026 Guideline for the Early Management of Acute Ischemic Stroke",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41582814/",
+     "p": "取代 2018/2019 版；強調避免不必要的影像延誤，延長窗 IVT 依 advanced imaging 選病人。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-06",
+     "o": "AJNR",
+     "t": "The 2026 AHA/ASA AIS guideline updates: a guide for radiologists",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42242731/",
+     "p": "從放射科角度整理 2026 中風指引的影像相關更新，含 medium vessel occlusion 與兒童建議。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026",
+     "o": "FDA",
+     "t": "Lecanemab：第 3 次輸注前新增 MRI（ARIA-E 安全通報）",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/?term=lecanemab+ARIA+MRI&sort=date",
+     "p": "監測 MRI 擴為第 3、5、7、14 次輸注前。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-01",
+     "o": "Eur Radiol · ESNR/EAN",
+     "t": "Are we ready for ARIA monitoring? European survey",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41493545/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2025-08",
+     "o": "ACR · JACR",
+     "t": "ACR NI-RADS for MRI v2025",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/40754125/",
+     "p": "H&N 術後追蹤：首次加入 MRI 專屬描述詞與處置建議。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2025",
+     "o": "JRS/JSNR/JSMRM",
+     "t": "Practical Brain MRI Guidelines for Anti-Aβ Antibody Treatment",
+     "u": "https://www.jstage.jst.go.jp/article/mrms/advpub/0/advpub_gl.2025-1000/_article",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2025-01",
+     "o": "ASNR",
+     "t": "Anti-Amyloid Immunotherapies: Imaging Recommendations for ARIA Monitoring",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/39179297/",
+     "p": "三個關鍵序列、標準化 protocol、報告與溝通流程。"
     }
-    feeds[s.id]={status:"ok",items,at:Date.now()}; LS.set(ck,{items,at:Date.now()});
-  }catch(e){ feeds[s.id]={status:"err"}; }
-  render();
+   ]
+  },
+  {
+   "grp": "dx",
+   "id": "msk",
+   "name": "Musculoskeletal",
+   "q": "(musculoskeletal OR bone OR joint OR knee OR shoulder OR hip OR ankle OR tendon OR cartilage)",
+   "j": [
+    "Skeletal Radiol",
+    "Semin Musculoskelet Radiol"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026-04",
+     "o": "ACR AC",
+     "t": "Chronic Foot Pain: Update 2025",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41701128/",
+     "p": "JACR 2026;23(4):681-699。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-03",
+     "o": "ACR AC",
+     "t": "Chronic Ankle Pain: Update 2025",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41817475/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2025-11",
+     "o": "ACR AC",
+     "t": "Suspected Osteomyelitis of the Foot in Patients With DM: 2025 Update",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41193054/",
+     "p": "X 光為首選；陰性／不確定時下一步多為 MRI。"
+    }
+   ]
+  },
+  {
+   "grp": "dx",
+   "id": "chest",
+   "name": "Thoracic",
+   "q": "(thoracic OR chest OR lung OR pulmonary OR pleura*)",
+   "j": [
+    "J Thorac Imaging",
+    "Radiol Cardiothorac Imaging"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026-04",
+     "o": "RadioGraphics",
+     "t": "LCS CT 的機會性（非肺癌）發現：辨識、報告與處置框架",
+     "u": "https://pubs.rsna.org/doi/10.1148/rg.260012",
+     "p": "Lung-RADS S modifier 相關發現與學會建議。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-01",
+     "o": "Eur Radiol",
+     "t": "A new framework for pulmonary nodules: how terminology impacts management",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41543561/",
+     "p": "Fleischner 新 glossary 對結節大小與型態用語的改變。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2025-05",
+     "o": "ATS",
+     "t": "Approach to the Evaluation and Management of Interstitial Lung Abnormalities",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/40387336/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2024-02",
+     "o": "Fleischner",
+     "t": "Glossary of Terms for Thoracic Imaging",
+     "u": "https://pubs.rsna.org/doi/10.1148/radiol.232558",
+     "p": "結節處置仍依 2017 Fleischner guideline。"
+    }
+   ]
+  },
+  {
+   "grp": "dx",
+   "id": "cardiac",
+   "name": "Cardiac",
+   "q": "(cardiac OR coronary OR heart OR myocardi*)",
+   "j": [
+    "J Cardiovasc Comput Tomogr",
+    "J Cardiovasc Magn Reson",
+    "JACC Cardiovasc Imaging"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026-06",
+     "o": "SCCT/SCAI",
+     "t": "Fractional flow reserve in coronary CT angiography — expert consensus",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42236373/",
+     "p": "FFR-CT 擷取、判讀與報告；ACC 背書。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2025",
+     "o": "SCAI/SCCT",
+     "t": "CCTA to Guide PCI: Expert Opinion",
+     "u": "https://doi.org/10.1016/j.jscai.2025.103664",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2022",
+     "o": "SCCT/ACC/ACR/NASCI",
+     "t": "CAD-RADS 2.0 — 2022（現行）",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/35864070/",
+     "p": ""
+    }
+   ]
+  },
+  {
+   "grp": "dx",
+   "id": "abd",
+   "name": "Abdominal",
+   "q": "(liver OR hepat* OR pancrea* OR bowel OR colorectal OR gastr* OR biliary OR abdominal)",
+   "j": [
+    "Abdom Radiol (NY)",
+    "Eur J Radiol"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026-03",
+     "o": "AJR",
+     "t": "LI-RADS Nonradiation TRA v2024 用於 HCC 切除後局部復發",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41190834/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2025-12",
+     "o": "SAR · AJR",
+     "t": "Adult Abdominal Photon-Counting CT Protocols: multi-institutional consensus",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41060190/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2024-12",
+     "o": "Abdom Radiol",
+     "t": "LI-RADS in 2024: recent updates, planned refinements",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/39671010/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2024",
+     "o": "ACR",
+     "t": "LI-RADS CT/MRI Nonradiation TRA v2024 Core",
+     "u": "https://ACR.org/-/media/ACR/Files/RADS/LI-RADS/LI-RADS-CTMR-Nonradiation-TRA-v2024-Core.pdf",
+     "p": ""
+    }
+   ]
+  },
+  {
+   "grp": "dx",
+   "id": "gu",
+   "name": "Genitourinary",
+   "q": "(prostat* OR kidney OR renal OR bladder OR ureter* OR urethr* OR adrenal)",
+   "j": [
+    "Abdom Radiol (NY)",
+    "Eur Urol",
+    "J Urol"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026-09",
+     "o": "Radiology",
+     "t": "Bosniak v2019 預測 III–IV 囊性腎腫瘤之癌症與不良組織學",
+     "u": "https://pubs.rsna.org/doi/10.1148/radiol.252603",
+     "p": "Class IV 癌症機率約 91%；nodule 大小與不良組織學強相關。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-03",
+     "o": "ACR AC",
+     "t": "Penetrating Trauma-Abdomen and Pelvis: Update 2026",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41863524/",
+     "p": "疑上泌尿道損傷：CT + CT urography。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-05",
+     "o": "Cancer Imaging",
+     "t": "The evolving PI-RADS paradigm",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42152154/",
+     "p": "PI-RADS v2.1 仍為現行標準。"
+    }
+   ]
+  },
+  {
+   "grp": "dx",
+   "id": "breast",
+   "name": "Breast Imaging",
+   "q": "(breast OR mammogra* OR tomosynthesis)",
+   "j": [
+    "J Breast Imaging",
+    "Eur J Radiol"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2025-12",
+     "o": "ACR",
+     "t": "BI-RADS v2025 Manual（第 6 版）",
+     "u": "https://edge.sitecorecloud.io/americancoldf5f-acrorgf92a-productioncb02-3650/media/ACR/Files/RADS/BI-RADS/BIRADS-v2025-Whats-New.pdf",
+     "p": "CEM 成為正式章節，納入 DBT、synthetic 2D、ABUS。"
+    }
+   ]
+  },
+  {
+   "grp": "dx",
+   "id": "women",
+   "name": "Women's Imaging",
+   "q": "(adnexal OR ovar* OR uter* OR endometri* OR pelvic floor OR obstetric OR pregnan* OR placenta*)",
+   "j": [
+    "Ultrasound Obstet Gynecol",
+    "Abdom Radiol (NY)"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2022",
+     "o": "ACR",
+     "t": "O-RADS US v2022（現行）",
+     "u": "https://ACR.org/-/media/ACR/Files/RADS/O-RADS/US-v2022/O-RADS-v2022-Updates.pdf",
+     "p": "O-RADS 3 可短期 US 追蹤；MRI management 預計 2026 更新。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-03",
+     "o": "SIR",
+     "t": "Venous Origin Chronic Pelvic Pain in Women: Practice Guidance",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41786126/",
+     "p": ""
+    }
+   ]
+  },
+  {
+   "grp": "dx",
+   "id": "peds",
+   "name": "Pediatric",
+   "q": "(child* OR pediatric OR paediatric OR infant OR neonat* OR fetal)",
+   "j": [
+    "Pediatr Radiol",
+    "Pediatr Blood Cancer"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026-07",
+     "o": "ACR AC",
+     "t": "Joint Pain: Idiopathic Arthritis-Child",
+     "u": "https://doi.org/10.1016/j.jacr.2026.02.011",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-05",
+     "o": "ESPR/SPR/…",
+     "t": "Pediatric and fetal postmortem imaging：多學會聲明",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42176061/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-03",
+     "o": "SIOPEN",
+     "t": "Imaging of High-Risk Neuroblastoma: Recommendations",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41823177/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2025-11",
+     "o": "ACR/ESPR/SPR/…",
+     "t": "AI Implementation in Pediatric Radiology for Patient Safety",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41288670/",
+     "p": ""
+    }
+   ]
+  },
+  {
+   "grp": "dx",
+   "id": "er",
+   "name": "Emergency",
+   "q": "(trauma OR emergency OR acute abdomen OR polytrauma)",
+   "j": [
+    "Emerg Radiol",
+    "J Trauma Acute Care Surg"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026-10",
+     "o": "ESER · Eur Radiol",
+     "t": "ESR Essentials: trauma whole-body CT — ESER practice recommendations",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42961651/",
+     "p": "Protocol 依病人分層、急診放射科參與 MDT、結構化報告。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-03",
+     "o": "ACR AC",
+     "t": "Penetrating Trauma-Abdomen and Pelvis: Update 2026",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41863524/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-03",
+     "o": "SVS",
+     "t": "SVS guideline: Blunt Thoracic Aortic Injury — focused update",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41874481/",
+     "p": "Grade 1 不需追蹤影像；grade 2 建議一次 CTA 追蹤。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-02",
+     "o": "ACR AC",
+     "t": "Major Blunt Trauma",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41758104/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026",
+     "o": "CIRSE · Eur Radiol",
+     "t": "ESR Essentials: trauma team and the role of IR",
+     "u": "https://doi.org/10.1007/s00330-026-12440-8",
+     "p": ""
+    }
+   ]
+  },
+  {
+   "grp": "dx",
+   "id": "nm",
+   "name": "Nuclear Medicine",
+   "q": "(PET OR SPECT OR scintigraph* OR radioligand OR theranostic* OR PSMA)",
+   "j": [
+    "J Nucl Med",
+    "Eur J Nucl Med Mol Imaging",
+    "Clin Nucl Med"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2023",
+     "o": "EANM/SNMMI",
+     "t": "PSMA PET/CT procedure guideline 2.0（現行）",
+     "u": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10027805/",
+     "p": "新指引請用「即時查詢」。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2023",
+     "o": "EANM/SNMMI",
+     "t": "177Lu-PSMA radioligand therapy procedure guideline",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/37246997/",
+     "p": ""
+    }
+   ]
+  },
+  {
+   "grp": "dx",
+   "id": "vasc",
+   "name": "Vascular Imaging",
+   "q": "(aort* OR angiograph* OR peripheral arter* OR carotid OR venous OR vascular)",
+   "j": [
+    "J Vasc Surg",
+    "Eur J Vasc Endovasc Surg",
+    "Radiol Cardiothorac Imaging"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026",
+     "o": "ESVS · EJVES",
+     "t": "2026 Guidelines: Descending Thoracic & Thoraco-Abdominal Aortic Diseases",
+     "u": "https://doi.org/10.1016/j.ejvs.2025.12.050",
+     "p": "取代 2017 版。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-03",
+     "o": "SVS",
+     "t": "SVS guideline: Blunt Thoracic Aortic Injury — focused update",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41874481/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-04",
+     "o": "Radiol Adv",
+     "t": "Photon-counting CT in vascular imaging：臨床效益與挑戰",
+     "u": "https://doi.org/10.1093/radadv/umag021",
+     "p": "減少鈣化／支架 blooming；需專屬 protocol。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2023",
+     "o": "EACVI/ESC",
+     "t": "Multimodality imaging in thoracic aortic diseases",
+     "u": "https://doi.org/10.1093/ehjci/jead024",
+     "p": "CT/CMR 以 inner-to-inner、舒張末期量測。"
+    }
+   ]
+  },
+  {
+   "grp": "ir",
+   "id": "vir",
+   "name": "Vascular & Interventional",
+   "q": "(embolization OR endovascular OR interventional radiology OR dialysis access OR venous intervention)",
+   "j": [
+    "J Vasc Interv Radiol",
+    "Cardiovasc Intervent Radiol",
+    "CVIR Endovasc"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026-06",
+     "o": "SIR · JVIR",
+     "t": "SIR 2026 Practice Guidance: Prostatic Artery Embolization",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42223385/",
+     "p": "更新 2019 PAE position statement。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-03",
+     "o": "SIR",
+     "t": "Venous Origin Chronic Pelvic Pain in Women",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41786126/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026",
+     "o": "CIRSE",
+     "t": "Standards of Practice：24/7 emergency IR",
+     "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12868068",
+     "p": ""
+    }
+   ]
+  },
+  {
+   "grp": "ir",
+   "id": "io",
+   "name": "Interventional Oncology",
+   "q": "(ablation OR chemoembolization OR radioembolization OR TACE OR TARE OR histotripsy OR interventional oncology)",
+   "j": [
+    "J Vasc Interv Radiol",
+    "Cardiovasc Intervent Radiol",
+    "Int J Hyperthermia"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026-05",
+     "o": "CIRSE/ESSO/SIO · Lancet Oncol",
+     "t": "International Delphi consensus for liver tumour thermal ablation: margin assessment",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42061382/",
+     "p": "199 條陳述中 150 條達共識。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2025",
+     "o": "EORTC/ESGAR",
+     "t": "HCC 局部／區域治療的分期、規劃與追蹤影像共識",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/40410331/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2025",
+     "o": "TATA",
+     "t": "Consensus Guideline of Ablation for Metastatic Liver Tumors",
+     "u": "https://karger.com/lic/article/doi/10.1159/000546765/929138/Consensus-Guideline-of-Ablation-for-Metastatic",
+     "p": "台灣腫瘤消融醫學會。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2024",
+     "o": "ACR",
+     "t": "LI-RADS CT/MRI Nonradiation TRA v2024",
+     "u": "https://ACR.org/-/media/ACR/Files/RADS/LI-RADS/LI-RADS-CTMR-Nonradiation-TRA-v2024-Core.pdf",
+     "p": ""
+    }
+   ]
+  },
+  {
+   "grp": "ir",
+   "id": "nir",
+   "name": "Neurointerventional / INR",
+   "q": "(thrombectomy OR intracranial aneurysm OR arteriovenous malformation OR neurointervention* OR intracranial stent* OR dural arteriovenous)",
+   "j": [
+    "J Neurointerv Surg",
+    "Interv Neuroradiol",
+    "Stroke"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026-07",
+     "o": "AHA/ASA · Stroke",
+     "t": "Response: EVT imaging selection in the 6- to 24-hour window",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42535264/",
+     "p": "對 2026 AIS guideline 修訂請求的回應。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-01",
+     "o": "AHA/ASA · Stroke",
+     "t": "2026 Guideline for the Early Management of Acute Ischemic Stroke",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41582814/",
+     "p": "EVT 適應症擴及 large core、部分病前失能者；basilar occlusion 有明確 EVT 建議。"
+    }
+   ]
+  },
+  {
+   "grp": "ir",
+   "id": "pain",
+   "name": "Interventional Pain",
+   "q": "(epidural OR facet OR vertebroplasty OR kyphoplasty OR vertebral augmentation OR nerve block OR basivertebral OR sacroiliac injection)",
+   "j": [
+    "Pain Med",
+    "Reg Anesth Pain Med",
+    "AJNR Am J Neuroradiol"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026-06",
+     "o": "ACR–ASNR–ASSR–SIR–SNIS",
+     "t": "Practice Parameter: Image-Guided Epidural Steroid Injection",
+     "u": "https://doi.org/10.3174/ajnr.A9280",
+     "p": "AJNR 47(6):1433-1447。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-01",
+     "o": "Multisociety · RAPM",
+     "t": "Consensus on corticosteroid injections for facet joint and SI joint pain",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41571428/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2025-03",
+     "o": "Multisociety",
+     "t": "Response to The BMJ publications on interventional spine procedures",
+     "u": "https://sirweb.org/media/ksoha0v1/multisociety-statement-on-bmj-articles-3-18-2025.pdf",
+     "p": ""
+    }
+   ]
+  },
+  {
+   "grp": "adv",
+   "id": "cvi",
+   "name": "Cardiovascular Imaging",
+   "q": "((cardiovascular OR coronary OR aort* OR myocardi*) AND (CT OR MRI OR magnetic resonance))",
+   "j": [
+    "J Cardiovasc Comput Tomogr",
+    "J Cardiovasc Magn Reson",
+    "Eur Heart J Cardiovasc Imaging"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026-06",
+     "o": "SCCT/SCAI",
+     "t": "FFR-CT expert consensus",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42236373/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026",
+     "o": "ESVS",
+     "t": "2026 Descending Thoracic & Thoraco-Abdominal Aortic Diseases",
+     "u": "https://doi.org/10.1016/j.ejvs.2025.12.050",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2025-11",
+     "o": "Diagn Interv Radiol",
+     "t": "Scoping review: photon-counting CT in cardiovascular imaging",
+     "u": "https://doi.org/10.4274/dir.2025.253597",
+     "p": "59 篇研究。"
+    }
+   ]
+  },
+  {
+   "grp": "adv",
+   "id": "adct",
+   "name": "Advanced CT",
+   "q": "(photon-counting OR spectral CT OR dual-energy CT OR deep learning reconstruction OR ultra-high-resolution CT)",
+   "j": [
+    "Invest Radiol",
+    "Eur Radiol",
+    "Radiology"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026-04",
+     "o": "Radiol Adv",
+     "t": "Photon-counting CT in vascular imaging",
+     "u": "https://doi.org/10.1093/radadv/umag021",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2025-12",
+     "o": "SAR · AJR",
+     "t": "Adult Abdominal Photon-Counting CT Protocols: consensus",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41060190/",
+     "p": "PV phase、多期 aortic CTA、pancreas protocol 等。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2024-05",
+     "o": "Abdom Radiol",
+     "t": "Standardizing technical parameters and terms for abdominopelvic PCD-CT",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/38769199/",
+     "p": ""
+    }
+   ]
+  },
+  {
+   "grp": "adv",
+   "id": "admri",
+   "name": "Advanced MRI",
+   "q": "((MRI OR magnetic resonance) AND (diffusion OR perfusion OR elastography OR relaxometry OR fingerprinting OR low-field OR 7 T OR accelerated))",
+   "j": [
+    "Magn Reson Med",
+    "J Magn Reson Imaging",
+    "Invest Radiol"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026",
+     "o": "QIBA/QMIC · Radiology",
+     "t": "Standardized technical guidelines for liver MR elastography",
+     "u": "https://pubs.rsna.org/doi/10.1148/radiol.260974",
+     "p": "肝硬度變化 ≥19% 代表真實生物變化（95% 信心）。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2024-10",
+     "o": "QIBA · Radiology",
+     "t": "QIBA Profile for DWI: ADC as a Quantitative Imaging Biomarker",
+     "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11537247",
+     "p": "腦、肝、攝護腺、乳房。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2024",
+     "o": "QIBA · Radiology",
+     "t": "QIBA Profile for DSC-MRI in neuro-oncology trials",
+     "u": "https://doi.org/10.1148/radiol.232555",
+     "p": ""
+    }
+   ]
+  },
+  {
+   "grp": "adv",
+   "id": "mol",
+   "name": "Molecular Imaging",
+   "q": "(molecular imaging OR theranostic* OR radiopharmaceutical OR FAPI OR PSMA OR radioligand)",
+   "j": [
+    "J Nucl Med",
+    "Eur J Nucl Med Mol Imaging",
+    "Mol Imaging Biol"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2023",
+     "o": "EANM/SNMMI",
+     "t": "177Lu-PSMA radioligand therapy procedure guideline",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/37246997/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2023",
+     "o": "EANM/SNMMI",
+     "t": "PSMA PET/CT procedure guideline 2.0",
+     "u": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10027805/",
+     "p": ""
+    }
+   ]
+  },
+  {
+   "grp": "adv",
+   "id": "quant",
+   "name": "Quantitative Imaging",
+   "q": "(quantitative imaging OR imaging biomarker* OR radiomics OR repeatability OR QIBA)",
+   "j": [
+    "Radiology",
+    "Magn Reson Med",
+    "Tomography"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026",
+     "o": "QIBA/QMIC · Radiology",
+     "t": "Liver MR elastography technical guidelines",
+     "u": "https://pubs.rsna.org/doi/10.1148/radiol.260974",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2025-11",
+     "o": "QMIC",
+     "t": "Quantitative Medical Imaging Coalition 成立（延續 RSNA QIBA）",
+     "u": "https://www.auntminnie.com/imaging-informatics/advanced-visualization/image-processing/article/15827987/advancing-precision-medicine-through-quantitative-imaging",
+     "p": "將檢驗醫學的 QA/QC 概念套用到定量影像。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2024-10",
+     "o": "QIBA",
+     "t": "DWI-ADC Profile",
+     "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11537247",
+     "p": ""
+    }
+   ]
+  },
+  {
+   "grp": "adv",
+   "id": "info",
+   "name": "Imaging Informatics",
+   "q": "(informatics OR PACS OR structured report* OR interoperability OR DICOM OR radiology workflow)",
+   "j": [
+    "J Imaging Inform Med",
+    "J Am Coll Radiol"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026-03",
+     "o": "ACR",
+     "t": "NI-RADS reporting quality measure（TEP 公開徵詢）",
+     "u": "https://edge.sitecorecloud.io/americancoldf5f-acrorgf92a-productioncb02-3650/media/ACR/Files/Clinical/Practice-Management/NIRADS-Specs-Public-Comment.pdf",
+     "p": "結構化報告品質指標。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2024-01",
+     "o": "ACR/CAR/ESR/RANZCR/RSNA",
+     "t": "Developing, Purchasing, Implementing and Monitoring AI Tools in Radiology",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/38251882/",
+     "p": ""
+    }
+   ]
+  },
+  {
+   "grp": "adv",
+   "id": "ai",
+   "name": "AI in Radiology",
+   "q": "(artificial intelligence OR deep learning OR large language model OR foundation model)",
+   "j": [
+    "Radiol Artif Intell",
+    "NPJ Digit Med",
+    "Eur Radiol"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2025-11",
+     "o": "ACR/ESPR/SPR/…",
+     "t": "AI Implementation in Pediatric Radiology for Patient Safety",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41288670/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2024-01",
+     "o": "ACR/CAR/ESR/RANZCR/RSNA",
+     "t": "Multi-society statement: AI tools in radiology — practical considerations",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/38251882/",
+     "p": "採購、導入與上市後監測。"
+    }
+   ]
+  },
+  {
+   "grp": "safe",
+   "id": "safety",
+   "name": "Contrast / Safety",
+   "q": "(contrast media OR gadolinium OR contrast reaction OR contrast-associated OR radiation dose OR MRI safety)",
+   "j": [
+    "Radiology",
+    "Invest Radiol",
+    "J Am Coll Radiol"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2024",
+     "o": "ACR",
+     "t": "ACR Manual on Contrast Media",
+     "u": "https://www.acr.org/Clinical-Resources/Clinical-Tools-and-Reference/Contrast-Manual",
+     "p": "ACR 對比劑安全使用手冊（連到官網最新版）。"
+    }
+   ]
+  }
+ ]
 }
-function feedHTML(s){
-  const f=feeds[s.id];
-  if(!f){ loadFeed(s); return `<div class="ldg">讀取 PubMed 中…</div>`; }
-  if(f.status==="loading") return `<div class="ldg">讀取 PubMed 中…</div>`;
-  if(f.status==="err") return `<div class="ldg">PubMed 暫時讀不到。<button class="refresh" data-rf="${s.id}">重試</button>　或改用「查詢連結」分頁。</div>`;
-  const head=`<div class="meta" style="margin:2px 0 4px"><span>${state.win?("近 "+state.win+" 天"):"不限期間"} · 依發表日期 · ${new Date(f.at).toLocaleString("zh-TW",{hour12:false,month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"})} 更新</span><button class="refresh" data-rf="${s.id}">重新整理</button></div>`;
-  if(!f.items.length) return head+`<div class="empty">這段期間沒有符合的文章，可把期間放寬。</div>`;
-  return head+f.items.map(a=>{const g=/guideline|consensus/i.test(a.pt+" "+a.t);return `<div class="art"><a href="https://pubmed.ncbi.nlm.nih.gov/${a.id}/" target="_blank" rel="noopener">${esc(a.t)}</a>
-    <div class="meta"><span class="d">${esc(a.d)}</span><span>${esc(a.j)}</span>${g?'<span class="n">● GUIDELINE</span>':''}<span>${esc(a.au)}</span></div></div>`}).join("");
-}
-
-/* ---------- curated guidelines ---------- */
-const isPinned = t => !!pins[keyOf(t)];
-function togglePin(panel, item, on){ const k=keyOf(item.t); if(on) pins[k]={panel,item}; else delete pins[k]; LS.set("rb_pins",pins); render(); }
-function curatedFor(s){
-  const cur = (s.g||[]).filter(x=>x.w===D.latest || isPinned(x.t));
-  const inData = new Set((s.g||[]).map(x=>keyOf(x.t)));
-  const kept = Object.entries(pins).filter(([k,v])=>v.panel===s.id && !inData.has(k)).map(([k,v])=>Object.assign({_gone:1},v.item));
-  return [...cur, ...kept];
-}
-function guideHTML(s){
-  const list=curatedFor(s);
-  if(!list.length) return `<div class="empty">本週此科別沒有新整理的指引，請看「最新文章」。</div>`;
-  return list.map(x=>{const on=isPinned(x.t);return `<div class="item ${on?'pinned':''} ${x._gone?'gone':''}"><div class="meta"><span class="d">${esc(x.d)}</span><span>${esc(x.o)}</span>${recent(x.d)?'<span class="n">● NEW</span>':''}
-    <label class="keep"><input type="checkbox" data-pin="${esc(x.t)}" data-panel="${s.id}" ${on?'checked':''}>保留</label></div>
-    <a href="${esc(x.u)}" target="_blank" rel="noopener">${esc(x.t)}</a>${x.p?`<p>${esc(x.p)}</p>`:""}</div>`}).join("");
-}
-function linksHTML(s){
-  const latest = PM(`${s.q} AND ${jq(allJ(s))}${winQ()}`), guide = PM(`${s.q} AND ${IMG} AND ${GUIDE}${winQ()}`), rev = PM(`${s.q} AND ${jq(allJ(s))} AND review[pt]${winQ()}`);
-  const w = state.win ? `近 ${state.win} 天` : "不限期間";
-  return `<div class="live">
-    <a class="btn" href="${latest}" target="_blank" rel="noopener"><b>PubMed：最新期刊文章 →</b><span>${w} · 專科期刊 + 主要綜合放射期刊</span></a>
-    <a class="btn" href="${guide}" target="_blank" rel="noopener"><b>PubMed：新指引 / 共識 / RADS →</b><span>${w} · 不限期刊</span></a>
-    <a class="btn" href="${rev}" target="_blank" rel="noopener"><b>PubMed：最新 review →</b><span>${w}</span></a>
-    <div class="lbl">單一期刊最新</div>
-    <div class="jl">${[...(s.j||[]),...D.gen.slice(0,4)].map(j=>`<a href="${PM(`"${j}"[ta]`)}" target="_blank" rel="noopener">${esc(j)}</a>`).join("")}</div>
-    <div class="lbl">其他</div>
-    <div class="jl"><a href="https://acsearch.acr.org/list" target="_blank" rel="noopener">ACR Appropriateness Criteria</a></div></div>`;
-}
-
-/* ---------- layout ---------- */
-function panelHTML(s, custom){
-  const tab = state.tab[s.id] || (custom ? "n" : (curatedFor(s).length ? "g" : "n"));
-  const tabs = (custom?[]:[["g","重點指引"]]).concat([["n","最新文章"],["l","查詢連結"]]);
-  const body = tab==="g"?guideHTML(s):tab==="n"?feedHTML(s):linksHTML(s);
-  const nPin = custom?0:curatedFor(s).filter(x=>isPinned(x.t)).length;
-  return `<section class="panel"><div class="ph"><h2>${esc(s.name)}</h2><span><span class="tag">${custom?"custom":(nPin+" 保留")}</span><button class="x" ${custom?`data-rmc="${esc(s.kw)}"`:`data-rm="${s.id}"`} aria-label="關閉">×</button></span></div>
-    <div class="tabs">${tabs.map(([k,l])=>`<button class="${tab===k?'on':''}" data-t="${k}" data-s="${esc(s.id)}">${l}</button>`).join("")}</div>
-    <div class="body">${body}</div></section>`;
-}
-function render(){
-  const hd=document.querySelector("header"), op=hd.classList.contains("open");
-  document.getElementById("chipToggle").textContent=(op?"收起科別 ▴":"選擇科別 ▾")+"（已開 "+(state.sel.length+state.custom.length)+"）";
-  document.getElementById("sub").textContent = `${D.groups.length} groups · ${D.panels.length} panels · 指引更新 ${D.latest}`;
-  document.getElementById("chips").innerHTML = `<div class="grp"><button class="chip none" id="selNone">✕ 全不選</button></div>` + D.groups.map(([k,l])=>`<div class="grp"><span class="gl">${esc(l)}</span><button class="chip all" data-g="${k}">全選</button>${D.panels.filter(s=>s.grp===k).map(s=>`<button class="chip ${state.sel.includes(s.id)?'on':''}" data-id="${s.id}">${esc(s.name)}</button>`).join("")}</div>`).join("")
-    + (state.custom.length?`<div class="grp"><span class="gl">Custom</span>${state.custom.map(k=>`<button class="chip on" data-c="${esc(k)}">★ ${esc(k)}</button>`).join("")}</div>`:"");
-  document.getElementById("win").innerHTML = [7,30,90,365,0].map(w=>`<button class="${state.win===w?'on':''}" data-w="${w}">${w?w+'d':'all'}</button>`).join("");
-  document.getElementById("cols").innerHTML = [1,2,3,4].map(c=>`<button class="${state.cols===c?'on':''}" data-c="${c}">${c}</button>`).join("");
-  const g=document.getElementById("grid"); g.style.setProperty("--cols",state.cols);
-  const out = D.panels.filter(s=>state.sel.includes(s.id)).map(s=>panelHTML(s,false));
-  state.custom.forEach(k=>out.push(panelHTML({id:"c_"+keyOf(k),kw:k,name:"★ "+k,q:`(${k})`,j:[],g:[]},true)));
-  g.innerHTML = out.join("") || `<div class="empty">選擇上方科別以開啟面板。</div>`;
-}
-const findPanel = id => D.panels.find(s=>s.id===id) || (state.custom.map(k=>({id:"c_"+keyOf(k),kw:k,name:"★ "+k,q:`(${k})`,j:[],g:[]})).find(s=>s.id===id));
-document.addEventListener("click",e=>{
-  const b=e.target.closest("button"); if(!b) return;
-  if(b.id==="chipToggle"){document.querySelector("header").classList.toggle("open"); render(); return;}
-  if(b.id==="selNone"){state.sel=[]; save(); render(); return;}
-  if(b.dataset.rf){ const s=findPanel(b.dataset.rf); if(s) loadFeed(s,true); return; }
-  if(b.dataset.g){const ids=D.panels.filter(s=>s.grp===b.dataset.g).map(s=>s.id);const allOn=ids.every(i=>state.sel.includes(i));state.sel=allOn?state.sel.filter(i=>!ids.includes(i)):[...new Set([...state.sel,...ids])];}
-  else if(b.dataset.id){const i=b.dataset.id; state.sel=state.sel.includes(i)?state.sel.filter(x=>x!==i):[...state.sel,i];}
-  else if(b.closest("#chips") && b.dataset.c){state.custom=state.custom.filter(x=>x!==b.dataset.c);}
-  else if(b.dataset.w!==undefined){state.win=+b.dataset.w; for(const k in feeds) delete feeds[k];}
-  else if(b.closest("#cols")){state.cols=+b.dataset.c;}
-  else if(b.dataset.rm){state.sel=state.sel.filter(x=>x!==b.dataset.rm);}
-  else if(b.dataset.rmc){state.custom=state.custom.filter(x=>x!==b.dataset.rmc);}
-  else if(b.dataset.t){state.tab[b.dataset.s]=b.dataset.t;}
-  else if(b.id==="add"){const v=document.getElementById("kw").value.trim(); if(v&&!state.custom.includes(v)) state.custom.push(v); document.getElementById("kw").value="";}
-  else return;
-  save(); render();
-});
-document.addEventListener("change",e=>{const c=e.target.closest("input[data-pin]"); if(!c) return; const s=D.panels.find(p=>p.id===c.dataset.panel); const item=[...(s?.g||[]),...Object.values(pins).map(v=>v.item)].find(x=>x.t===c.dataset.pin); if(item){const {_gone,...clean}=item; togglePin(c.dataset.panel,clean,c.checked);} });
-document.getElementById("kw").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("add").click();});
-fetch("data.json?v="+Date.now()).then(r=>r.json()).then(d=>{D=d; render();}).catch(()=>{document.getElementById("grid").innerHTML='<div class="empty">資料載入失敗，請重新整理。</div>';});
-</script>
-</body>
-</html>
