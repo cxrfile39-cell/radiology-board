@@ -23,6 +23,7 @@ h1 small{font:400 12px "IBM Plex Mono",monospace;color:var(--mut);margin-left:8p
 .grp{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
 .gl{font:11px "IBM Plex Mono",monospace;color:var(--dim);text-transform:uppercase;letter-spacing:.06em;min-width:220px}
 @media (max-width:700px){.gl{min-width:100%}}
+.chip.none{border-color:var(--acc2);color:var(--acc2)}
 .chip.all{border-style:dashed;font-size:11.5px}
 .chip{border:1px solid var(--line);background:transparent;color:var(--mut);border-radius:999px;padding:4px 11px;font:inherit;font-size:12.5px;cursor:pointer}
 .chip.on{border-color:var(--acc);color:var(--ink);background:color-mix(in srgb,var(--acc) 14%,transparent)}
@@ -199,7 +200,7 @@ function render(){
   const hd=document.querySelector("header"), op=hd.classList.contains("open");
   document.getElementById("chipToggle").textContent=(op?"收起科別 ▴":"選擇科別 ▾")+"（已開 "+(state.sel.length+state.custom.length)+"）";
   document.getElementById("sub").textContent = `${D.groups.length} groups · ${D.panels.length} panels · 指引更新 ${D.latest}`;
-  document.getElementById("chips").innerHTML = D.groups.map(([k,l])=>`<div class="grp"><span class="gl">${esc(l)}</span><button class="chip all" data-g="${k}">全選</button>${D.panels.filter(s=>s.grp===k).map(s=>`<button class="chip ${state.sel.includes(s.id)?'on':''}" data-id="${s.id}">${esc(s.name)}</button>`).join("")}</div>`).join("")
+  document.getElementById("chips").innerHTML = `<div class="grp"><button class="chip none" id="selNone">✕ 全不選</button></div>` + D.groups.map(([k,l])=>`<div class="grp"><span class="gl">${esc(l)}</span><button class="chip all" data-g="${k}">全選</button>${D.panels.filter(s=>s.grp===k).map(s=>`<button class="chip ${state.sel.includes(s.id)?'on':''}" data-id="${s.id}">${esc(s.name)}</button>`).join("")}</div>`).join("")
     + (state.custom.length?`<div class="grp"><span class="gl">Custom</span>${state.custom.map(k=>`<button class="chip on" data-c="${esc(k)}">★ ${esc(k)}</button>`).join("")}</div>`:"");
   document.getElementById("win").innerHTML = [7,30,90,365,0].map(w=>`<button class="${state.win===w?'on':''}" data-w="${w}">${w?w+'d':'all'}</button>`).join("");
   document.getElementById("cols").innerHTML = [1,2,3,4].map(c=>`<button class="${state.cols===c?'on':''}" data-c="${c}">${c}</button>`).join("");
@@ -212,6 +213,7 @@ const findPanel = id => D.panels.find(s=>s.id===id) || (state.custom.map(k=>({id
 document.addEventListener("click",e=>{
   const b=e.target.closest("button"); if(!b) return;
   if(b.id==="chipToggle"){document.querySelector("header").classList.toggle("open"); render(); return;}
+  if(b.id==="selNone"){state.sel=[]; save(); render(); return;}
   if(b.dataset.rf){ const s=findPanel(b.dataset.rf); if(s) loadFeed(s,true); return; }
   if(b.dataset.g){const ids=D.panels.filter(s=>s.grp===b.dataset.g).map(s=>s.id);const allOn=ids.every(i=>state.sel.includes(i));state.sel=allOn?state.sel.filter(i=>!ids.includes(i)):[...new Set([...state.sel,...ids])];}
   else if(b.dataset.id){const i=b.dataset.id; state.sel=state.sel.includes(i)?state.sel.filter(x=>x!==i):[...state.sel,i];}
