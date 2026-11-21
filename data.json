@@ -45,7 +45,8 @@
      "o": "AHA/ASA · Stroke",
      "t": "2026 Guideline for the Early Management of Acute Ischemic Stroke",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41582814/",
-     "p": "取代 2018/2019 版；強調避免不必要的影像延誤，延長窗 IVT 依 advanced imaging 選病人。"
+     "p": "取代 2018/2019 版；強調避免不必要的影像延誤，延長窗 IVT 依 advanced imaging 選病人。",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -53,7 +54,8 @@
      "o": "AJNR",
      "t": "The 2026 AHA/ASA AIS guideline updates: a guide for radiologists",
      "u": "https://pubmed.ncbi.nlm.nih.gov/42242731/",
-     "p": "從放射科角度整理 2026 中風指引的影像相關更新，含 medium vessel occlusion 與兒童建議。"
+     "p": "從放射科角度整理 2026 中風指引的影像相關更新，含 medium vessel occlusion 與兒童建議。",
+     "k": "Review"
     },
     {
      "w": "2026-11-19",
@@ -61,7 +63,8 @@
      "o": "FDA",
      "t": "Lecanemab：第 3 次輸注前新增 MRI（ARIA-E 安全通報）",
      "u": "https://pubmed.ncbi.nlm.nih.gov/?term=lecanemab+ARIA+MRI&sort=date",
-     "p": "監測 MRI 擴為第 3、5、7、14 次輸注前。"
+     "p": "監測 MRI 擴為第 3、5、7、14 次輸注前。",
+     "k": "Regulatory"
     },
     {
      "w": "2026-11-19",
@@ -69,7 +72,8 @@
      "o": "Eur Radiol · ESNR/EAN",
      "t": "Are we ready for ARIA monitoring? European survey",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41493545/",
-     "p": ""
+     "p": "",
+     "k": "Original"
     },
     {
      "w": "2026-11-19",
@@ -77,7 +81,8 @@
      "o": "ACR · JACR",
      "t": "ACR NI-RADS for MRI v2025",
      "u": "https://pubmed.ncbi.nlm.nih.gov/40754125/",
-     "p": "H&N 術後追蹤：首次加入 MRI 專屬描述詞與處置建議。"
+     "p": "H&N 術後追蹤：首次加入 MRI 專屬描述詞與處置建議。",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -85,7 +90,8 @@
      "o": "JRS/JSNR/JSMRM",
      "t": "Practical Brain MRI Guidelines for Anti-Aβ Antibody Treatment",
      "u": "https://www.jstage.jst.go.jp/article/mrms/advpub/0/advpub_gl.2025-1000/_article",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -93,7 +99,8 @@
      "o": "ASNR",
      "t": "Anti-Amyloid Immunotherapies: Imaging Recommendations for ARIA Monitoring",
      "u": "https://pubmed.ncbi.nlm.nih.gov/39179297/",
-     "p": "三個關鍵序列、標準化 protocol、報告與溝通流程。"
+     "p": "三個關鍵序列、標準化 protocol、報告與溝通流程。",
+     "k": "Review"
     }
    ]
   },
@@ -114,7 +121,8 @@
      "o": "JACR",
      "t": "Intermediate-suspicion thyroid nodules with AI assistance: C-TIRADS vs ACR TI-RADS vs ATA",
      "u": "https://pubmed.ncbi.nlm.nih.gov/42498197/",
-     "p": "比較三種分類系統對中度可疑結節的表現，並評估 AI 輔助。"
+     "p": "比較三種分類系統對中度可疑結節的表現，並評估 AI 輔助。",
+     "k": "Original"
     },
     {
      "w": "2026-11-19",
@@ -122,7 +130,8 @@
      "o": "ESHNR · Eur Radiol",
      "t": "ESR Essentials: thyroid imaging practice recommendations",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41258456/",
-     "p": "歐洲頭頸放射學會的甲狀腺影像實務建議。"
+     "p": "歐洲頭頸放射學會的甲狀腺影像實務建議。",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -130,7 +139,8 @@
      "o": "ATA · Thyroid",
      "t": "2025 ATA Management Guidelines for Adult Patients with Differentiated Thyroid Cancer",
      "u": "https://pubmed.ncbi.nlm.nih.gov/40844370/",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -138,7 +148,8 @@
      "o": "ACR",
      "t": "ACR TI-RADS: White Paper of the ACR TI-RADS Committee（現行）",
      "u": "https://pubmed.ncbi.nlm.nih.gov/28372962/",
-     "p": ""
+     "p": "",
+     "k": "Consensus"
     }
    ]
   },
@@ -158,7 +169,8 @@
      "o": "ACR AC",
      "t": "Chronic Foot Pain: Update 2025",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41701128/",
-     "p": "JACR 2026;23(4):681-699。"
+     "p": "JACR 2026;23(4):681-699。",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -166,7 +178,8 @@
      "o": "ACR AC",
      "t": "Chronic Ankle Pain: Update 2025",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41817475/",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -174,7 +187,8 @@
      "o": "ACR AC",
      "t": "Suspected Osteomyelitis of the Foot in Patients With DM: 2025 Update",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41193054/",
-     "p": "X 光為首選；陰性／不確定時下一步多為 MRI。"
+     "p": "X 光為首選；陰性／不確定時下一步多為 MRI。",
+     "k": "Guideline"
     }
    ]
   },
@@ -194,7 +208,8 @@
      "o": "RadioGraphics",
      "t": "LCS CT 的機會性（非肺癌）發現：辨識、報告與處置框架",
      "u": "https://pubs.rsna.org/doi/10.1148/rg.260012",
-     "p": "Lung-RADS S modifier 相關發現與學會建議。"
+     "p": "Lung-RADS S modifier 相關發現與學會建議。",
+     "k": "Review"
     },
     {
      "w": "2026-11-19",
@@ -202,7 +217,8 @@
      "o": "Eur Radiol",
      "t": "A new framework for pulmonary nodules: how terminology impacts management",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41543561/",
-     "p": "Fleischner 新 glossary 對結節大小與型態用語的改變。"
+     "p": "Fleischner 新 glossary 對結節大小與型態用語的改變。",
+     "k": "Review"
     },
     {
      "w": "2026-11-19",
@@ -210,7 +226,8 @@
      "o": "ATS",
      "t": "Approach to the Evaluation and Management of Interstitial Lung Abnormalities",
      "u": "https://pubmed.ncbi.nlm.nih.gov/40387336/",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -218,7 +235,8 @@
      "o": "Fleischner",
      "t": "Glossary of Terms for Thoracic Imaging",
      "u": "https://pubs.rsna.org/doi/10.1148/radiol.232558",
-     "p": "結節處置仍依 2017 Fleischner guideline。"
+     "p": "結節處置仍依 2017 Fleischner guideline。",
+     "k": "Consensus"
     }
    ]
   },
@@ -239,7 +257,8 @@
      "o": "SCCT/SCAI",
      "t": "Fractional flow reserve in coronary CT angiography — expert consensus",
      "u": "https://pubmed.ncbi.nlm.nih.gov/42236373/",
-     "p": "FFR-CT 擷取、判讀與報告；ACC 背書。"
+     "p": "FFR-CT 擷取、判讀與報告；ACC 背書。",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -247,7 +266,8 @@
      "o": "SCAI/SCCT",
      "t": "CCTA to Guide PCI: Expert Opinion",
      "u": "https://doi.org/10.1016/j.jscai.2025.103664",
-     "p": ""
+     "p": "",
+     "k": "Consensus"
     },
     {
      "w": "2026-11-19",
@@ -255,7 +275,8 @@
      "o": "SCCT/ACC/ACR/NASCI",
      "t": "CAD-RADS 2.0 — 2022（現行）",
      "u": "https://pubmed.ncbi.nlm.nih.gov/35864070/",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     }
    ]
   },
@@ -275,7 +296,8 @@
      "o": "AJR",
      "t": "LI-RADS Nonradiation TRA v2024 用於 HCC 切除後局部復發",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41190834/",
-     "p": ""
+     "p": "",
+     "k": "Original"
     },
     {
      "w": "2026-11-19",
@@ -283,7 +305,8 @@
      "o": "SAR · AJR",
      "t": "Adult Abdominal Photon-Counting CT Protocols: multi-institutional consensus",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41060190/",
-     "p": ""
+     "p": "",
+     "k": "Consensus"
     },
     {
      "w": "2026-11-19",
@@ -291,7 +314,8 @@
      "o": "Abdom Radiol",
      "t": "LI-RADS in 2024: recent updates, planned refinements",
      "u": "https://pubmed.ncbi.nlm.nih.gov/39671010/",
-     "p": ""
+     "p": "",
+     "k": "Review"
     },
     {
      "w": "2026-11-19",
@@ -299,7 +323,8 @@
      "o": "ACR",
      "t": "LI-RADS CT/MRI Nonradiation TRA v2024 Core",
      "u": "https://ACR.org/-/media/ACR/Files/RADS/LI-RADS/LI-RADS-CTMR-Nonradiation-TRA-v2024-Core.pdf",
-     "p": ""
+     "p": "",
+     "k": "RADS"
     }
    ]
   },
@@ -320,7 +345,8 @@
      "o": "Radiology",
      "t": "Bosniak v2019 預測 III–IV 囊性腎腫瘤之癌症與不良組織學",
      "u": "https://pubs.rsna.org/doi/10.1148/radiol.252603",
-     "p": "Class IV 癌症機率約 91%；nodule 大小與不良組織學強相關。"
+     "p": "Class IV 癌症機率約 91%；nodule 大小與不良組織學強相關。",
+     "k": "Original"
     },
     {
      "w": "2026-11-19",
@@ -328,7 +354,8 @@
      "o": "ACR AC",
      "t": "Penetrating Trauma-Abdomen and Pelvis: Update 2026",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41863524/",
-     "p": "疑上泌尿道損傷：CT + CT urography。"
+     "p": "疑上泌尿道損傷：CT + CT urography。",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -336,7 +363,8 @@
      "o": "Cancer Imaging",
      "t": "The evolving PI-RADS paradigm",
      "u": "https://pubmed.ncbi.nlm.nih.gov/42152154/",
-     "p": "PI-RADS v2.1 仍為現行標準。"
+     "p": "PI-RADS v2.1 仍為現行標準。",
+     "k": "Review"
     }
    ]
   },
@@ -357,7 +385,8 @@
      "o": "AJR",
      "t": "Prostate MRI in incidental prostate cancer diagnosed by TURP: addressing a guideline gap",
      "u": "https://pubmed.ncbi.nlm.nih.gov/42615671/",
-     "p": "針對 TURP 後偶發攝護腺癌，討論 MRI 的角色與現行指引未涵蓋之處。"
+     "p": "針對 TURP 後偶發攝護腺癌，討論 MRI 的角色與現行指引未涵蓋之處。",
+     "k": "Original"
     },
     {
      "w": "2026-11-19",
@@ -365,7 +394,8 @@
      "o": "Cancer Imaging",
      "t": "The evolving PI-RADS paradigm",
      "u": "https://pubmed.ncbi.nlm.nih.gov/42152154/",
-     "p": "PI-RADS v2.1 仍為現行標準；預告整合 PSA density 等臨床參數的 PI-RADS Pathway 2026。"
+     "p": "PI-RADS v2.1 仍為現行標準；預告整合 PSA density 等臨床參數的 PI-RADS Pathway 2026。",
+     "k": "Review"
     },
     {
      "w": "2026-11-19",
@@ -373,7 +403,8 @@
      "o": "Eur Urol",
      "t": "TARGET: international consensus on prostate MRI after focal therapy",
      "u": "https://pubmed.ncbi.nlm.nih.gov/38519280/",
-     "p": "局部治療後攝護腺 MRI 評估的國際共識。"
+     "p": "局部治療後攝護腺 MRI 評估的國際共識。",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -381,7 +412,8 @@
      "o": "PI-RADS Steering Committee",
      "t": "PI-RADS v2.1: 2019 update of PI-RADS v2（現行）",
      "u": "https://pubmed.ncbi.nlm.nih.gov/30898406/",
-     "p": ""
+     "p": "",
+     "k": "Review"
     }
    ]
   },
@@ -401,7 +433,8 @@
      "o": "ACR",
      "t": "BI-RADS v2025 Manual（第 6 版）",
      "u": "https://edge.sitecorecloud.io/americancoldf5f-acrorgf92a-productioncb02-3650/media/ACR/Files/RADS/BI-RADS/BIRADS-v2025-Whats-New.pdf",
-     "p": "CEM 成為正式章節，納入 DBT、synthetic 2D、ABUS。"
+     "p": "CEM 成為正式章節，納入 DBT、synthetic 2D、ABUS。",
+     "k": "RADS"
     }
    ]
   },
@@ -421,7 +454,8 @@
      "o": "ACR",
      "t": "O-RADS US v2022（現行）",
      "u": "https://ACR.org/-/media/ACR/Files/RADS/O-RADS/US-v2022/O-RADS-v2022-Updates.pdf",
-     "p": "O-RADS 3 可短期 US 追蹤；MRI management 預計 2026 更新。"
+     "p": "O-RADS 3 可短期 US 追蹤；MRI management 預計 2026 更新。",
+     "k": "RADS"
     },
     {
      "w": "2026-11-19",
@@ -429,7 +463,8 @@
      "o": "SIR",
      "t": "Venous Origin Chronic Pelvic Pain in Women: Practice Guidance",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41786126/",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     }
    ]
   },
@@ -449,7 +484,8 @@
      "o": "ACR AC",
      "t": "Joint Pain: Idiopathic Arthritis-Child",
      "u": "https://doi.org/10.1016/j.jacr.2026.02.011",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -457,7 +493,8 @@
      "o": "ESPR/SPR/…",
      "t": "Pediatric and fetal postmortem imaging：多學會聲明",
      "u": "https://pubmed.ncbi.nlm.nih.gov/42176061/",
-     "p": ""
+     "p": "",
+     "k": "Consensus"
     },
     {
      "w": "2026-11-19",
@@ -465,7 +502,8 @@
      "o": "SIOPEN",
      "t": "Imaging of High-Risk Neuroblastoma: Recommendations",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41823177/",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -473,7 +511,8 @@
      "o": "ACR/ESPR/SPR/…",
      "t": "AI Implementation in Pediatric Radiology for Patient Safety",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41288670/",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     }
    ]
   },
@@ -493,7 +532,8 @@
      "o": "ESER · Eur Radiol",
      "t": "ESR Essentials: trauma whole-body CT — ESER practice recommendations",
      "u": "https://pubmed.ncbi.nlm.nih.gov/42961651/",
-     "p": "Protocol 依病人分層、急診放射科參與 MDT、結構化報告。"
+     "p": "Protocol 依病人分層、急診放射科參與 MDT、結構化報告。",
+     "k": "Review"
     },
     {
      "w": "2026-11-19",
@@ -501,7 +541,8 @@
      "o": "ACR AC",
      "t": "Penetrating Trauma-Abdomen and Pelvis: Update 2026",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41863524/",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -509,7 +550,8 @@
      "o": "SVS",
      "t": "SVS guideline: Blunt Thoracic Aortic Injury — focused update",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41874481/",
-     "p": "Grade 1 不需追蹤影像；grade 2 建議一次 CTA 追蹤。"
+     "p": "Grade 1 不需追蹤影像；grade 2 建議一次 CTA 追蹤。",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -517,7 +559,8 @@
      "o": "ACR AC",
      "t": "Major Blunt Trauma",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41758104/",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -525,7 +568,8 @@
      "o": "CIRSE · Eur Radiol",
      "t": "ESR Essentials: trauma team and the role of IR",
      "u": "https://doi.org/10.1007/s00330-026-12440-8",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     }
    ]
   },
@@ -546,7 +590,8 @@
      "o": "EANM/SNMMI",
      "t": "PSMA PET/CT procedure guideline 2.0（現行）",
      "u": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10027805/",
-     "p": "新指引請用「即時查詢」。"
+     "p": "新指引請用「即時查詢」。",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -554,7 +599,8 @@
      "o": "EANM/SNMMI",
      "t": "177Lu-PSMA radioligand therapy procedure guideline",
      "u": "https://pubmed.ncbi.nlm.nih.gov/37246997/",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     }
    ]
   },
@@ -575,7 +621,8 @@
      "o": "ESVS · EJVES",
      "t": "2026 Guidelines: Descending Thoracic & Thoraco-Abdominal Aortic Diseases",
      "u": "https://doi.org/10.1016/j.ejvs.2025.12.050",
-     "p": "取代 2017 版。"
+     "p": "取代 2017 版。",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -583,7 +630,8 @@
      "o": "SVS",
      "t": "SVS guideline: Blunt Thoracic Aortic Injury — focused update",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41874481/",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -591,7 +639,8 @@
      "o": "Radiol Adv",
      "t": "Photon-counting CT in vascular imaging：臨床效益與挑戰",
      "u": "https://doi.org/10.1093/radadv/umag021",
-     "p": "減少鈣化／支架 blooming；需專屬 protocol。"
+     "p": "減少鈣化／支架 blooming；需專屬 protocol。",
+     "k": "Review"
     },
     {
      "w": "2026-11-19",
@@ -599,7 +648,8 @@
      "o": "EACVI/ESC",
      "t": "Multimodality imaging in thoracic aortic diseases",
      "u": "https://doi.org/10.1093/ehjci/jead024",
-     "p": "CT/CMR 以 inner-to-inner、舒張末期量測。"
+     "p": "CT/CMR 以 inner-to-inner、舒張末期量測。",
+     "k": "Consensus"
     }
    ]
   },
@@ -620,7 +670,8 @@
      "o": "SIR · JVIR",
      "t": "SIR 2026 Practice Guidance: Prostatic Artery Embolization",
      "u": "https://pubmed.ncbi.nlm.nih.gov/42223385/",
-     "p": "更新 2019 PAE position statement。"
+     "p": "更新 2019 PAE position statement。",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -628,7 +679,8 @@
      "o": "SIR",
      "t": "Venous Origin Chronic Pelvic Pain in Women",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41786126/",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -636,7 +688,8 @@
      "o": "CIRSE",
      "t": "Standards of Practice：24/7 emergency IR",
      "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12868068",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     }
    ]
   },
@@ -657,7 +710,8 @@
      "o": "CIRSE/ESSO/SIO · Lancet Oncol",
      "t": "International Delphi consensus for liver tumour thermal ablation: margin assessment",
      "u": "https://pubmed.ncbi.nlm.nih.gov/42061382/",
-     "p": "199 條陳述中 150 條達共識。"
+     "p": "199 條陳述中 150 條達共識。",
+     "k": "Consensus"
     },
     {
      "w": "2026-11-19",
@@ -665,7 +719,8 @@
      "o": "EORTC/ESGAR",
      "t": "HCC 局部／區域治療的分期、規劃與追蹤影像共識",
      "u": "https://pubmed.ncbi.nlm.nih.gov/40410331/",
-     "p": ""
+     "p": "",
+     "k": "Consensus"
     },
     {
      "w": "2026-11-19",
@@ -673,7 +728,8 @@
      "o": "TATA",
      "t": "Consensus Guideline of Ablation for Metastatic Liver Tumors",
      "u": "https://karger.com/lic/article/doi/10.1159/000546765/929138/Consensus-Guideline-of-Ablation-for-Metastatic",
-     "p": "台灣腫瘤消融醫學會。"
+     "p": "台灣腫瘤消融醫學會。",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -681,7 +737,8 @@
      "o": "ACR",
      "t": "LI-RADS CT/MRI Nonradiation TRA v2024",
      "u": "https://ACR.org/-/media/ACR/Files/RADS/LI-RADS/LI-RADS-CTMR-Nonradiation-TRA-v2024-Core.pdf",
-     "p": ""
+     "p": "",
+     "k": "RADS"
     }
    ]
   },
@@ -702,7 +759,8 @@
      "o": "AHA/ASA · Stroke",
      "t": "Response: EVT imaging selection in the 6- to 24-hour window",
      "u": "https://pubmed.ncbi.nlm.nih.gov/42535264/",
-     "p": "對 2026 AIS guideline 修訂請求的回應。"
+     "p": "對 2026 AIS guideline 修訂請求的回應。",
+     "k": "Review"
     },
     {
      "w": "2026-11-19",
@@ -710,7 +768,8 @@
      "o": "AHA/ASA · Stroke",
      "t": "2026 Guideline for the Early Management of Acute Ischemic Stroke",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41582814/",
-     "p": "EVT 適應症擴及 large core、部分病前失能者；basilar occlusion 有明確 EVT 建議。"
+     "p": "EVT 適應症擴及 large core、部分病前失能者；basilar occlusion 有明確 EVT 建議。",
+     "k": "Guideline"
     }
    ]
   },
@@ -731,7 +790,8 @@
      "o": "ACR–ASNR–ASSR–SIR–SNIS",
      "t": "Practice Parameter: Image-Guided Epidural Steroid Injection",
      "u": "https://doi.org/10.3174/ajnr.A9280",
-     "p": "AJNR 47(6):1433-1447。"
+     "p": "AJNR 47(6):1433-1447。",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -739,7 +799,8 @@
      "o": "Multisociety · RAPM",
      "t": "Consensus on corticosteroid injections for facet joint and SI joint pain",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41571428/",
-     "p": ""
+     "p": "",
+     "k": "Consensus"
     },
     {
      "w": "2026-11-19",
@@ -747,7 +808,8 @@
      "o": "Multisociety",
      "t": "Response to The BMJ publications on interventional spine procedures",
      "u": "https://sirweb.org/media/ksoha0v1/multisociety-statement-on-bmj-articles-3-18-2025.pdf",
-     "p": ""
+     "p": "",
+     "k": "Statement"
     }
    ]
   },
@@ -768,7 +830,8 @@
      "o": "SCCT/SCAI",
      "t": "FFR-CT expert consensus",
      "u": "https://pubmed.ncbi.nlm.nih.gov/42236373/",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -776,7 +839,8 @@
      "o": "ESVS",
      "t": "2026 Descending Thoracic & Thoraco-Abdominal Aortic Diseases",
      "u": "https://doi.org/10.1016/j.ejvs.2025.12.050",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -784,7 +848,8 @@
      "o": "Diagn Interv Radiol",
      "t": "Scoping review: photon-counting CT in cardiovascular imaging",
      "u": "https://doi.org/10.4274/dir.2025.253597",
-     "p": "59 篇研究。"
+     "p": "59 篇研究。",
+     "k": "Review"
     }
    ]
   },
@@ -805,7 +870,8 @@
      "o": "Radiol Adv",
      "t": "Photon-counting CT in vascular imaging",
      "u": "https://doi.org/10.1093/radadv/umag021",
-     "p": ""
+     "p": "",
+     "k": "Review"
     },
     {
      "w": "2026-11-19",
@@ -813,7 +879,8 @@
      "o": "SAR · AJR",
      "t": "Adult Abdominal Photon-Counting CT Protocols: consensus",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41060190/",
-     "p": "PV phase、多期 aortic CTA、pancreas protocol 等。"
+     "p": "PV phase、多期 aortic CTA、pancreas protocol 等。",
+     "k": "Consensus"
     },
     {
      "w": "2026-11-19",
@@ -821,7 +888,8 @@
      "o": "Abdom Radiol",
      "t": "Standardizing technical parameters and terms for abdominopelvic PCD-CT",
      "u": "https://pubmed.ncbi.nlm.nih.gov/38769199/",
-     "p": ""
+     "p": "",
+     "k": "Review"
     }
    ]
   },
@@ -842,7 +910,8 @@
      "o": "QIBA/QMIC · Radiology",
      "t": "Standardized technical guidelines for liver MR elastography",
      "u": "https://pubs.rsna.org/doi/10.1148/radiol.260974",
-     "p": "肝硬度變化 ≥19% 代表真實生物變化（95% 信心）。"
+     "p": "肝硬度變化 ≥19% 代表真實生物變化（95% 信心）。",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -850,7 +919,8 @@
      "o": "QIBA · Radiology",
      "t": "QIBA Profile for DWI: ADC as a Quantitative Imaging Biomarker",
      "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11537247",
-     "p": "腦、肝、攝護腺、乳房。"
+     "p": "腦、肝、攝護腺、乳房。",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -858,7 +928,8 @@
      "o": "QIBA · Radiology",
      "t": "QIBA Profile for DSC-MRI in neuro-oncology trials",
      "u": "https://doi.org/10.1148/radiol.232555",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     }
    ]
   },
@@ -879,7 +950,8 @@
      "o": "EANM/SNMMI",
      "t": "177Lu-PSMA radioligand therapy procedure guideline",
      "u": "https://pubmed.ncbi.nlm.nih.gov/37246997/",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -887,7 +959,8 @@
      "o": "EANM/SNMMI",
      "t": "PSMA PET/CT procedure guideline 2.0",
      "u": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10027805/",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     }
    ]
   },
@@ -908,7 +981,8 @@
      "o": "QIBA/QMIC · Radiology",
      "t": "Liver MR elastography technical guidelines",
      "u": "https://pubs.rsna.org/doi/10.1148/radiol.260974",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -916,7 +990,8 @@
      "o": "QMIC",
      "t": "Quantitative Medical Imaging Coalition 成立（延續 RSNA QIBA）",
      "u": "https://www.auntminnie.com/imaging-informatics/advanced-visualization/image-processing/article/15827987/advancing-precision-medicine-through-quantitative-imaging",
-     "p": "將檢驗醫學的 QA/QC 概念套用到定量影像。"
+     "p": "將檢驗醫學的 QA/QC 概念套用到定量影像。",
+     "k": "News"
     },
     {
      "w": "2026-11-19",
@@ -924,7 +999,8 @@
      "o": "QIBA",
      "t": "DWI-ADC Profile",
      "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11537247",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     }
    ]
   },
@@ -944,7 +1020,8 @@
      "o": "ACR",
      "t": "NI-RADS reporting quality measure（TEP 公開徵詢）",
      "u": "https://edge.sitecorecloud.io/americancoldf5f-acrorgf92a-productioncb02-3650/media/ACR/Files/Clinical/Practice-Management/NIRADS-Specs-Public-Comment.pdf",
-     "p": "結構化報告品質指標。"
+     "p": "結構化報告品質指標。",
+     "k": "Statement"
     },
     {
      "w": "2026-11-19",
@@ -952,7 +1029,8 @@
      "o": "ACR/CAR/ESR/RANZCR/RSNA",
      "t": "Developing, Purchasing, Implementing and Monitoring AI Tools in Radiology",
      "u": "https://pubmed.ncbi.nlm.nih.gov/38251882/",
-     "p": ""
+     "p": "",
+     "k": "Review"
     }
    ]
   },
@@ -973,7 +1051,8 @@
      "o": "ACR/ESPR/SPR/…",
      "t": "AI Implementation in Pediatric Radiology for Patient Safety",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41288670/",
-     "p": ""
+     "p": "",
+     "k": "Guideline"
     },
     {
      "w": "2026-11-19",
@@ -981,7 +1060,8 @@
      "o": "ACR/CAR/ESR/RANZCR/RSNA",
      "t": "Multi-society statement: AI tools in radiology — practical considerations",
      "u": "https://pubmed.ncbi.nlm.nih.gov/38251882/",
-     "p": "採購、導入與上市後監測。"
+     "p": "採購、導入與上市後監測。",
+     "k": "Review"
     }
    ]
   },
@@ -1002,7 +1082,8 @@
      "o": "ACR",
      "t": "ACR Manual on Contrast Media",
      "u": "https://www.acr.org/Clinical-Resources/Clinical-Tools-and-Reference/Contrast-Manual",
-     "p": "ACR 對比劑安全使用手冊（連到官網最新版）。"
+     "p": "ACR 對比劑安全使用手冊（連到官網最新版）。",
+     "k": "Guideline"
     }
    ]
   }
