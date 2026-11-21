@@ -198,10 +198,16 @@ function panelHTML(s, custom){
     <div class="tabs">${tabs.map(([k,l])=>`<button class="${tab===k?'on':''}" data-t="${k}" data-s="${esc(s.id)}">${l}</button>`).join("")}</div>
     <div class="body">${body}</div></section>`;
 }
+function nextRun(){ // 每週一 06:33 台北 = 週日 22:33 UTC
+  const n=new Date(), t=new Date(Date.UTC(n.getUTCFullYear(),n.getUTCMonth(),n.getUTCDate(),22,33));
+  t.setUTCDate(t.getUTCDate()+((7-t.getUTCDay())%7)); if(t<=n) t.setUTCDate(t.getUTCDate()+7);
+  const tp=new Date(t.getTime()+8*3600e3), p=x=>String(x).padStart(2,"0");
+  return `${tp.getUTCFullYear()}-${p(tp.getUTCMonth()+1)}-${p(tp.getUTCDate())}（一）06:33`;
+}
 function render(){
   const hd=document.querySelector("header"), op=hd.classList.contains("open");
   document.getElementById("chipToggle").textContent=(op?"收起科別 ▴":"選擇科別 ▾")+"（已開 "+(state.sel.length+state.custom.length)+"）";
-  document.getElementById("sub").textContent = `${D.groups.length} groups · ${D.panels.length} panels · 上次更新 ${D.updated||D.latest}（台北時間）`;
+  document.getElementById("sub").textContent = `${D.groups.length} groups · ${D.panels.length} panels · 上次更新 ${D.updated||D.latest} · 下次更新 ${nextRun()}（台北時間）`;
   document.getElementById("chips").innerHTML = `<div class="grp"><button class="chip none" id="selNone">✕ 全不選</button></div>` + D.groups.map(([k,l])=>`<div class="grp"><span class="gl">${esc(l)}</span><button class="chip all" data-g="${k}">全選</button>${D.panels.filter(s=>s.grp===k).map(s=>`<button class="chip ${state.sel.includes(s.id)?'on':''}" data-id="${s.id}">${esc(s.name)}</button>`).join("")}</div>`).join("")
     + (state.custom.length?`<div class="grp"><span class="gl">Custom</span>${state.custom.map(k=>`<button class="chip on" data-c="${esc(k)}">★ ${esc(k)}</button>`).join("")}</div>`:"");
   document.getElementById("win").innerHTML = [7,30,90,365,0].map(w=>`<button class="${state.win===w?'on':''}" data-w="${w}">${w?w+'d':'all'}</button>`).join("");
