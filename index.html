@@ -201,7 +201,7 @@ function panelHTML(s, custom){
 function render(){
   const hd=document.querySelector("header"), op=hd.classList.contains("open");
   document.getElementById("chipToggle").textContent=(op?"收起科別 ▴":"選擇科別 ▾")+"（已開 "+(state.sel.length+state.custom.length)+"）";
-  document.getElementById("sub").textContent = `${D.groups.length} groups · ${D.panels.length} panels · 指引更新 ${D.latest}`;
+  document.getElementById("sub").textContent = `${D.groups.length} groups · ${D.panels.length} panels · 上次更新 ${D.updated||D.latest}（台北時間）`;
   document.getElementById("chips").innerHTML = `<div class="grp"><button class="chip none" id="selNone">✕ 全不選</button></div>` + D.groups.map(([k,l])=>`<div class="grp"><span class="gl">${esc(l)}</span><button class="chip all" data-g="${k}">全選</button>${D.panels.filter(s=>s.grp===k).map(s=>`<button class="chip ${state.sel.includes(s.id)?'on':''}" data-id="${s.id}">${esc(s.name)}</button>`).join("")}</div>`).join("")
     + (state.custom.length?`<div class="grp"><span class="gl">Custom</span>${state.custom.map(k=>`<button class="chip on" data-c="${esc(k)}">★ ${esc(k)}</button>`).join("")}</div>`:"");
   document.getElementById("win").innerHTML = [7,30,90,365,0].map(w=>`<button class="${state.win===w?'on':''}" data-w="${w}">${w?w+'d':'all'}</button>`).join("");
