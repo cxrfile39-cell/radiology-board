@@ -120,12 +120,27 @@ footer{color:var(--dim);font-size:11.5px;padding:0 18px 30px;max-width:900px}
 .kb{font:10.5px "IBM Plex Mono",monospace;padding:0 6px;border-radius:4px;line-height:16px;border:1px solid color-mix(in srgb,var(--kc) 45%,transparent);color:var(--kc);background:color-mix(in srgb,var(--kc) 10%,transparent)}
 .kg{--kc:#5eead4}.kr{--kc:#a3e635}.kc{--kc:#7dd3fc}.km{--kc:#f0abfc}.kt{--kc:#86efac}.kv{--kc:#cbd5e1}.ko{--kc:#d6d3d1}.kx{--kc:#fdba74}
 @media (prefers-color-scheme: light){.kg{--kc:#0f766e}.kr{--kc:#4d7c0f}.kc{--kc:#0369a1}.km{--kc:#a21caf}.kt{--kc:#15803d}.kv{--kc:#475569}.ko{--kc:#78716c}.kx{--kc:#c2410c}}
+
+.topband{display:flex;gap:12px;align-items:flex-start}
+.topband .tb-main{flex:1;min-width:0}
+.gantry{width:34px;height:30px;flex:none;margin-top:1px;fill:none;stroke:#8fd3c1;stroke-width:1.6;stroke-linecap:round}
+.gantry .tk{stroke:rgba(255,255,255,.55);stroke-width:1.2}
+.dcm{flex:none;text-align:right;font:10.5px/1.45 "IBM Plex Mono",monospace;color:rgba(255,255,255,.5);letter-spacing:.02em}
+.dcm .lutrow{display:flex;gap:6px;align-items:center;justify-content:flex-end}
+.dcm .lut{display:inline-block;width:54px;height:6px;background:linear-gradient(90deg,#000,#fff);border:1px solid rgba(255,255,255,.35)}
+.dcm .scale{display:flex;gap:6px;align-items:flex-end;justify-content:flex-end;margin-top:2px}
+.dcm .ticks{display:inline-block;width:80px;height:8px;border-bottom:1px solid rgba(255,255,255,.55);
+  background-image:linear-gradient(to right,rgba(255,255,255,.55) 1px,transparent 1px),linear-gradient(to right,rgba(255,255,255,.55) 1px,transparent 1px);
+  background-size:8px 4px,40px 8px;background-repeat:repeat-x;background-position:left bottom,left bottom}
+main{counter-reset:se}
+.gsec::before{counter-increment:se;content:"SE " counter(se);font-weight:500;padding:1px 6px;border:1px solid color-mix(in srgb,var(--gc,var(--mut)) 55%,transparent);border-radius:4px;letter-spacing:.04em}
+@media (max-width:700px){.dcm{display:none}.gantry{width:28px;height:25px}}
 </style>
 </head>
 <body>
 <header>
-  <div class="topband"><h1><span class="t1">Radiology</span> <span class="t2">Guideline & Journal Board</span><small id="sub">loading…</small></h1>
-  <div class="credit">製作者：JH CHIU MD · Claude Opus 5.5</div></div>
+  <div class="topband"><svg class="gantry" viewBox="0 0 32 28" aria-hidden="true"><circle cx="16" cy="12" r="10.5"/><circle cx="16" cy="12" r="5"/><path d="M1.5 15.5H30.5M1.5 18.5H30.5M9 18.5V25M23 18.5V25M6 25H26"/><path d="M16 1.5V4M16 20V22.5M5.5 12H8M24 12H26.5" class="tk"/></svg><div class="tb-main"><h1><span class="t1">Radiology</span> <span class="t2">Guideline & Journal Board</span><small id="sub">loading…</small></h1>
+  <div class="credit">製作者：JH CHIU MD · Claude Opus 5.5</div></div><div class="dcm" aria-hidden="true"><div>WW 400 · WL 40</div><div>120 kVp · 1.25 mm</div><div class="lutrow"><span class="lut"></span><span id="seim">Se 4 · Im 26</span></div><div class="scale"><span class="ticks"></span>5 cm</div></div></div>
   <button id="chipToggle" type="button"></button>
   <div class="bar" id="chips"></div>
   <div class="ctrl">
@@ -255,6 +270,7 @@ function nextRun(){ // 每週一 06:33 台北 = 週日 22:33 UTC
 function render(){
   const hd=document.querySelector("header"), op=hd.classList.contains("open");
   document.getElementById("chipToggle").textContent=(op?"收起科別 ▴":"選擇科別 ▾")+"（已開 "+(state.sel.length+state.custom.length)+"）";
+  {const si=document.getElementById("seim"); if(si) si.textContent=`Se ${D.groups.length} · Im ${D.panels.length}`;}
   document.getElementById("sub").textContent = `${D.groups.length} groups · ${D.panels.length} panels · 上次更新 ${D.updated||D.latest} · 下次更新 ${nextRun()}（台北時間）`;
   document.getElementById("chips").innerHTML = `<div class="grp"><button class="chip none" id="selNone">✕ 全不選</button></div>` + D.groups.map(([k,l])=>`<div class="grp g-${k}"><span class="gl">${esc(l)}</span><button class="chip all" data-g="${k}">全選</button>${D.panels.filter(s=>s.grp===k).map(s=>`<button class="chip ${state.sel.includes(s.id)?'on':''}" data-id="${s.id}">${esc(s.name)}</button>`).join("")}</div>`).join("")
     + (state.custom.length?`<div class="grp"><span class="gl">Custom</span>${state.custom.map(k=>`<button class="chip on" data-c="${esc(k)}">★ ${esc(k)}</button>`).join("")}</div>`:"");
