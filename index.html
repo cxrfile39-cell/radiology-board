@@ -116,6 +116,10 @@ footer{color:var(--dim);font-size:11.5px;padding:0 18px 30px;max-width:900px}
 .gsec{grid-column:1/-1;display:flex;align-items:center;gap:10px;margin:10px 0 -2px;font:600 12px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--gc,var(--mut))}
 .gsec::after{content:"";flex:1;height:2px;background:color-mix(in srgb,var(--gc,var(--mut)) 40%,transparent)}
 .gsec:first-child{margin-top:0}
+
+.kb{font:10.5px "IBM Plex Mono",monospace;padding:0 6px;border-radius:4px;line-height:16px;border:1px solid color-mix(in srgb,var(--kc) 45%,transparent);color:var(--kc);background:color-mix(in srgb,var(--kc) 10%,transparent)}
+.kg{--kc:#5eead4}.kr{--kc:#a3e635}.kc{--kc:#7dd3fc}.km{--kc:#f0abfc}.kt{--kc:#86efac}.kv{--kc:#cbd5e1}.ko{--kc:#d6d3d1}.kx{--kc:#fdba74}
+@media (prefers-color-scheme: light){.kg{--kc:#0f766e}.kr{--kc:#4d7c0f}.kc{--kc:#0369a1}.km{--kc:#a21caf}.kt{--kc:#15803d}.kv{--kc:#475569}.ko{--kc:#78716c}.kx{--kc:#c2410c}}
 </style>
 </head>
 <body>
@@ -134,6 +138,24 @@ footer{color:var(--dim);font-size:11.5px;padding:0 18px 30px;max-width:900px}
 <footer>「重點指引」每週一更新，經人工核對的 guideline / RADS / consensus；勾選「保留」的項目存在你這個瀏覽器，更新後仍會留著，沒勾選的在下次更新後消失。「最新文章」直接從 PubMed 即時抓取（依發表日期排序，6 小時快取）。請以原文為準。<br>製作者：JH CHIU MD · 以 Claude Opus 5.5 協助開發</footer>
 
 <script>
+const KCAT={"Guideline":"kg","RADS":"kr","Consensus":"kc","Statement":"kc","Meta-analysis":"km","Systematic Review":"km","RCT":"kt","Clinical Trial":"kt","Review":"kv","Original":"ko","Case Report":"kx","Commentary":"kx","Regulatory":"kx","News":"kx"};
+const kb = k => k ? `<span class="kb ${KCAT[k]||'kx'}">${esc(k)}</span>` : "";
+function catOf(types,title){
+  const T=new Set(types||[]); let c;
+  if(T.has("Practice Guideline")||T.has("Guideline")) c="Guideline";
+  else if(T.has("Consensus Statement")) c="Consensus";
+  else if(T.has("Meta-Analysis")) c="Meta-analysis";
+  else if(T.has("Systematic Review")) c="Systematic Review";
+  else if(T.has("Randomized Controlled Trial")) c="RCT";
+  else if([...T].some(t=>t.startsWith("Clinical Trial"))) c="Clinical Trial";
+  else if(T.has("Review")) c="Review";
+  else if(T.has("Case Reports")) c="Case Report";
+  else if(T.has("Editorial")||T.has("Comment")||T.has("Letter")) c="Commentary";
+  else c="Original";
+  if(c==="Original" && /consensus|recommendations|practice parameter|position statement/i.test(title||"")) c="Consensus";
+  return c;
+}
+
 const PM = t => "https://pubmed.ncbi.nlm.nih.gov/?term=" + encodeURIComponent(t) + "&sort=date";
 const GUIDE = '(guideline[pt] OR practice guideline[pt] OR consensus[ti] OR "appropriateness criteria"[ti] OR recommendation*[ti] OR "reporting and data system"[ti] OR statement[ti])';
 const IMG = '(imaging OR radiolog* OR CT OR MRI OR ultrasound OR PET)';
@@ -182,7 +204,7 @@ function feedHTML(s){
   const head=`<div class="meta" style="margin:2px 0 4px"><span>${state.win?("近 "+state.win+" 天"):"不限期間"} · 依發表日期 · ${new Date(f.at).toLocaleString("zh-TW",{hour12:false,month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"})} 更新</span><button class="refresh" data-rf="${s.id}">重新整理</button></div>`;
   if(!f.items.length) return head+`<div class="empty">這段期間沒有符合的文章，可把期間放寬。</div>`;
   return head+f.items.map(a=>{const g=/guideline|consensus/i.test(a.pt+" "+a.t);return `<div class="art"><a href="https://pubmed.ncbi.nlm.nih.gov/${a.id}/" target="_blank" rel="noopener">${esc(a.t)}</a>
-    <div class="meta"><span class="d">${esc(a.d)}</span><span>${esc(a.j)}</span>${g?'<span class="n">● GUIDELINE</span>':''}<span>${esc(a.au)}</span></div></div>`}).join("");
+    <div class="meta"><span class="d">${esc(a.d)}</span><span>${esc(a.j)}</span>${kb(catOf(String(a.pt||"").split(", "),a.t))}<span>${esc(a.au)}</span></div></div>`}).join("");
 }
 
 /* ---------- curated guidelines ---------- */
@@ -197,7 +219,7 @@ function curatedFor(s){
 function guideHTML(s){
   const list=curatedFor(s);
   if(!list.length) return `<div class="empty">本週此科別沒有新整理的指引，請看「最新文章」。</div>`;
-  return list.map(x=>{const on=isPinned(x.t);return `<div class="item ${on?'pinned':''} ${x._gone?'gone':''}"><div class="meta"><span class="d">${esc(x.d)}</span><span>${esc(x.o)}</span>${recent(x.d)?'<span class="n">● NEW</span>':''}
+  return list.map(x=>{const on=isPinned(x.t);return `<div class="item ${on?'pinned':''} ${x._gone?'gone':''}"><div class="meta"><span class="d">${esc(x.d)}</span>${kb(x.k)}<span>${esc(x.o)}</span>${recent(x.d)?'<span class="n">● NEW</span>':''}
     <label class="keep"><input type="checkbox" data-pin="${esc(x.t)}" data-panel="${s.id}" ${on?'checked':''}>保留</label></div>
     <a href="${esc(x.u)}" target="_blank" rel="noopener">${esc(x.t)}</a>${x.p?`<p>${esc(x.p)}</p>`:""}</div>`}).join("");
 }
