@@ -90,6 +90,17 @@ footer{color:var(--dim);font-size:11.5px;padding:0 18px 30px;max-width:900px}
 .ldg{color:var(--dim);font-size:12.5px;padding:10px 0}
 .refresh{background:none;border:0;color:var(--acc);font:11.5px "IBM Plex Mono",monospace;cursor:pointer;padding:0}
 .item.gone a{opacity:.85}
+
+:root{--c-dx:#7fb0e8;--c-ir:#f0a45e;--c-adv:#b49ae8;--c-safe:#ec8a96}
+@media (prefers-color-scheme: light){:root{--c-dx:#2563a8;--c-ir:#b4580f;--c-adv:#6d4bb3;--c-safe:#b03a48}}
+.g-dx{--gc:var(--c-dx)}.g-ir{--gc:var(--c-ir)}.g-adv{--gc:var(--c-adv)}.g-safe{--gc:var(--c-safe)}
+.grp.g-dx .gl,.grp.g-ir .gl,.grp.g-adv .gl,.grp.g-safe .gl{color:var(--gc);font-weight:500}
+.grp[class*="g-"] .chip.on{border-color:var(--gc);background:color-mix(in srgb,var(--gc) 14%,transparent)}
+.grp[class*="g-"] .chip.all{border-color:color-mix(in srgb,var(--gc) 45%,transparent);color:var(--gc)}
+.panel[class*="g-"]{border-top:3px solid var(--gc)}
+.panel[class*="g-"] .ph h2{color:var(--gc)}
+.panel[class*="g-"] .tabs button.on{border-color:var(--gc)}
+.panel[class*="g-"] .meta .d{color:var(--gc)}
 </style>
 </head>
 <body>
@@ -194,7 +205,7 @@ function panelHTML(s, custom){
   const tabs = (custom?[]:[["g","重點指引"]]).concat([["n","最新文章"],["l","查詢連結"]]);
   const body = tab==="g"?guideHTML(s):tab==="n"?feedHTML(s):linksHTML(s);
   const nPin = custom?0:curatedFor(s).filter(x=>isPinned(x.t)).length;
-  return `<section class="panel"><div class="ph"><h2>${esc(s.name)}</h2><span><span class="tag">${custom?"custom":(nPin+" 保留")}</span><button class="x" ${custom?`data-rmc="${esc(s.kw)}"`:`data-rm="${s.id}"`} aria-label="關閉">×</button></span></div>
+  return `<section class="panel ${custom?"":"g-"+s.grp}"><div class="ph"><h2>${esc(s.name)}</h2><span><span class="tag">${custom?"custom":(nPin+" 保留")}</span><button class="x" ${custom?`data-rmc="${esc(s.kw)}"`:`data-rm="${s.id}"`} aria-label="關閉">×</button></span></div>
     <div class="tabs">${tabs.map(([k,l])=>`<button class="${tab===k?'on':''}" data-t="${k}" data-s="${esc(s.id)}">${l}</button>`).join("")}</div>
     <div class="body">${body}</div></section>`;
 }
@@ -208,7 +219,7 @@ function render(){
   const hd=document.querySelector("header"), op=hd.classList.contains("open");
   document.getElementById("chipToggle").textContent=(op?"收起科別 ▴":"選擇科別 ▾")+"（已開 "+(state.sel.length+state.custom.length)+"）";
   document.getElementById("sub").textContent = `${D.groups.length} groups · ${D.panels.length} panels · 上次更新 ${D.updated||D.latest} · 下次更新 ${nextRun()}（台北時間）`;
-  document.getElementById("chips").innerHTML = `<div class="grp"><button class="chip none" id="selNone">✕ 全不選</button></div>` + D.groups.map(([k,l])=>`<div class="grp"><span class="gl">${esc(l)}</span><button class="chip all" data-g="${k}">全選</button>${D.panels.filter(s=>s.grp===k).map(s=>`<button class="chip ${state.sel.includes(s.id)?'on':''}" data-id="${s.id}">${esc(s.name)}</button>`).join("")}</div>`).join("")
+  document.getElementById("chips").innerHTML = `<div class="grp"><button class="chip none" id="selNone">✕ 全不選</button></div>` + D.groups.map(([k,l])=>`<div class="grp g-${k}"><span class="gl">${esc(l)}</span><button class="chip all" data-g="${k}">全選</button>${D.panels.filter(s=>s.grp===k).map(s=>`<button class="chip ${state.sel.includes(s.id)?'on':''}" data-id="${s.id}">${esc(s.name)}</button>`).join("")}</div>`).join("")
     + (state.custom.length?`<div class="grp"><span class="gl">Custom</span>${state.custom.map(k=>`<button class="chip on" data-c="${esc(k)}">★ ${esc(k)}</button>`).join("")}</div>`:"");
   document.getElementById("win").innerHTML = [7,30,90,365,0].map(w=>`<button class="${state.win===w?'on':''}" data-w="${w}">${w?w+'d':'all'}</button>`).join("");
   document.getElementById("cols").innerHTML = [1,2,3,4].map(c=>`<button class="${state.cols===c?'on':''}" data-c="${c}">${c}</button>`).join("");
