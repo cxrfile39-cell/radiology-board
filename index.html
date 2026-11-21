@@ -110,6 +110,12 @@ footer{color:var(--dim);font-size:11.5px;padding:0 18px 30px;max-width:900px}
 .topband h1 small{color:rgba(255,255,255,.72)}
 .topband .credit{color:rgba(255,255,255,.78)}
 @media (max-width:700px){.topband{margin:-12px -12px 12px;padding:12px 12px 10px}}
+
+#chips .grp[class*="g-"]{padding:7px 10px;border:1px solid color-mix(in srgb,var(--gc) 30%,transparent);border-left:4px solid var(--gc);border-radius:8px;background:color-mix(in srgb,var(--gc) 6%,transparent)}
+.bar{gap:8px}
+.gsec{grid-column:1/-1;display:flex;align-items:center;gap:10px;margin:10px 0 -2px;font:600 12px "IBM Plex Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--gc,var(--mut))}
+.gsec::after{content:"";flex:1;height:2px;background:color-mix(in srgb,var(--gc,var(--mut)) 40%,transparent)}
+.gsec:first-child{margin-top:0}
 </style>
 </head>
 <body>
@@ -233,7 +239,9 @@ function render(){
   document.getElementById("win").innerHTML = [7,30,90,365,0].map(w=>`<button class="${state.win===w?'on':''}" data-w="${w}">${w?w+'d':'all'}</button>`).join("");
   document.getElementById("cols").innerHTML = [1,2,3,4].map(c=>`<button class="${state.cols===c?'on':''}" data-c="${c}">${c}</button>`).join("");
   const g=document.getElementById("grid"); g.style.setProperty("--cols",state.cols);
-  const out = D.panels.filter(s=>state.sel.includes(s.id)).map(s=>panelHTML(s,false));
+  const out=[]; let last=null;
+  D.panels.filter(s=>state.sel.includes(s.id)).forEach(s=>{ if(s.grp!==last){ out.push(`<div class="gsec g-${s.grp}">${esc((D.groups.find(x=>x[0]===s.grp)||[,""])[1])}</div>`); last=s.grp; } out.push(panelHTML(s,false)); });
+  if(state.custom.length) out.push(`<div class="gsec">Custom</div>`);
   state.custom.forEach(k=>out.push(panelHTML({id:"c_"+keyOf(k),kw:k,name:"★ "+k,q:`(${k})`,j:[],g:[]},true)));
   g.innerHTML = out.join("") || `<div class="empty">選擇上方科別以開啟面板。</div>`;
 }
