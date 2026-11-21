@@ -99,6 +99,51 @@
   },
   {
    "grp": "dx",
+   "id": "thyroid",
+   "name": "Thyroid",
+   "q": "(thyroid OR parathyroid)",
+   "j": [
+    "Thyroid",
+    "Ultrasonography",
+    "AJNR Am J Neuroradiol"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026-07",
+     "o": "JACR",
+     "t": "Intermediate-suspicion thyroid nodules with AI assistance: C-TIRADS vs ACR TI-RADS vs ATA",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42498197/",
+     "p": "比較三種分類系統對中度可疑結節的表現，並評估 AI 輔助。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2025-11",
+     "o": "ESHNR · Eur Radiol",
+     "t": "ESR Essentials: thyroid imaging practice recommendations",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/41258456/",
+     "p": "歐洲頭頸放射學會的甲狀腺影像實務建議。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2025-08",
+     "o": "ATA · Thyroid",
+     "t": "2025 ATA Management Guidelines for Adult Patients with Differentiated Thyroid Cancer",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/40844370/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2017-04",
+     "o": "ACR",
+     "t": "ACR TI-RADS: White Paper of the ACR TI-RADS Committee（現行）",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/28372962/",
+     "p": ""
+    }
+   ]
+  },
+  {
+   "grp": "dx",
    "id": "msk",
    "name": "Musculoskeletal",
    "q": "(musculoskeletal OR bone OR joint OR knee OR shoulder OR hip OR ankle OR tendon OR cartilage)",
@@ -292,6 +337,51 @@
      "t": "The evolving PI-RADS paradigm",
      "u": "https://pubmed.ncbi.nlm.nih.gov/42152154/",
      "p": "PI-RADS v2.1 仍為現行標準。"
+    }
+   ]
+  },
+  {
+   "grp": "dx",
+   "id": "prostate",
+   "name": "Prostate",
+   "q": "(prostate OR prostatic)",
+   "j": [
+    "Eur Urol",
+    "J Urol",
+    "Abdom Radiol (NY)"
+   ],
+   "g": [
+    {
+     "w": "2026-11-19",
+     "d": "2026-11",
+     "o": "AJR",
+     "t": "Prostate MRI in incidental prostate cancer diagnosed by TURP: addressing a guideline gap",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42615671/",
+     "p": "針對 TURP 後偶發攝護腺癌，討論 MRI 的角色與現行指引未涵蓋之處。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2026-05",
+     "o": "Cancer Imaging",
+     "t": "The evolving PI-RADS paradigm",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42152154/",
+     "p": "PI-RADS v2.1 仍為現行標準；預告整合 PSA density 等臨床參數的 PI-RADS Pathway 2026。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2024-03",
+     "o": "Eur Urol",
+     "t": "TARGET: international consensus on prostate MRI after focal therapy",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/38519280/",
+     "p": "局部治療後攝護腺 MRI 評估的國際共識。"
+    },
+    {
+     "w": "2026-11-19",
+     "d": "2019-03",
+     "o": "PI-RADS Steering Committee",
+     "t": "PI-RADS v2.1: 2019 update of PI-RADS v2（現行）",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/30898406/",
+     "p": ""
     }
    ]
   },
@@ -917,5 +1007,5 @@
    ]
   }
  ],
- "updated": "2026-11-21 08:28"
+ "updated": "2026-11-21 16:18"
 }
