@@ -135,6 +135,17 @@ footer{color:var(--dim);font-size:11.5px;padding:0 18px 30px;max-width:900px}
 main{counter-reset:se}
 .gsec::before{counter-increment:se;content:"SE " counter(se);font-weight:500;padding:1px 6px;border:1px solid color-mix(in srgb,var(--gc,var(--mut)) 55%,transparent);border-radius:4px;letter-spacing:.04em}
 @media (max-width:700px){.dcm{display:none}.gantry{width:28px;height:25px}}
+
+.blk{margin:6px 0 2px;border-left:3px solid var(--bk);padding-left:9px}
+.b-orig{--bk:#78716c}.b-rev{--bk:#64748b}.b-meta{--bk:#a21caf}.b-cg{--bk:#0f766e}
+@media (prefers-color-scheme: dark){.b-orig{--bk:#a8a29e}.b-rev{--bk:#94a3b8}.b-meta{--bk:#e879f9}.b-cg{--bk:#2dd4bf}}
+.bh{display:flex;align-items:center;gap:8px;width:100%;background:none;border:0;padding:4px 0;cursor:pointer;color:var(--ink);font:600 12px "IBM Plex Mono",monospace;letter-spacing:.03em;text-align:left}
+.bh[disabled]{cursor:default}
+.bh .bc{min-width:22px;text-align:center;padding:0 6px;border-radius:9px;font-weight:500;background:color-mix(in srgb,var(--bk) 16%,transparent);color:var(--bk)}
+.bh .bt{margin-left:auto;font-weight:400;color:var(--acc)}
+.blk.b0 .bh{color:var(--dim)}
+.blk.b0 .bh .bc{background:transparent;border:1px solid var(--line);color:var(--dim)}
+.more{background:none;border:0;color:var(--acc);font:11.5px "IBM Plex Mono",monospace;cursor:pointer;padding:2px 0 6px}
 </style>
 </head>
 <body>
@@ -171,6 +182,20 @@ function catOf(types,title){
   return c;
 }
 
+const BLK=[["orig","Original"],["rev","Review"],["meta","Meta-analysis"],["cg","Consensus / Guideline"]];
+const blkOf=k=>({"Guideline":"cg","Consensus":"cg","RADS":"cg","Statement":"cg","Regulatory":"cg","Meta-analysis":"meta","Systematic Review":"meta","Review":"rev"})[k]||"orig";
+const PREVIEW=2;
+function blocksHTML(pid,items,kOf,row){
+  const ex=state.exp||{};
+  return BLK.map(([b,l])=>{
+    const arr=items.filter(x=>blkOf(kOf(x))===b), key=pid+"|"+b, open=!!ex[key], more=arr.length>PREVIEW;
+    const vis=open?arr:arr.slice(0,PREVIEW);
+    return `<div class="blk b-${b}${arr.length?'':' b0'}"><button class="bh" data-exp="${esc(key)}"${more?'':' disabled'}><span class="bl">${l}</span><span class="bc">${arr.length}</span>${more?`<span class="bt">${open?'收合 ▴':'展開 ▾'}</span>`:''}</button>`
+      + vis.map(row).join("")
+      + (more&&!open?`<button class="more" data-exp="${esc(key)}">還有 ${arr.length-PREVIEW} 篇 ▾</button>`:'') + `</div>`;
+  }).join("");
+}
+
 const PM = t => "https://pubmed.ncbi.nlm.nih.gov/?term=" + encodeURIComponent(t) + "&sort=date";
 const GUIDE = '(guideline[pt] OR practice guideline[pt] OR consensus[ti] OR "appropriateness criteria"[ti] OR recommendation*[ti] OR "reporting and data system"[ti] OR statement[ti])';
 const IMG = '(imaging OR radiolog* OR CT OR MRI OR ultrasound OR PET)';
@@ -198,7 +223,7 @@ async function loadFeed(s, force){
   if(!force && c && Date.now()-c.at < 6*3600e3){ feeds[s.id]={status:"ok",items:c.items,at:c.at}; return; }
   feeds[s.id]={status:"loading"}; render();
   try{
-    let u = EU+"esearch.fcgi?db=pubmed&retmode=json&retmax=12&sort=pub_date&term="+encodeURIComponent(term);
+    let u = EU+"esearch.fcgi?db=pubmed&retmode=json&retmax=30&sort=pub_date&term="+encodeURIComponent(term);
     if(state.win) u += "&datetype=edat&reldate="+state.win;
     const ids = (await throttled(u)).esearchresult?.idlist || [];
     let items=[];
@@ -216,10 +241,10 @@ function feedHTML(s){
   if(!f){ loadFeed(s); return `<div class="ldg">讀取 PubMed 中…</div>`; }
   if(f.status==="loading") return `<div class="ldg">讀取 PubMed 中…</div>`;
   if(f.status==="err") return `<div class="ldg">PubMed 暫時讀不到。<button class="refresh" data-rf="${s.id}">重試</button>　或改用「查詢連結」分頁。</div>`;
-  const head=`<div class="meta" style="margin:2px 0 4px"><span>${state.win?("近 "+state.win+" 天"):"不限期間"} · 依發表日期 · ${new Date(f.at).toLocaleString("zh-TW",{hour12:false,month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"})} 更新</span><button class="refresh" data-rf="${s.id}">重新整理</button></div>`;
+  const head=`<div class="meta" style="margin:2px 0 4px"><span>${state.win?("近 "+state.win+" 天"):"不限期間"} · 最新 30 篇 · 依發表日期 · ${new Date(f.at).toLocaleString("zh-TW",{hour12:false,month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"})} 更新</span><button class="refresh" data-rf="${s.id}">重新整理</button></div>`;
   if(!f.items.length) return head+`<div class="empty">這段期間沒有符合的文章，可把期間放寬。</div>`;
-  return head+f.items.map(a=>{const g=/guideline|consensus/i.test(a.pt+" "+a.t);return `<div class="art"><a href="https://pubmed.ncbi.nlm.nih.gov/${a.id}/" target="_blank" rel="noopener">${esc(a.t)}</a>
-    <div class="meta"><span class="d">${esc(a.d)}</span><span>${esc(a.j)}</span>${kb(catOf(String(a.pt||"").split(", "),a.t))}<span>${esc(a.au)}</span></div></div>`}).join("");
+  return head+blocksHTML(s.id+"|n",f.items,a=>catOf(String(a.pt||"").split(", "),a.t),a=>{const g=/guideline|consensus/i.test(a.pt+" "+a.t);return `<div class="art"><a href="https://pubmed.ncbi.nlm.nih.gov/${a.id}/" target="_blank" rel="noopener">${esc(a.t)}</a>
+    <div class="meta"><span class="d">${esc(a.d)}</span><span>${esc(a.j)}</span>${kb(catOf(String(a.pt||"").split(", "),a.t))}<span>${esc(a.au)}</span></div></div>`});
 }
 
 /* ---------- curated guidelines ---------- */
@@ -234,9 +259,9 @@ function curatedFor(s){
 function guideHTML(s){
   const list=curatedFor(s);
   if(!list.length) return `<div class="empty">本週此科別沒有新整理的指引，請看「最新文章」。</div>`;
-  return list.map(x=>{const on=isPinned(x.t);return `<div class="item ${on?'pinned':''} ${x._gone?'gone':''}"><div class="meta"><span class="d">${esc(x.d)}</span>${kb(x.k)}<span>${esc(x.o)}</span>${recent(x.d)?'<span class="n">● NEW</span>':''}
+  return blocksHTML(s.id+"|g",list,x=>x.k,x=>{const on=isPinned(x.t);return `<div class="item ${on?'pinned':''} ${x._gone?'gone':''}"><div class="meta"><span class="d">${esc(x.d)}</span>${kb(x.k)}<span>${esc(x.o)}</span>${recent(x.d)?'<span class="n">● NEW</span>':''}
     <label class="keep"><input type="checkbox" data-pin="${esc(x.t)}" data-panel="${s.id}" ${on?'checked':''}>保留</label></div>
-    <a href="${esc(x.u)}" target="_blank" rel="noopener">${esc(x.t)}</a>${x.p?`<p>${esc(x.p)}</p>`:""}</div>`}).join("");
+    <a href="${esc(x.u)}" target="_blank" rel="noopener">${esc(x.t)}</a>${x.p?`<p>${esc(x.p)}</p>`:""}</div>`});
 }
 function linksHTML(s){
   const latest = PM(`${s.q} AND ${jq(allJ(s))}${winQ()}`), guide = PM(`${s.q} AND ${IMG} AND ${GUIDE}${winQ()}`), rev = PM(`${s.q} AND ${jq(allJ(s))} AND review[pt]${winQ()}`);
@@ -286,6 +311,7 @@ function render(){
 const findPanel = id => D.panels.find(s=>s.id===id) || (state.custom.map(k=>({id:"c_"+keyOf(k),kw:k,name:"★ "+k,q:`(${k})`,j:[],g:[]})).find(s=>s.id===id));
 document.addEventListener("click",e=>{
   const b=e.target.closest("button"); if(!b) return;
+  if(b.dataset.exp){state.exp=state.exp||{}; state.exp[b.dataset.exp]=!state.exp[b.dataset.exp]; save(); render(); return;}
   if(b.id==="chipToggle"){document.querySelector("header").classList.toggle("open"); render(); return;}
   if(b.id==="selNone"){state.sel=[]; save(); render(); return;}
   if(b.dataset.rf){ const s=findPanel(b.dataset.rf); if(s) loadFeed(s,true); return; }
