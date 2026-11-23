@@ -146,6 +146,17 @@ main{counter-reset:se}
 .blk.b0 .bh{color:var(--dim)}
 .blk.b0 .bh .bc{background:transparent;border:1px solid var(--line);color:var(--dim)}
 .more{background:none;border:0;color:var(--acc);font:11.5px "IBM Plex Mono",monospace;cursor:pointer;padding:2px 0 6px}
+.b-orig{--bk:#2563eb}.b-rev{--bk:#b45309}.b-meta{--bk:#9333ea}.b-cg{--bk:#0f766e}
+@media (prefers-color-scheme: dark){.b-orig{--bk:#60a5fa}.b-rev{--bk:#fbbf24}.b-meta{--bk:#c084fc}.b-cg{--bk:#2dd4bf}}
+.blk{margin:12px 0;border:1px solid color-mix(in srgb,var(--bk) 38%,transparent);border-left:4px solid var(--bk);border-radius:8px;padding:0 10px 2px;background:color-mix(in srgb,var(--bk) 4%,transparent);overflow:hidden}
+.blk:first-child{margin-top:4px}
+.bh{margin:0 -10px;width:calc(100% + 20px);padding:7px 10px;background:color-mix(in srgb,var(--bk) 15%,transparent);color:var(--bk);font-size:12.5px;text-transform:uppercase;letter-spacing:.07em}
+.bh .bc{background:var(--bk);color:var(--panel);font-weight:700}
+.bh .bt{color:var(--bk);text-transform:none;letter-spacing:0}
+.blk.b0{--bk:var(--dim);background:transparent;border-style:dashed;opacity:.75}
+.blk.b0 .bh{background:transparent}
+.blk .item.pinned{margin:0 -10px;padding:8px 10px}
+.blk .more{color:var(--bk)}
 
 footer{max-width:1100px;line-height:1.6}
 footer h3{font:600 12px "IBM Plex Mono",monospace;letter-spacing:.06em;color:var(--mut);margin:18px 0 6px;padding-top:12px;border-top:1px solid var(--line)}
@@ -160,6 +171,10 @@ header:not(.open) #chips{display:none}
 .bar{gap:5px}
 #wk{background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:7px;padding:3px 6px;font:12px "IBM Plex Mono",monospace}
 .if{font:10.5px "IBM Plex Mono",monospace;color:var(--mut);border:1px dashed var(--line);border-radius:4px;padding:0 5px;line-height:16px}
+.meta .if,.if{font:700 11.5px/18px "IBM Plex Mono",monospace;padding:0 7px;border-radius:9px;border:1.5px solid #c98a1e;color:#8a5a00;background:#fff3d6;letter-spacing:.2px;white-space:nowrap}
+@media (prefers-color-scheme: dark){.meta .if,.if{background:rgba(227,178,107,.16);color:#f5cf92;border-color:#e3b26b}}
+.meta .if.t2,.if.t2{background:#e3a52f;border-color:#e3a52f;color:#1b1300}
+.meta .if.t3,.if.t3{background:#d9480f;border-color:#d9480f;color:#fff}
 
 @media (min-width:1100px){
  body{display:grid;grid-template-columns:300px minmax(0,1fr);align-items:start}
@@ -238,7 +253,7 @@ const JIF={"Radiology":["17.6","2025"],"Radiol Artif Intell":["20.1","2025"],"AJ
 const JALIAS=[["ACR AC","J Am Coll Radiol"],["JACR","J Am Coll Radiol"],["RadioGraphics","Radiographics"],["AJNR","AJNR Am J Neuroradiol"],["AJR","AJR Am J Roentgenol"],["Eur Radiol","Eur Radiol"],["Abdom Radiol","Abdom Radiol (NY)"],["Cancer Imaging","Cancer Imaging"],["JVIR","J Vasc Interv Radiol"],["CVIR","Cardiovasc Intervent Radiol"],["Radiol Adv","Radiol Adv"],["Insights","Insights Imaging"],["Radiology","Radiology"]];
 const jifJ = j => JIF[j] ? {f:JIF[j][0], fy:JIF[j][1]} : {};
 const jifOf = x => { if(x.f) return x; const o=String(x.o||""); for(const [k,j] of JALIAS){ if(new RegExp("(^|[^A-Za-z])"+k+"([^A-Za-z]|$)").test(o)) return jifJ(j); } return {}; };
-const ifb = x0 => { const x=jifOf(x0||{}); return !x.f ? "" : x.f==="none" ? `<span class="if" title="無 Clarivate JCR 影響係數">無 IF</span>` : `<span class="if" title="Clarivate JCR Journal Impact Factor${x.fy?" "+x.fy:""}">IF ${esc(x.f)}${x.fy&&x.fy!=="2025"?` (${esc(x.fy||"年份未註明")})`:(x.fy?"":" (年份未註明)")}</span>`; };
+const ifb = x0 => { const x=jifOf(x0||{}), t=+x.f>=10?" t3":+x.f>=5?" t2":""; return !x.f ? "" : x.f==="none" ? `<span class="if" title="無 Clarivate JCR 影響係數">無 IF</span>` : `<span class="if${t}" title="Clarivate JCR Journal Impact Factor${x.fy?" "+x.fy:""}">IF ${esc(x.f)}${x.fy&&x.fy!=="2025"?` (${esc(x.fy||"年份未註明")})`:(x.fy?"":" (年份未註明)")}</span>`; };
 let curWeek = null;
 const WEEKS = () => [...new Set(D.panels.flatMap(s=>(s.g||[]).map(x=>x.w||D.latest)))].sort().reverse();
 function weekLabel(w,i,arr){
