@@ -158,6 +158,9 @@ header{position:relative !important}
 header:not(.open) #chips{display:none}
 #chips .grp[class*="g-"]{padding:4px 8px}
 .bar{gap:5px}
+#wk{background:var(--panel);border:1px solid var(--line);color:var(--ink);border-radius:7px;padding:3px 6px;font:12px "IBM Plex Mono",monospace}
+.if{font:10.5px "IBM Plex Mono",monospace;color:var(--mut);border:1px dashed var(--line);border-radius:4px;padding:0 5px;line-height:16px}
+
 @media (min-width:1100px){
  body{display:grid;grid-template-columns:300px minmax(0,1fr);align-items:start}
  header{grid-column:1;grid-row:1 / span 2;position:sticky !important;top:0;height:100vh;overflow-y:auto;border-bottom:0;border-right:1px solid var(--line);padding:14px 16px 24px}
@@ -185,13 +188,14 @@ header:not(.open) #chips{display:none}
   <div class="bar" id="chips"></div>
   <div class="ctrl">
     <span>期間 <span class="seg" id="win"></span></span>
+    <span>週次 <select id="wk"></select></span>
     <span class="colsw">欄數 <span class="seg" id="cols"></span></span>
     <span class="custom"><input id="kw" placeholder="自訂主題，如 photon-counting CT"><button id="add">+ 面板</button></span>
   </div>
 </header>
 <main id="grid"></main>
 <footer><h3>搜尋邏輯說明</h3><ul>
-<li><b>重點指引</b>：每週一 06:33（台北時間）由 Claude 自動搜尋各科近兩週新發布的 guideline、consensus、practice parameter、ACR Appropriateness Criteria、RADS 新版本與 FDA 影像安全通報。每條須在 PubMed 查到文章編號並核對標題，或有 DOI／學會官網，查不到不收。勾選「保留」的項目在更新後仍保留（存在你的瀏覽器），未勾選的舊項目於下次更新後移除。</li>
+<li><b>重點指引</b>：每週一 06:33（台北時間）由 Claude 自動搜尋各科近兩週新發布的 guideline、consensus、practice parameter、ACR Appropriateness Criteria、RADS 新版本與 FDA 影像安全通報。每條須在 PubMed 查到文章編號並核對標題，或有 DOI／學會官網，查不到不收。勾選「保留」的項目一直留在本週畫面（存在你的瀏覽器）；預設只顯示本週新項目與已保留項目，前幾週的項目可用上方「週次」選單切換查看（保留最近 12 週）。</li>
 <li><b>最新文章</b>：直接向 PubMed 即時查詢，分四區各取最新 10 篇，依發表日期排序：
 <br>· Consensus / Guideline：科別關鍵字 + 影像關鍵字 + 文獻類型為 guideline／practice guideline／consensus statement，或標題含 consensus、recommendation、appropriateness criteria、reporting and data system、statement；不限期刊。
 <br>· Meta-analysis：科別關鍵字 + 影像關鍵字 + 文獻類型為 meta-analysis 或 systematic review；不限期刊。
@@ -201,6 +205,7 @@ header:not(.open) #chips{display:none}
 <li><b>指定期刊</b>：各科專科期刊，加上 Radiology、AJR、Eur Radiol、RadioGraphics、JACR、Korean J Radiol、Insights Imaging。</li>
 <li><b>期間</b>：7d／30d／90d／365d／all 以 PubMed 收錄日期（Entrez date）篩選，影響「最新文章」與「查詢連結」，不影響「重點指引」。</li>
 <li><b>查詢連結</b>：三個按鈕用相同條件在 PubMed 網站開啟完整結果（最新期刊文章、新指引／共識、最新 review），另有單一期刊最新文章捷徑。</li>
+<li><b>IF</b>：期刊的 Clarivate Journal Impact Factor，優先採用 JCR 2026 年版公布的 2025 IF，數值取自期刊、出版社或學會官網；非 2025 年的數值在括號註明年份。「無 IF」表示期刊未被 JCR 收錄；查不到可靠官方數值者不標示。</li>
 <li><b>影像關鍵字</b>：imaging、radiolog*、CT、MRI、ultrasound、PET。</li>
 <li><b>科別關鍵字</b>：每個面板有預設關鍵字（例如 Thoracic 為 thoracic、chest、lung、pulmonary、pleura*）；點「查詢連結」裡的按鈕，可在 PubMed 搜尋框看到完整條件。</li>
 <li><b>文章類別標籤</b>：依 PubMed 的 Publication Type 判定，優先順序 Guideline → Consensus → Meta-analysis → Systematic Review → RCT → Clinical Trial → Review → Case Report → Commentary → Original；只標為一般期刊文章、但標題含 consensus、recommendations、practice parameter、position statement 者改標 Consensus。非 PubMed 文章（RADS、學會官網、FDA 通報）由人工判定。</li>
@@ -225,6 +230,18 @@ function catOf(types,title){
   else c="Original";
   if(c==="Original" && /consensus|recommendations|practice parameter|position statement/i.test(title||"")) c="Consensus";
   return c;
+}
+
+
+
+const ifb = x => !x.f ? "" : x.f==="none" ? `<span class="if" title="無 Clarivate JCR 影響係數">無 IF</span>` : `<span class="if" title="Clarivate JCR Journal Impact Factor${x.fy?" "+x.fy:""}">IF ${esc(x.f)}${x.fy&&x.fy!=="2025"?` (${esc(x.fy)})`:""}</span>`;
+let curWeek = null;
+const WEEKS = () => [...new Set(D.panels.flatMap(s=>(s.g||[]).map(x=>x.w||D.latest)))].sort().reverse();
+function weekLabel(w,i,arr){
+  const md=s=>{const [y,m,d]=s.split("-").map(Number);return `${m}/${d}`;};
+  const prev=(()=>{const t=new Date(w+"T00:00:00Z");t.setUTCDate(t.getUTCDate()-7);return t.toISOString().slice(0,10);})();
+  const name=i===0?"本週":i===1?"上一週":`${i} 週前`;
+  return `${name} ${md(prev)}–${md(w)}${i===0?"（含已保留）":""}`;
 }
 
 const BLK=[["orig","Original"],["rev","Review"],["meta","Meta-analysis"],["cg","Consensus / Guideline"]];
@@ -305,15 +322,17 @@ function feedHTML(s){
 const isPinned = t => !!pins[keyOf(t)];
 function togglePin(panel, item, on){ const k=keyOf(item.t); if(on) pins[k]={panel,item}; else delete pins[k]; LS.set("rb_pins",pins); render(); }
 function curatedFor(s){
-  const cur = (s.g||[]).filter(x=>x.w===D.latest || isPinned(x.t));
+  const wk=curWeek||D.latest;
+  if(wk!==D.latest) return (s.g||[]).filter(x=>(x.w||D.latest)===wk);
+  const cur = (s.g||[]).filter(x=>(x.w||D.latest)===D.latest || isPinned(x.t));
   const inData = new Set((s.g||[]).map(x=>keyOf(x.t)));
   const kept = Object.entries(pins).filter(([k,v])=>v.panel===s.id && !inData.has(k)).map(([k,v])=>Object.assign({_gone:1},v.item));
   return [...cur, ...kept];
 }
 function guideHTML(s){
   const list=curatedFor(s);
-  if(!list.length) return `<div class="empty">本週此科別沒有新整理的指引，請看「最新文章」。</div>`;
-  return blocksHTML(s.id+"|g",list,x=>x.k,x=>{const on=isPinned(x.t);return `<div class="item ${on?'pinned':''} ${x._gone?'gone':''}"><div class="meta"><span class="d">${esc(x.d)}</span>${kb(x.k)}<span>${esc(x.o)}</span>${recent(x.d)?'<span class="n">● NEW</span>':''}
+  if(!list.length) return `<div class="empty">${(curWeek||D.latest)===D.latest?"本週此科別沒有新整理的指引，請看「最新文章」或用「週次」看前幾週。":"這一週此科別沒有項目。"}</div>`;
+  return blocksHTML(s.id+"|g",list,x=>x.k,x=>{const on=isPinned(x.t);return `<div class="item ${on?'pinned':''} ${x._gone?'gone':''}"><div class="meta"><span class="d">${esc(x.d)}</span>${kb(x.k)}<span>${esc(x.o)}</span>${ifb(x)}${recent(x.d)?'<span class="n">● NEW</span>':''}
     <label class="keep"><input type="checkbox" data-pin="${esc(x.t)}" data-panel="${s.id}" ${on?'checked':''}>保留</label></div>
     <a href="${esc(x.u)}" target="_blank" rel="noopener">${esc(x.t)}</a>${x.p?`<p>${esc(x.p)}</p>`:""}</div>`});
 }
@@ -353,6 +372,7 @@ function render(){
   document.getElementById("sub").textContent = `${D.groups.length} groups · ${D.panels.length} panels · 上次更新 ${D.updated||D.latest} · 下次更新 ${nextRun()}（台北時間）`;
   document.getElementById("chips").innerHTML = `<div class="grp"><button class="chip none" id="selNone">✕ 全不選</button></div>` + D.groups.map(([k,l])=>`<div class="grp g-${k}"><span class="gl">${esc(l)}</span><button class="chip all" data-g="${k}">全選</button>${D.panels.filter(s=>s.grp===k).map(s=>`<button class="chip ${state.sel.includes(s.id)?'on':''}" data-id="${s.id}">${esc(s.name)}</button>`).join("")}</div>`).join("")
     + (state.custom.length?`<div class="grp"><span class="gl">Custom</span>${state.custom.map(k=>`<button class="chip on" data-c="${esc(k)}">★ ${esc(k)}</button>`).join("")}</div>`:"");
+  {const ws=WEEKS(); if(!curWeek) curWeek=D.latest; document.getElementById("wk").innerHTML=ws.map((w,i)=>`<option value="${w}" ${w===curWeek?"selected":""}>${weekLabel(w,i,ws)}</option>`).join("");}
   document.getElementById("win").innerHTML = [7,30,90,365,0].map(w=>`<button class="${state.win===w?'on':''}" data-w="${w}">${w?w+'d':'all'}</button>`).join("");
   document.getElementById("cols").innerHTML = [1,2,3,4].map(c=>`<button class="${state.cols===c?'on':''}" data-c="${c}">${c}</button>`).join("");
   const g=document.getElementById("grid"); g.style.setProperty("--cols",state.cols);
@@ -381,7 +401,7 @@ document.addEventListener("click",e=>{
   else return;
   save(); render();
 });
-document.addEventListener("change",e=>{const c=e.target.closest("input[data-pin]"); if(!c) return; const s=D.panels.find(p=>p.id===c.dataset.panel); const item=[...(s?.g||[]),...Object.values(pins).map(v=>v.item)].find(x=>x.t===c.dataset.pin); if(item){const {_gone,...clean}=item; togglePin(c.dataset.panel,clean,c.checked);} });
+document.addEventListener("change",e=>{if(e.target.id==="wk"){curWeek=e.target.value; render(); return;}const c=e.target.closest("input[data-pin]"); if(!c) return; const s=D.panels.find(p=>p.id===c.dataset.panel); const item=[...(s?.g||[]),...Object.values(pins).map(v=>v.item)].find(x=>x.t===c.dataset.pin); if(item){const {_gone,...clean}=item; togglePin(c.dataset.panel,clean,c.checked);} });
 document.getElementById("kw").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("add").click();});
 try{if(localStorage.getItem("rb_hdr")==="1")document.querySelector("header").classList.add("open")}catch(e){}
 fetch("data.json?v="+Date.now()).then(r=>r.json()).then(d=>{D=d; render();}).catch(()=>{document.getElementById("grid").innerHTML='<div class="empty">資料載入失敗，請重新整理。</div>';});
