@@ -1,0 +1,47 @@
+name: Update PubMed feed
+
+on:
+  schedule:
+    - cron: "17 21 * * *"   # 每天 05:17（台北時間）
+  push:                      # 上傳／修改這些檔案時自動跑（第一次上傳就會產生 feed.json）
+    paths:
+      - ".github/workflows/feed.yml"
+      - "scripts/build_feed.mjs"
+      - "data.json"
+  workflow_dispatch:         # 需要時也可在 Actions 頁面手動按「Run workflow」
+
+permissions:
+  contents: write
+
+concurrency:
+  group: feed
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Query PubMed and write feed.json
+        env:
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+        run: node scripts/build_feed.mjs
+
+      - name: Commit feed.json if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add feed.json
+          if git diff --cached --quiet; then
+            echo "feed.json 沒有變動"
+          else
+            git commit -m "Update PubMed feed $(date -u +%Y-%m-%d)"
+            git pull --rebase
+            git push
+          fi
