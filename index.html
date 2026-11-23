@@ -205,7 +205,7 @@ header:not(.open) #chips{display:none}
 <li><b>指定期刊</b>：各科專科期刊，加上 Radiology、AJR、Eur Radiol、RadioGraphics、JACR、Korean J Radiol、Insights Imaging。</li>
 <li><b>期間</b>：7d／30d／90d／365d／all 以 PubMed 收錄日期（Entrez date）篩選，影響「最新文章」與「查詢連結」，不影響「重點指引」。</li>
 <li><b>查詢連結</b>：三個按鈕用相同條件在 PubMed 網站開啟完整結果（最新期刊文章、新指引／共識、最新 review），另有單一期刊最新文章捷徑。</li>
-<li><b>IF</b>：期刊的 Clarivate Journal Impact Factor，優先採用 JCR 2026 年版公布的 2025 IF，數值取自期刊、出版社或學會官網；非 2025 年的數值在括號註明年份。「無 IF」表示期刊未被 JCR 收錄；查不到可靠官方數值者不標示。</li>
+<li><b>IF</b>：期刊的 Clarivate Journal Impact Factor，優先採用 JCR 2026 年版公布的 2025 IF，數值取自期刊、出版社或學會官方公告（如 RSNA、ESR），或圖書館整理的 JCR 2026 年版清單；非 2025 年的數值在括號註明年份。重點指引依刊登期刊標示，最新文章依 PubMed 期刊名比對；名單內沒有的期刊不標示。「無 IF」表示期刊未被 JCR 收錄；查不到可靠官方數值者不標示。</li>
 <li><b>影像關鍵字</b>：imaging、radiolog*、CT、MRI、ultrasound、PET。</li>
 <li><b>科別關鍵字</b>：每個面板有預設關鍵字（例如 Thoracic 為 thoracic、chest、lung、pulmonary、pleura*）；點「查詢連結」裡的按鈕，可在 PubMed 搜尋框看到完整條件。</li>
 <li><b>文章類別標籤</b>：依 PubMed 的 Publication Type 判定，優先順序 Guideline → Consensus → Meta-analysis → Systematic Review → RCT → Clinical Trial → Review → Case Report → Commentary → Original；只標為一般期刊文章、但標題含 consensus、recommendations、practice parameter、position statement 者改標 Consensus。非 PubMed 文章（RADS、學會官網、FDA 通報）由人工判定。</li>
@@ -234,7 +234,11 @@ function catOf(types,title){
 
 
 
-const ifb = x => !x.f ? "" : x.f==="none" ? `<span class="if" title="無 Clarivate JCR 影響係數">無 IF</span>` : `<span class="if" title="Clarivate JCR Journal Impact Factor${x.fy?" "+x.fy:""}">IF ${esc(x.f)}${x.fy&&x.fy!=="2025"?` (${esc(x.fy)})`:""}</span>`;
+const JIF={"Radiology":["17.6","2025"],"Radiol Artif Intell":["20.1","2025"],"AJR Am J Roentgenol":["7.4","2025"],"Radiographics":["6.2","2025"],"Eur Radiol":["6.0","2025"],"Insights Imaging":["5.6","2025"],"Radiol Cardiothorac Imaging":["4.5","2025"],"Radiol Imaging Cancer":["7.2","2025"],"Radiol Adv":["1.8","2025"],"Korean J Radiol":["6.1","2025"],"J Am Coll Radiol":["5.3","2025"],"JACC Cardiovasc Imaging":["19","2025"],"Clin Nucl Med":["9.6","2025"],"J Nucl Med":["9.6","2025"],"Diagn Interv Imaging":["11.1","2025"],"Invest Radiol":["7.9","2025"],"Eur J Nucl Med Mol Imaging":["7.6","2025"],"Circ Cardiovasc Imaging":["9.1","2025"],"Eur Heart J Cardiovasc Imaging":["6.1","2025"],"Ultrasound Obstet Gynecol":["5.3","2025"],"J Cardiovasc Comput Tomogr":["5.4","2025"],"Radiol Med":["5.3","2025"],"Acad Radiol":["4.7","2025"],"Jpn J Radiol":["4.6","2025"],"J Imaging Inform Med":["3.1","2025"],"Can Assoc Radiol J":["4.0","2025"],"AJNR Am J Neuroradiol":["3.5","2025"],"Eur Radiol Exp":["4.7","2025"],"J Magn Reson Imaging":["4.3","2025"],"Cancer Imaging":["4.8","2025"],"Br J Radiol":["3.4","2025"],"J Neuroradiol":["3.3","2025"],"BMC Med Imaging":["3.9","2025"],"Magn Reson Med Sci":["3.4","2025"],"Magn Reson Med":["3.2","2025"],"Cardiovasc Intervent Radiol":["3.4","2025"],"Clin Neuroradiol":["3.2","2025"],"Ultraschall Med":["3.2","2025"],"PET Clin":["3.1","2025"],"J Vasc Interv Radiol":["3.1","2025"],"J Nucl Cardiol":["3.0","2025"],"Med Phys":["3.2","2025"],"Pediatr Radiol":["2.5","2025"],"Abdom Radiol (NY)":["2.3","2025"],"Clin Transl Radiat Oncol":["3.6","2025"],"Nat Rev Endocrinol":["39.1","2025"],"Ann Rheum Dis":["24",""],"Cancers (Basel)":["4.8",""],"Rofo":["2.0",""],"An Pediatr (Barc)":["2.1","2024"]};
+const JALIAS=[["ACR AC","J Am Coll Radiol"],["JACR","J Am Coll Radiol"],["RadioGraphics","Radiographics"],["AJNR","AJNR Am J Neuroradiol"],["AJR","AJR Am J Roentgenol"],["Eur Radiol","Eur Radiol"],["Abdom Radiol","Abdom Radiol (NY)"],["Cancer Imaging","Cancer Imaging"],["JVIR","J Vasc Interv Radiol"],["CVIR","Cardiovasc Intervent Radiol"],["Radiol Adv","Radiol Adv"],["Insights","Insights Imaging"],["Radiology","Radiology"]];
+const jifJ = j => JIF[j] ? {f:JIF[j][0], fy:JIF[j][1]} : {};
+const jifOf = x => { if(x.f) return x; const o=String(x.o||""); for(const [k,j] of JALIAS){ if(new RegExp("(^|[^A-Za-z])"+k+"([^A-Za-z]|$)").test(o)) return jifJ(j); } return {}; };
+const ifb = x0 => { const x=jifOf(x0||{}); return !x.f ? "" : x.f==="none" ? `<span class="if" title="無 Clarivate JCR 影響係數">無 IF</span>` : `<span class="if" title="Clarivate JCR Journal Impact Factor${x.fy?" "+x.fy:""}">IF ${esc(x.f)}${x.fy&&x.fy!=="2025"?` (${esc(x.fy||"年份未註明")})`:(x.fy?"":" (年份未註明)")}</span>`; };
 let curWeek = null;
 const WEEKS = () => [...new Set(D.panels.flatMap(s=>(s.g||[]).map(x=>x.w||D.latest)))].sort().reverse();
 function weekLabel(w,i,arr){
@@ -315,7 +319,7 @@ function feedHTML(s){
   const head=`<div class="meta" style="margin:2px 0 4px"><span>${state.win?("近 "+state.win+" 天"):"不限期間"} · 各區最新 10 篇 · 依發表日期 · ${new Date(f.at).toLocaleString("zh-TW",{hour12:false,month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"})} 更新</span><button class="refresh" data-rf="${s.id}">重新整理</button></div>`;
   if(!f.items.length) return head+`<div class="empty">這段期間沒有符合的文章，可把期間放寬。</div>`;
   return head+blocksHTML(s.id+"|n",f.items,a=>({cg:"Guideline",meta:"Meta-analysis",rev:"Review",orig:"Original"})[a.b]||catOf(String(a.pt||"").split(", "),a.t),a=>{const g=/guideline|consensus/i.test(a.pt+" "+a.t);return `<div class="art"><a href="https://pubmed.ncbi.nlm.nih.gov/${a.id}/" target="_blank" rel="noopener">${esc(a.t)}</a>
-    <div class="meta"><span class="d">${esc(a.d)}</span><span>${esc(a.j)}</span>${kb(catOf(String(a.pt||"").split(", "),a.t))}<span>${esc(a.au)}</span></div></div>`});
+    <div class="meta"><span class="d">${esc(a.d)}</span><span>${esc(a.j)}</span>${ifb(jifJ(a.j))}${kb(catOf(String(a.pt||"").split(", "),a.t))}<span>${esc(a.au)}</span></div></div>`});
 }
 
 /* ---------- curated guidelines ---------- */
