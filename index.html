@@ -172,7 +172,7 @@ footer p{margin:8px 0}
 </header>
 <main id="grid"></main>
 <footer><h3>搜尋邏輯說明</h3><ul>
-<li><b>重點指引</b>：每週一 06:33（台北時間）由 Claude 自動搜尋各科近兩週新發布的 guideline、consensus、practice parameter、ACR Appropriateness Criteria、RADS 新版本與 FDA 影像安全通報。每條須在 PubMed 查到文章編號並核對標題，或有 DOI／學會官網，查不到不收。勾選「保留」的項目在更新後仍保留（存在你的瀏覽器）。預設只顯示本週新項目與已保留項目；舊週次的項目不會刪除，可用上方「週次」選單切換查看（保留最近 12 週）。</li>
+<li><b>重點指引</b>：每週一 06:33（台北時間）由 GitHub Action 自動查詢 PubMed：科別關鍵字 + 影像關鍵字（標題或摘要含 imaging、radiolog*、CT、MRI、ultrasound、PET 等）+ 指引類條件（文獻類型為 guideline／practice guideline／consensus statement，或標題含 consensus、recommendation、appropriateness criteria、practice parameter、position statement、standards of practice、reporting and data system、RADS、white paper），取近 14 天收錄、排除純動物研究與勘誤，每科最多 10 篇。2026-11-23 以前的項目由 Claude 人工整理。勾選「保留」的項目在更新後仍保留（存在你的瀏覽器）。預設只顯示本週新項目與已保留項目；舊週次的項目不會刪除，可用上方「週次」選單切換查看（保留最近 12 週）。</li>
 <li><b>IF</b>：期刊的 Clarivate Journal Impact Factor，優先採用 JCR 2026 年版公布的 2025 IF，數值取自期刊、出版社或學會官網；非 2025 年的數值會在括號註明年份，官網沒寫年份者只列數值。「無 IF」表示期刊未被 JCR 收錄；查不到可靠官方數值者不標示。</li>
 <li><b>最新文章</b>：直接向 PubMed 即時查詢，分四區各取最新 10 篇，依發表日期排序：
 <br>· Consensus / Guideline：科別關鍵字 + 影像關鍵字 + 文獻類型為 guideline／practice guideline／consensus statement，或標題含 consensus、recommendation、appropriateness criteria、reporting and data system、statement；不限期刊。
@@ -288,7 +288,7 @@ function feedHTML(s){
 const isPinned = t => !!pins[keyOf(t)];
 function togglePin(panel, item, on){ const k=keyOf(item.t); if(on) pins[k]={panel,item}; else delete pins[k]; LS.set("rb_pins",pins); render(); }
 let curWeek = "";
-const WEEKS = () => [...new Set(D.panels.flatMap(s=>(s.g||[]).map(x=>x.w).filter(Boolean)))].sort().reverse();
+const WEEKS = () => [...new Set([D.latest, ...D.panels.flatMap(s=>(s.g||[]).map(x=>x.w).filter(Boolean))].filter(Boolean))].sort().reverse();
 function curatedFor(s){
   if(curWeek && curWeek!==D.latest) return (s.g||[]).filter(x=>x.w===curWeek);
   const cur = (s.g||[]).filter(x=>x.w===D.latest || isPinned(x.t));
