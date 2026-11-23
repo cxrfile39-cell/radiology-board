@@ -1,6 +1,6 @@
 {
  "latest": "2026-11-23",
- "updated": "2026-11-23 06:33",
+ "updated": "2026-11-23 10:48",
  "groups": [
   [
    "dx",
@@ -40,6 +40,96 @@
     "Clin Neuroradiol"
    ],
    "g": [
+    {
+     "w": "2026-11-23",
+     "d": "2026-09",
+     "k": "Consensus",
+     "o": "JTO Clin Res Rep",
+     "t": "Multidisciplinary Management of Stage III NSCLC in the Immunotherapy Era: An Italian Delphi Consensus from AIOM, SICT, SIAPEC, and AIRO",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43036783/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Anim Sci",
+     "t": "Choline in canine and feline nutrition: Physiological roles, dietary requirements and recommendations, and implications for health",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43055381/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Can J Ophthalmol",
+     "t": "Assessing radiology recommendations on neuroimaging reports for patients with idiopathic intracranial hypertension",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42998673/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Bone",
+     "t": "Clinical recommendations on monitoring and management of bone health in adults with Duchenne Muscular Dystrophy and transition to adult care: A national Delphi consensus study",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43044705/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Clin Infect Dis",
+     "t": "Trial Endpoints for Endemic Mycoses: Consensus Recommendations by the Mycoses Study Group Education and Research Consortium and European Confederation of Medical Mycology",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43043169/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Neuro Oncol",
+     "t": "Defining and managing NF1-related peripheral nerve sheath tumors at risk for malignant transformation: Consensus from the Atypical Neurofibroma Symposium",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43021633/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Ann Rheum Dis",
+     "t": "ERN-RITA/PReS recommendations for the diagnosis, classification, monitoring, and treatment of childhood idiopathic (primary) angiitis of the central nervous system",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43020703/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Cereb Circ Cogn Behav",
+     "t": "Clinical management of CADASIL in Europe: bridging evidence gaps and harmonizing care - a consensus review",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43036367/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Diagnostics (Basel)",
+     "t": "Artificial Intelligence-Assisted ACR TI-RADS and Bethesda-like Risk Prediction for Indeterminate Thyroid Nodules: A Retrospective Proof-of-Concept Evaluation",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43028488/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Neuroendocrinol",
+     "t": "Controversies in NEN: An ENETS position statement on unresolved clinical scenarios and emerging approaches with somatostatin analogues",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43012352/",
+     "p": ""
+    },
     {
      "w": "2026-11-23",
      "d": "2026-11",
@@ -126,6 +216,51 @@
    ],
    "g": [
     {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Br J Radiol",
+     "t": "Diagnostic Accuracy and Procedural Efficiency of ACR TI-RADS, EU-TIRADS, and K-TIRADS in ≤ 10 mm Thyroid Nodules Using Bethesda Cytology: A Cohort of 998 Nodules",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43016308/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Cureus",
+     "t": "Comparative Diagnostic Accuracy of the American College of Radiology Thyroid Imaging Reporting and Data System (ACR TI-RADS) and the European Thyroid Imaging and Reporting Data System (EU-TIRADS) for Thyroid Nodule Malignancy: A Systematic Review",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43022089/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Eur J Radiol",
+     "t": "Comparative performance of three large language models and expert radiologists in ACR TI-RADS classification of structured thyroid ultrasound reports: a retrospective analysis using cytology as reference",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43008426/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Diagnostics (Basel)",
+     "t": "Artificial Intelligence-Assisted ACR TI-RADS and Bethesda-like Risk Prediction for Indeterminate Thyroid Nodules: A Retrospective Proof-of-Concept Evaluation",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43028488/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-10",
+     "k": "Original",
+     "o": "Gland Surg",
+     "t": "Comparison of a model combining conventional ultrasonography and strain elastography with ACR TI-RADS for reducing unnecessary fine-needle aspiration in solid-predominant partially cystic thyroid nodules: a multicenter study",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42996834/",
+     "p": ""
+    },
+    {
      "w": "2026-11-19",
      "d": "2026-07",
      "o": "JACR",
@@ -174,6 +309,89 @@
    ],
    "g": [
     {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Prehosp Emerg Care",
+     "t": "Prehospital Trauma Compendium: Prehospital Management of Pediatric Traumatic Out-of-Hospital Circulatory Arrest - A Joint Position Statement and Resource Document of NAEMSP, ACS-COT, ACEP, and AAP",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43055685/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Bone Miner Res",
+     "t": "International Consensus on Clinical Trial Endpoints in Autosomal Dominant Osteopetrosis",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43049183/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Bone",
+     "t": "Clinical recommendations on monitoring and management of bone health in adults with Duchenne Muscular Dystrophy and transition to adult care: A national Delphi consensus study",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43044705/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Ann Rheum Dis",
+     "t": "ERN-RITA/PReS recommendations for the diagnosis, classification, monitoring, and treatment of childhood idiopathic (primary) angiitis of the central nervous system",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43020703/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "J Imaging Inform Med",
+     "t": "Category and Modifier Accuracy in a Five-Model Evaluation of Large Language Model Extraction of CAD-RADS 2.0 from Coronary CT Angiography Reports",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43009660/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Am Coll Surg",
+     "t": "Rapid Endovascular Hemorrhage Control in Trauma: Joint Position Statement from the American College of Surgeons Committee on Trauma and the Society of Interventional Radiology",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43001744/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Curr Probl Diagn Radiol",
+     "t": "Comparison of biparametric and multiparametric MRI for detection of clinically significant prostate cancer using PI-RADS v2.1",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43034132/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Radiol Imaging Cancer",
+     "t": "Calibration Analysis of BI-RADS: A Patient-centered Approach to the Last Imaging Workup Examination",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43062339/",
+     "p": "",
+     "f": "7.2",
+     "fy": "2025"
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-09",
+     "k": "Original",
+     "o": "Ann Jt",
+     "t": "Diagnostic and treatment recommendation performance of multimodal large language models in failed or painful total hip arthroplasty: an expert-rated benchmark study",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42999487/",
+     "p": ""
+    },
+    {
      "w": "2026-11-19",
      "d": "2026-04",
      "o": "ACR AC",
@@ -212,6 +430,96 @@
     "Radiol Cardiothorac Imaging"
    ],
    "g": [
+    {
+     "w": "2026-11-23",
+     "d": "2026-09",
+     "k": "Consensus",
+     "o": "JTO Clin Res Rep",
+     "t": "Multidisciplinary Management of Stage III NSCLC in the Immunotherapy Era: An Italian Delphi Consensus from AIOM, SICT, SIAPEC, and AIRO",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43036783/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Thorac Oncol",
+     "t": "IASLC Multidisciplinary Recommendations for Assessment and Reporting of Lymph Node Treatment Response in Lung Cancer Resection Specimens After Neoadjuvant Therapy",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43064237/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Prehosp Emerg Care",
+     "t": "Prehospital Trauma Compendium: Prehospital Management of Pediatric Traumatic Out-of-Hospital Circulatory Arrest - A Joint Position Statement and Resource Document of NAEMSP, ACS-COT, ACEP, and AAP",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43055685/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Int J Radiat Oncol Biol Phys",
+     "t": "Local ablative therapy for oligometastatic non-small cell lung cancer with actionable mutations: A consensus from Hong Kong SBRT Study Group",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051603/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Clin Infect Dis",
+     "t": "Trial Endpoints for Aspergillus and Rare Molds: Consensus Recommendations by the Mycoses Study Group Education and Research Consortium and the European Confederation of Medical Mycology",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43043132/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Systematic Review",
+     "o": "BJS Open",
+     "t": "Initial management of oesophageal perforation: recommendations based on a systematic review and two-stage consensus method",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43050347/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Fr J Urol",
+     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Testicular germ cell cancer",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051711/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Fr J Urol",
+     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Muscle-invasive bladder tumors (MIBC)",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051709/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Zhonghua Nei Ke Za Zhi",
+     "t": "[Expert consensus on artificial intelligence optical navigation-assisted CT-guided percutaneous for thoracic lesions]",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43035265/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Neuroendocrinol",
+     "t": "Controversies in NEN: An ENETS position statement on unresolved clinical scenarios and emerging approaches with somatostatin analogues",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43012352/",
+     "p": ""
+    },
     {
      "w": "2026-11-23",
      "d": "2026-10",
@@ -273,6 +581,69 @@
    ],
    "g": [
     {
+     "w": "2026-11-23",
+     "d": "2026-09",
+     "k": "Consensus",
+     "o": "JTO Clin Res Rep",
+     "t": "Multidisciplinary Management of Stage III NSCLC in the Immunotherapy Era: An Italian Delphi Consensus from AIOM, SICT, SIAPEC, and AIRO",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43036783/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Turk Kardiyol Dern Ars",
+     "t": "Diastolic Function Classification in Acute Myocardial Infarction: Comparison of the 2016 ASE/EACVI Guideline and the 2025 ASE Recommendations",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43048918/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Clin Mol Hepatol",
+     "t": "KASL Consensus Statement for Pharmacologic Treatment of Metabolic Dysfunction-Associated Steatohepatitis: Focus on Semaglutide",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43041053/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Anatol J Cardiol",
+     "t": "Aviation Medicine and Cardiovascular Assessment of Aircrew: A European Society of Cardiology-Aligned Review of Integrating International Civil Aviation Organization, European Union Aviation Safety Agency, Federal Aviation Administration, and Turkish Directorate General of Civil Aviation Aeromedical Standards",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43012473/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "J Imaging Inform Med",
+     "t": "Category and Modifier Accuracy in a Five-Model Evaluation of Large Language Model Extraction of CAD-RADS 2.0 from Coronary CT Angiography Reports",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43009660/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Front Immunol",
+     "t": "Controversies and consensus on immune function and long-term health risks following adult thymectomy: a comprehensive review of molecular mechanisms and real-world evidence",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43047868/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-08",
+     "k": "Review",
+     "o": "Orphanet J Rare Dis",
+     "t": "Implementing evolving Fabry disease management recommendations in resource-constrained settings: lessons from South Africa",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43015823/",
+     "p": ""
+    },
+    {
      "w": "2026-11-19",
      "d": "2026-06",
      "o": "SCCT/SCAI",
@@ -311,6 +682,96 @@
     "Eur J Radiol"
    ],
    "g": [
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Clin Transl Radiat Oncol",
+     "t": "ESTRO consensus recommendations for high dose rate interstitial liver brachytherapy",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43036317/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-09",
+     "k": "Consensus",
+     "o": "JTO Clin Res Rep",
+     "t": "Multidisciplinary Management of Stage III NSCLC in the Immunotherapy Era: An Italian Delphi Consensus from AIOM, SICT, SIAPEC, and AIRO",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43036783/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Clin Gastroenterol Hepatol",
+     "t": "AGA Clinical Practice Update on the Role of Liver Biopsy: Commentary",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43062379/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Endoscopy",
+     "t": "When endoscopy is not required: reducing low value care for more sustainable endoscopy - European Society of Gastrointestinal Endoscopy (ESGE) Position Statement Update 2026 recycling ESGE published guidelines and position statements",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43057246/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Anim Sci",
+     "t": "Choline in canine and feline nutrition: Physiological roles, dietary requirements and recommendations, and implications for health",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43055381/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Ultrasound Med Biol",
+     "t": "Beyond An Emphasis on Diagnostic Specificity: Washout Time Cutoff Derived via Youden Index in CEUS LI-RADS for Hepatocellular Carcinoma, Improving Diagnostic Sensitivity",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43045588/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Gastrointest Endosc",
+     "t": "International Expert Consensus Statement on Endoscopic Ultrasound-Guided Gastric Variceal Coil Embolization Using the Modified Delphi Process: Best Practices and Future Directions",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43044777/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Clin Mol Hepatol",
+     "t": "KASL Consensus Statement for Pharmacologic Treatment of Metabolic Dysfunction-Associated Steatohepatitis: Focus on Semaglutide",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43041053/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Diagn Interv Radiol",
+     "t": "Prompt-dependent readability and accuracy of Generative Pre-trained Transformer-5 thinking responses to breast imaging questions derived from European Society of Breast Imaging patient recommendations",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43016123/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Systematic Review",
+     "o": "BJS Open",
+     "t": "Initial management of oesophageal perforation: recommendations based on a systematic review and two-stage consensus method",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43050347/",
+     "p": ""
+    },
     {
      "w": "2026-11-23",
      "d": "2026-11",
@@ -405,6 +866,98 @@
     {
      "w": "2026-11-23",
      "d": "2026-11",
+     "k": "Original",
+     "o": "Acta Radiol",
+     "t": "Personalized prostate MRI protocol: Selective contrast enhancement for PI-RADS 3 lesions to optimize diagnostic accuracy and resource utilization",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43055275/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Clin Mol Hepatol",
+     "t": "KASL Consensus Statement for Pharmacologic Treatment of Metabolic Dysfunction-Associated Steatohepatitis: Focus on Semaglutide",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43041053/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Cancer Manag Res",
+     "t": "Association Between Prostate Volume and PI-RADS v2.1 Performance for Detecting Clinically Significant Prostate Cancer in Men in the PSA Gray Zone: A Retrospective Study",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43060703/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Rofo",
+     "t": "Updated Recommendations of the German Radiological Society and the German Professional Association of Radiologists on Prostate MRI in the Context of the New S3 Guideline on Prostate Cancer",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43008744/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Eur J Radiol",
+     "t": "Impact of reader expertise on PI-RADS assessment of prostate transition zone lesions: Diagnostic performance, inter-reader agreement, and resource implications",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43008425/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Arch Ital Urol Androl",
+     "t": "Systemic inflammatory indices in biopsy-naïve men with PI-RADS 3 lesions: added value over PSA density and the free-to-total PSA ratio",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43001839/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Diagnostics (Basel)",
+     "t": "Contrast-Enhanced Ultrasound Combined with the NLR-PMR Phenotype for Prostate Cancer Prediction and Risk Stratification in Patients with PSA 4-20 ng/mL and PI-RADS ≤ 3",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43028552/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Abdom Radiol (NY)",
+     "t": "Enhanced image quality and interpretation efficiency of voxelwise-computed diffusion-weighted imaging for bladder cancer VI-RADS assessment",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42998145/",
+     "p": "",
+     "f": "2.3",
+     "fy": "2025"
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Curr Probl Diagn Radiol",
+     "t": "Comparison of biparametric and multiparametric MRI for detection of clinically significant prostate cancer using PI-RADS v2.1",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43034132/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Fr J Urol",
+     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Penile cancer",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051713/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
      "k": "Guideline",
      "o": "AFU · Fr J Urol",
      "t": "French AFU Cancer Committee Guideline - Update 2026-2028: Adrenal incidentalomas and adrenal cancers",
@@ -471,6 +1024,96 @@
     "Abdom Radiol (NY)"
    ],
    "g": [
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Acta Radiol",
+     "t": "Personalized prostate MRI protocol: Selective contrast enhancement for PI-RADS 3 lesions to optimize diagnostic accuracy and resource utilization",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43055275/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Cancer Manag Res",
+     "t": "Association Between Prostate Volume and PI-RADS v2.1 Performance for Detecting Clinically Significant Prostate Cancer in Men in the PSA Gray Zone: A Retrospective Study",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43060703/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Eur J Radiol",
+     "t": "Impact of reader expertise on PI-RADS assessment of prostate transition zone lesions: Diagnostic performance, inter-reader agreement, and resource implications",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43008425/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Arch Ital Urol Androl",
+     "t": "Systemic inflammatory indices in biopsy-naïve men with PI-RADS 3 lesions: added value over PSA density and the free-to-total PSA ratio",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43001839/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Diagnostics (Basel)",
+     "t": "Contrast-Enhanced Ultrasound Combined with the NLR-PMR Phenotype for Prostate Cancer Prediction and Risk Stratification in Patients with PSA 4-20 ng/mL and PI-RADS ≤ 3",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43028552/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Curr Probl Diagn Radiol",
+     "t": "Comparison of biparametric and multiparametric MRI for detection of clinically significant prostate cancer using PI-RADS v2.1",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43034132/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Fr J Urol",
+     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Prostate Cancer - Treatment of relapse and metastatic disease",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051704/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-10",
+     "k": "Original",
+     "o": "Can J Urol",
+     "t": "Association of one single visible mpMRI PI-RADS index lesion with prostate cancer adverse pathology at robot-assisted radical prostatectomy: a 505-patient study",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43016022/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-10",
+     "k": "Review",
+     "o": "Can J Urol",
+     "t": "Impact of 5-alpha reductase inhibitors on pre-biopsy MRI interpretation: effects on PI-RADS assessment and local staging",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43016014/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-10",
+     "k": "Review",
+     "o": "Front Oncol",
+     "t": "Targeted biopsy with or without systematic biopsy in PI-RADS-stratified prostate biopsy: a risk-adapted narrative review and clinical proposal",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43005680/",
+     "p": ""
+    },
     {
      "w": "2026-11-23",
      "d": "2026-11",
@@ -551,6 +1194,98 @@
     {
      "w": "2026-11-23",
      "d": "2026-11",
+     "k": "Review",
+     "o": "Int J Radiat Oncol Biol Phys",
+     "t": "Local ablative therapy for oligometastatic non-small cell lung cancer with actionable mutations: A consensus from Hong Kong SBRT Study Group",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051603/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "J Ultrasound Med",
+     "t": "Incremental Diagnostic Value of Serum Tumor Markers Beyond Multimodal Ultrasound for BI-RADS Category 4 Breast Lesions: A Retrospective Diagnostic Modeling Study",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43037019/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Invest Radiol",
+     "t": "(Elastography) E-BI-RADS: A Novel Classification System for Breast Elastography to Enable Safe Biopsy De-escalation",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43016126/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Diagn Interv Radiol",
+     "t": "Prompt-dependent readability and accuracy of Generative Pre-trained Transformer-5 thinking responses to breast imaging questions derived from European Society of Breast Imaging patient recommendations",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43016123/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Acad Radiol",
+     "t": "Do S-Detect and ChatGPT Improve Diagnostic Performance and Agreement with BI-RADS Morphologic Descriptors Among Early-career Radiologists?",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43009364/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Rofo",
+     "t": "Towards Accuracy: Identifying Benign Predictors in BI-RADS 4 on MRI",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43008743/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Radiol Imaging Cancer",
+     "t": "Calibration Analysis of BI-RADS: A Patient-centered Approach to the Last Imaging Workup Examination",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43062339/",
+     "p": "",
+     "f": "7.2",
+     "fy": "2025"
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Quant Imaging Med Surg",
+     "t": "Application of multimodal ultrasound in risk assessment of breast masses: construction and validation of the BI-RADS prediction model",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42997939/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-10",
+     "k": "Original",
+     "o": "Front Physiol",
+     "t": "Re-stratification of BI-RADS 3/4A breast lesions based on dynamic contrast-enhanced MRI: integrating cardiometabolic risk and breast microvascular remodeling phenotypes to improve diagnostic accuracy and reduce unnecessary biopsies",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43016423/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-10",
+     "k": "Original",
+     "o": "Front Oncol",
+     "t": "Development and internal validation of an interpretable mammography-based model for malignancy risk stratification in BI-RADS 4 breast lesions",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43005083/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
      "k": "Original",
      "o": "Eur Radiol",
      "t": "Multiparametric MRI to predict response to neoadjuvant chemotherapy in breast cancer: Are we ready for NacBI-RADS?",
@@ -580,6 +1315,42 @@
     "Abdom Radiol (NY)"
    ],
    "g": [
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Anim Sci",
+     "t": "Choline in canine and feline nutrition: Physiological roles, dietary requirements and recommendations, and implications for health",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43055381/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "CA Cancer J Clin",
+     "t": "American Cancer Society guideline for the early detection of prostate cancer, 2026",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43018083/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-10",
+     "k": "Original",
+     "o": "Cureus",
+     "t": "Diagnostic Accuracy of American College of Radiology Ovarian-Adnexal Reporting and Data System (ACR O-RADS) Ultrasound for Characterizing Adnexal-Ovarian Masses: A Histopathological Correlation Study",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43017543/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-08",
+     "k": "Original",
+     "o": "J Nanobiotechnology",
+     "t": "Extracellular vesicle-based ovarian cancer score combined with O-RADS ultrasound for preoperative risk stratification of adnexal masses",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43040326/",
+     "p": ""
+    },
     {
      "w": "2026-11-23",
      "d": "2026-10",
@@ -621,6 +1392,100 @@
     "Pediatr Blood Cancer"
    ],
    "g": [
+    {
+     "w": "2026-11-23",
+     "d": "2026-09",
+     "k": "Consensus",
+     "o": "JTO Clin Res Rep",
+     "t": "Multidisciplinary Management of Stage III NSCLC in the Immunotherapy Era: An Italian Delphi Consensus from AIOM, SICT, SIAPEC, and AIRO",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43036783/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "J Am Coll Radiol",
+     "t": "ACR Appropriateness Criteria® Chronic Liver Disease: 2026 Update",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43055695/",
+     "p": "",
+     "f": "5.3",
+     "fy": "2025"
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Prehosp Emerg Care",
+     "t": "Prehospital Trauma Compendium: Prehospital Management of Pediatric Traumatic Out-of-Hospital Circulatory Arrest - A Joint Position Statement and Resource Document of NAEMSP, ACS-COT, ACEP, and AAP",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43055685/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Bone Miner Res",
+     "t": "International Consensus on Clinical Trial Endpoints in Autosomal Dominant Osteopetrosis",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43049183/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Bone",
+     "t": "Clinical recommendations on monitoring and management of bone health in adults with Duchenne Muscular Dystrophy and transition to adult care: A national Delphi consensus study",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43044705/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Clin Infect Dis",
+     "t": "Trial Endpoints for Endemic Mycoses: Consensus Recommendations by the Mycoses Study Group Education and Research Consortium and European Confederation of Medical Mycology",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43043169/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Clin Infect Dis",
+     "t": "Trial Endpoints for Aspergillus and Rare Molds: Consensus Recommendations by the Mycoses Study Group Education and Research Consortium and the European Confederation of Medical Mycology",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43043132/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Neuro Oncol",
+     "t": "Defining and managing NF1-related peripheral nerve sheath tumors at risk for malignant transformation: Consensus from the Atypical Neurofibroma Symposium",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43021633/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "RCT",
+     "o": "Radiology",
+     "t": "Low-Dose CT Lung-RADS 2022 for the Management of Screening- and Non-Screening-detected Lung Cancer Associated with Cystic Airspaces",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43007081/",
+     "p": "",
+     "f": "17.6",
+     "fy": "2025"
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-10",
+     "k": "Original",
+     "o": "Front Physiol",
+     "t": "Re-stratification of BI-RADS 3/4A breast lesions based on dynamic contrast-enhanced MRI: integrating cardiometabolic risk and breast microvascular remodeling phenotypes to improve diagnostic accuracy and reduce unnecessary biopsies",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43016423/",
+     "p": ""
+    },
     {
      "w": "2026-11-23",
      "d": "2026-11",
@@ -694,6 +1559,98 @@
     {
      "w": "2026-11-23",
      "d": "2026-11",
+     "k": "Original",
+     "o": "Acad Radiol",
+     "t": "Quality and Determinants of Inpatient Imaging Requests: A Multicentre RI-RADS Study",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43057942/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Endoscopy",
+     "t": "When endoscopy is not required: reducing low value care for more sustainable endoscopy - European Society of Gastrointestinal Endoscopy (ESGE) Position Statement Update 2026 recycling ESGE published guidelines and position statements",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43057246/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Prehosp Emerg Care",
+     "t": "Prehospital Trauma Compendium: Prehospital Management of Pediatric Traumatic Out-of-Hospital Circulatory Arrest - A Joint Position Statement and Resource Document of NAEMSP, ACS-COT, ACEP, and AAP",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43055685/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Anim Sci",
+     "t": "Choline in canine and feline nutrition: Physiological roles, dietary requirements and recommendations, and implications for health",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43055381/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Int J Radiat Oncol Biol Phys",
+     "t": "Local ablative therapy for oligometastatic non-small cell lung cancer with actionable mutations: A consensus from Hong Kong SBRT Study Group",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051603/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Ultrasound Med Biol",
+     "t": "Beyond An Emphasis on Diagnostic Specificity: Washout Time Cutoff Derived via Youden Index in CEUS LI-RADS for Hepatocellular Carcinoma, Improving Diagnostic Sensitivity",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43045588/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Gastrointest Endosc",
+     "t": "International Expert Consensus Statement on Endoscopic Ultrasound-Guided Gastric Variceal Coil Embolization Using the Modified Delphi Process: Best Practices and Future Directions",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43044777/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Bone",
+     "t": "Clinical recommendations on monitoring and management of bone health in adults with Duchenne Muscular Dystrophy and transition to adult care: A national Delphi consensus study",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43044705/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Abdom Radiol (NY)",
+     "t": "Beyond specificity: growing evidence from validation of CEUS LI-RADS v2017 and proposed revisions",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43043467/",
+     "p": "",
+     "f": "2.3",
+     "fy": "2025"
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Clin Infect Dis",
+     "t": "Trial Endpoints for Aspergillus and Rare Molds: Consensus Recommendations by the Mycoses Study Group Education and Research Consortium and the European Confederation of Medical Mycology",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43043132/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
      "k": "Consensus",
      "o": "Scandinavian Neurotrauma Committee · Lancet Reg Health Eur",
      "t": "The Scandinavian Neurotrauma Committee 2026 guidelines for initial management of minimal, mild and moderate head injuries in adults",
@@ -759,6 +1716,69 @@
    ],
    "g": [
     {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Anim Sci",
+     "t": "Choline in canine and feline nutrition: Physiological roles, dietary requirements and recommendations, and implications for health",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43055381/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Neuro Oncol",
+     "t": "Defining and managing NF1-related peripheral nerve sheath tumors at risk for malignant transformation: Consensus from the Atypical Neurofibroma Symposium",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43021633/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Cancers (Basel)",
+     "t": "PET/MRI in Oncology: Real-World Recommendations",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43026867/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Fr J Urol",
+     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Penile cancer",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051713/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Fr J Urol",
+     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Testicular germ cell cancer",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051711/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Fr J Urol",
+     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Kidney cancer",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051705/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Fr J Urol",
+     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Prostate Cancer - Treatment of relapse and metastatic disease",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051704/",
+     "p": ""
+    },
+    {
      "w": "2026-11-19",
      "d": "2023",
      "o": "EANM/SNMMI",
@@ -789,6 +1809,96 @@
     "Radiol Cardiothorac Imaging"
    ],
    "g": [
+    {
+     "w": "2026-11-23",
+     "d": "2026-09",
+     "k": "Consensus",
+     "o": "JTO Clin Res Rep",
+     "t": "Multidisciplinary Management of Stage III NSCLC in the Immunotherapy Era: An Italian Delphi Consensus from AIOM, SICT, SIAPEC, and AIRO",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43036783/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Adv Skin Wound Care",
+     "t": "International Delphi Consensus on the Use of Near-infrared Spectroscopy for Wound Care and Procedural Decision-making, With Adjunctive Workflow and Time Analysis",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43018111/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Anatol J Cardiol",
+     "t": "Aviation Medicine and Cardiovascular Assessment of Aircrew: A European Society of Cardiology-Aligned Review of Integrating International Civil Aviation Organization, European Union Aviation Safety Agency, Federal Aviation Administration, and Turkish Directorate General of Civil Aviation Aeromedical Standards",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43012473/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "J Imaging Inform Med",
+     "t": "Category and Modifier Accuracy in a Five-Model Evaluation of Large Language Model Extraction of CAD-RADS 2.0 from Coronary CT Angiography Reports",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43009660/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Am Coll Surg",
+     "t": "Rapid Endovascular Hemorrhage Control in Trauma: Joint Position Statement from the American College of Surgeons Committee on Trauma and the Society of Interventional Radiology",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43001744/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Fr J Urol",
+     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Testicular germ cell cancer",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051711/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Quant Imaging Med Surg",
+     "t": "Incremental prognostic and risk-stratification value of ultrasound-based Carotid Plaque Reporting and Data System (Plaque-RADS) classification for recurrent ischemic stroke in patients with low-to-moderate-grade carotid stenosis",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42997941/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-10",
+     "k": "Consensus",
+     "o": "Br J Surg",
+     "t": "International expert consensus on radical resection combined with intestinal autotransplantation for locally advanced pancreatic cancer",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43062045/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-10",
+     "k": "Original",
+     "o": "Front Physiol",
+     "t": "Re-stratification of BI-RADS 3/4A breast lesions based on dynamic contrast-enhanced MRI: integrating cardiometabolic risk and breast microvascular remodeling phenotypes to improve diagnostic accuracy and reduce unnecessary biopsies",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43016423/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-08",
+     "k": "Original",
+     "o": "Cancer Imaging",
+     "t": "Revealing hidden vascular patterns: a modified CEUS LI-RADS framework for HCC using super-resolution ultrasound",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43058947/",
+     "p": ""
+    },
     {
      "w": "2026-11-19",
      "d": "2026",
@@ -841,6 +1951,60 @@
     {
      "w": "2026-11-23",
      "d": "2026-11",
+     "k": "Consensus",
+     "o": "Gastrointest Endosc",
+     "t": "International Expert Consensus Statement on Endoscopic Ultrasound-Guided Gastric Variceal Coil Embolization Using the Modified Delphi Process: Best Practices and Future Directions",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43044777/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Neuro Oncol",
+     "t": "Defining and managing NF1-related peripheral nerve sheath tumors at risk for malignant transformation: Consensus from the Atypical Neurofibroma Symposium",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43021633/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Anatol J Cardiol",
+     "t": "Aviation Medicine and Cardiovascular Assessment of Aircrew: A European Society of Cardiology-Aligned Review of Integrating International Civil Aviation Organization, European Union Aviation Safety Agency, Federal Aviation Administration, and Turkish Directorate General of Civil Aviation Aeromedical Standards",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43012473/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Rofo",
+     "t": "Updated Recommendations of the German Radiological Society and the German Professional Association of Radiologists on Prostate MRI in the Context of the New S3 Guideline on Prostate Cancer",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43008744/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Am Coll Surg",
+     "t": "Rapid Endovascular Hemorrhage Control in Trauma: Joint Position Statement from the American College of Surgeons Committee on Trauma and the Society of Interventional Radiology",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43001744/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-07",
+     "k": "Original",
+     "o": "NPJ Digit Med",
+     "t": "A Multi-Agent MLLM Framework for Imaging-Grounded Treatment Recommendation in Acute Ischemic Stroke",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43045752/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
      "k": "Original",
      "o": "CIRSE · CVIR",
      "t": "CIRSE Standards of Practice for the Endovascular Management of Acute Arterial Upper Limb Ischemia",
@@ -889,6 +2053,42 @@
     "Int J Hyperthermia"
    ],
    "g": [
+    {
+     "w": "2026-11-23",
+     "d": "2026-09",
+     "k": "Consensus",
+     "o": "JTO Clin Res Rep",
+     "t": "Multidisciplinary Management of Stage III NSCLC in the Immunotherapy Era: An Italian Delphi Consensus from AIOM, SICT, SIAPEC, and AIRO",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43036783/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Neuro Oncol",
+     "t": "Defining and managing NF1-related peripheral nerve sheath tumors at risk for malignant transformation: Consensus from the Atypical Neurofibroma Symposium",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43021633/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Fr J Urol",
+     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Upper urinary tract urothelial tumors (UTUC)",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051710/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Zhonghua Nei Ke Za Zhi",
+     "t": "[Expert consensus on artificial intelligence optical navigation-assisted CT-guided percutaneous for thoracic lesions]",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43035265/",
+     "p": ""
+    },
     {
      "w": "2026-11-23",
      "d": "2026-11",
@@ -958,6 +2158,24 @@
     "Stroke"
    ],
    "g": [
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Ann Rheum Dis",
+     "t": "ERN-RITA/PReS recommendations for the diagnosis, classification, monitoring, and treatment of childhood idiopathic (primary) angiitis of the central nervous system",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43020703/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-07",
+     "k": "Original",
+     "o": "NPJ Digit Med",
+     "t": "A Multi-Agent MLLM Framework for Imaging-Grounded Treatment Recommendation in Acute Ischemic Stroke",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43045752/",
+     "p": ""
+    },
     {
      "w": "2026-11-23",
      "d": "2026-11",
@@ -1041,6 +2259,62 @@
    ],
    "g": [
     {
+     "w": "2026-11-23",
+     "d": "2026-09",
+     "k": "Consensus",
+     "o": "JTO Clin Res Rep",
+     "t": "Multidisciplinary Management of Stage III NSCLC in the Immunotherapy Era: An Italian Delphi Consensus from AIOM, SICT, SIAPEC, and AIRO",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43036783/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Nat Rev Endocrinol",
+     "t": "Imaging for localizing and therapeutic management of primary aldosteronism: the primary aldosteronism imaging outcome consensus",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43045815/",
+     "p": "",
+     "f": "39.1",
+     "fy": "2025"
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Clin Mol Hepatol",
+     "t": "KASL Consensus Statement for Pharmacologic Treatment of Metabolic Dysfunction-Associated Steatohepatitis: Focus on Semaglutide",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43041053/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "J Imaging Inform Med",
+     "t": "Category and Modifier Accuracy in a Five-Model Evaluation of Large Language Model Extraction of CAD-RADS 2.0 from Coronary CT Angiography Reports",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43009660/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Cereb Circ Cogn Behav",
+     "t": "Clinical management of CADASIL in Europe: bridging evidence gaps and harmonizing care - a consensus review",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43036367/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Fr J Urol",
+     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Testicular germ cell cancer",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051711/",
+     "p": ""
+    },
+    {
      "w": "2026-11-19",
      "d": "2026-06",
      "o": "SCCT/SCAI",
@@ -1080,6 +2354,15 @@
     "Radiology"
    ],
    "g": [
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Quant Imaging Med Surg",
+     "t": "Deep learning-based super-resolution ultrashort echo time MRI combined with free-breathing Star-VIBE dynamic contrast-enhanced MRI for characterization of Lung-RADS 4 pulmonary nodules",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42997947/",
+     "p": ""
+    },
     {
      "w": "2026-11-19",
      "d": "2026-04",
@@ -1121,6 +2404,82 @@
    ],
    "g": [
     {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Clin Mol Hepatol",
+     "t": "KASL Consensus Statement for Pharmacologic Treatment of Metabolic Dysfunction-Associated Steatohepatitis: Focus on Semaglutide",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43041053/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Invest Radiol",
+     "t": "(Elastography) E-BI-RADS: A Novel Classification System for Breast Elastography to Enable Safe Biopsy De-escalation",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43016126/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Rofo",
+     "t": "Towards Accuracy: Identifying Benign Predictors in BI-RADS 4 on MRI",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43008743/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Eur Radiol",
+     "t": "Multiparametric MRI to predict response to neoadjuvant chemotherapy in breast cancer: Are we ready for NacBI-RADS?",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43007412/",
+     "p": "",
+     "f": "6.0",
+     "fy": "2025"
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Abdom Radiol (NY)",
+     "t": "Enhanced image quality and interpretation efficiency of voxelwise-computed diffusion-weighted imaging for bladder cancer VI-RADS assessment",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42998145/",
+     "p": "",
+     "f": "2.3",
+     "fy": "2025"
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Quant Imaging Med Surg",
+     "t": "Deep learning-based super-resolution ultrashort echo time MRI combined with free-breathing Star-VIBE dynamic contrast-enhanced MRI for characterization of Lung-RADS 4 pulmonary nodules",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42997947/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-10",
+     "k": "Review",
+     "o": "Can J Urol",
+     "t": "Impact of 5-alpha reductase inhibitors on pre-biopsy MRI interpretation: effects on PI-RADS assessment and local staging",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43016014/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-07",
+     "k": "Consensus",
+     "o": "NPJ Parkinsons Dis",
+     "t": "A multimodal consensus parcellation of the human brainstem and its applications in Parkinson's disease",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43045745/",
+     "p": ""
+    },
+    {
      "w": "2026-11-19",
      "d": "2026",
      "o": "QIBA/QMIC · Radiology",
@@ -1160,6 +2519,98 @@
     "Mol Imaging Biol"
    ],
    "g": [
+    {
+     "w": "2026-11-23",
+     "d": "2026-09",
+     "k": "Consensus",
+     "o": "JTO Clin Res Rep",
+     "t": "Multidisciplinary Management of Stage III NSCLC in the Immunotherapy Era: An Italian Delphi Consensus from AIOM, SICT, SIAPEC, and AIRO",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43036783/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "J Am Coll Radiol",
+     "t": "ACR Appropriateness Criteria® Chronic Liver Disease: 2026 Update",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43055695/",
+     "p": "",
+     "f": "5.3",
+     "fy": "2025"
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Int J Radiat Oncol Biol Phys",
+     "t": "Local ablative therapy for oligometastatic non-small cell lung cancer with actionable mutations: A consensus from Hong Kong SBRT Study Group",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051603/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Bone Miner Res",
+     "t": "International Consensus on Clinical Trial Endpoints in Autosomal Dominant Osteopetrosis",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43049183/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Neuro Oncol",
+     "t": "Defining and managing NF1-related peripheral nerve sheath tumors at risk for malignant transformation: Consensus from the Atypical Neurofibroma Symposium",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43021633/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Front Immunol",
+     "t": "Controversies and consensus on immune function and long-term health risks following adult thymectomy: a comprehensive review of molecular mechanisms and real-world evidence",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43047868/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Fr J Urol",
+     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Prostate cancer - Diagnosis and management of localized disease",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051708/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Fr J Urol",
+     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Prostate Cancer - Treatment of relapse and metastatic disease",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051704/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Neuroendocrinol",
+     "t": "Controversies in NEN: An ENETS position statement on unresolved clinical scenarios and emerging approaches with somatostatin analogues",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43012352/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Neuroendocrinol",
+     "t": "Controversies in NEN: An ENETS position statement on the diagnosis and treatment of mixed neuroendocrine/non-neuroendocrine neoplasms of the digestive system",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43003098/",
+     "p": ""
+    },
     {
      "w": "2026-11-23",
      "d": "2026-11",
@@ -1214,6 +2665,98 @@
    ],
    "g": [
     {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Lancet Reg Health Eur",
+     "t": "The Scandinavian Neurotrauma Committee 2026 guidelines for initial management of minimal, mild and moderate head injuries in adults: a systematic review, meta-analysis and modified Delphi consensus study",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43034829/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-10",
+     "k": "Consensus",
+     "o": "Open Respir Arch",
+     "t": "Recommendations on the Use of Computed Tomography in Severe Asthma: A Consensus Document",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43032439/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Int J Radiat Oncol Biol Phys",
+     "t": "Local ablative therapy for oligometastatic non-small cell lung cancer with actionable mutations: A consensus from Hong Kong SBRT Study Group",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43051603/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Bone Miner Res",
+     "t": "International Consensus on Clinical Trial Endpoints in Autosomal Dominant Osteopetrosis",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43049183/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "J Prosthet Dent",
+     "t": "Dual-phase deep learning recommendation system for radiographic crown lengthening assessment and post selection for the restoration of endodontically treated teeth",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43045595/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Abdom Radiol (NY)",
+     "t": "Beyond specificity: growing evidence from validation of CEUS LI-RADS v2017 and proposed revisions",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43043467/",
+     "p": "",
+     "f": "2.3",
+     "fy": "2025"
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "Anatol J Cardiol",
+     "t": "Aviation Medicine and Cardiovascular Assessment of Aircrew: A European Society of Cardiology-Aligned Review of Integrating International Civil Aviation Organization, European Union Aviation Safety Agency, Federal Aviation Administration, and Turkish Directorate General of Civil Aviation Aeromedical Standards",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43012473/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "J Imaging Inform Med",
+     "t": "Category and Modifier Accuracy in a Five-Model Evaluation of Large Language Model Extraction of CAD-RADS 2.0 from Coronary CT Angiography Reports",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43009660/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Cancers (Basel)",
+     "t": "PET/MRI in Oncology: Real-World Recommendations",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43026867/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Guideline",
+     "o": "CA Cancer J Clin",
+     "t": "American Cancer Society guideline for the early detection of prostate cancer, 2026",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43018083/",
+     "p": ""
+    },
+    {
      "w": "2026-11-19",
      "d": "2026",
      "o": "QIBA/QMIC · Radiology",
@@ -1253,6 +2796,98 @@
    ],
    "g": [
     {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Clin Transl Radiat Oncol",
+     "t": "ESTRO consensus recommendations for high dose rate interstitial liver brachytherapy",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43036317/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Acad Radiol",
+     "t": "Quality and Determinants of Inpatient Imaging Requests: A Multicentre RI-RADS Study",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43057942/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Can J Ophthalmol",
+     "t": "Assessing radiology recommendations on neuroimaging reports for patients with idiopathic intracranial hypertension",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/42998673/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Bone Miner Res",
+     "t": "International Consensus on Clinical Trial Endpoints in Autosomal Dominant Osteopetrosis",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43049183/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Bone",
+     "t": "Clinical recommendations on monitoring and management of bone health in adults with Duchenne Muscular Dystrophy and transition to adult care: A national Delphi consensus study",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43044705/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Clin Infect Dis",
+     "t": "Trial Endpoints for Endemic Mycoses: Consensus Recommendations by the Mycoses Study Group Education and Research Consortium and European Confederation of Medical Mycology",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43043169/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "J Imaging Inform Med",
+     "t": "Category and Modifier Accuracy in a Five-Model Evaluation of Large Language Model Extraction of CAD-RADS 2.0 from Coronary CT Angiography Reports",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43009660/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Rofo",
+     "t": "Updated Recommendations of the German Radiological Society and the German Professional Association of Radiologists on Prostate MRI in the Context of the New S3 Guideline on Prostate Cancer",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43008744/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Eur Radiol",
+     "t": "Multiparametric MRI to predict response to neoadjuvant chemotherapy in breast cancer: Are we ready for NacBI-RADS?",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43007412/",
+     "p": "",
+     "f": "6.0",
+     "fy": "2025"
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "J Am Coll Surg",
+     "t": "Rapid Endovascular Hemorrhage Control in Trauma: Joint Position Statement from the American College of Surgeons Committee on Trauma and the Society of Interventional Radiology",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43001744/",
+     "p": ""
+    },
+    {
      "w": "2026-11-19",
      "d": "2026-03",
      "o": "ACR",
@@ -1283,6 +2918,96 @@
     "Eur Radiol"
    ],
    "g": [
+    {
+     "w": "2026-11-23",
+     "d": "2026-10",
+     "k": "Consensus",
+     "o": "Open Respir Arch",
+     "t": "Recommendations on the Use of Computed Tomography in Severe Asthma: A Consensus Document",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43032439/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "J Prosthet Dent",
+     "t": "Dual-phase deep learning recommendation system for radiographic crown lengthening assessment and post selection for the restoration of endodontically treated teeth",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43045595/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Diagn Interv Radiol",
+     "t": "Prompt-dependent readability and accuracy of Generative Pre-trained Transformer-5 thinking responses to breast imaging questions derived from European Society of Breast Imaging patient recommendations",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43016123/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "J Imaging Inform Med",
+     "t": "Category and Modifier Accuracy in a Five-Model Evaluation of Large Language Model Extraction of CAD-RADS 2.0 from Coronary CT Angiography Reports",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43009660/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Acad Radiol",
+     "t": "Do S-Detect and ChatGPT Improve Diagnostic Performance and Agreement with BI-RADS Morphologic Descriptors Among Early-career Radiologists?",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43009364/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Rofo",
+     "t": "Updated Recommendations of the German Radiological Society and the German Professional Association of Radiologists on Prostate MRI in the Context of the New S3 Guideline on Prostate Cancer",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43008744/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Eur J Radiol",
+     "t": "Comparative performance of three large language models and expert radiologists in ACR TI-RADS classification of structured thyroid ultrasound reports: a retrospective analysis using cytology as reference",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43008426/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Cancers (Basel)",
+     "t": "PET/MRI in Oncology: Real-World Recommendations",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43026867/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Review",
+     "o": "Front Immunol",
+     "t": "Controversies and consensus on immune function and long-term health risks following adult thymectomy: a comprehensive review of molecular mechanisms and real-world evidence",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43047868/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Diagnostics (Basel)",
+     "t": "Artificial Intelligence-Assisted ACR TI-RADS and Bethesda-like Risk Prediction for Indeterminate Thyroid Nodules: A Retrospective Proof-of-Concept Evaluation",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43028488/",
+     "p": ""
+    },
     {
      "w": "2026-11-23",
      "d": "2026-11",
@@ -1325,6 +3050,44 @@
     "J Am Coll Radiol"
    ],
    "g": [
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Consensus",
+     "o": "Clin Transl Radiat Oncol",
+     "t": "ESTRO consensus recommendations for high dose rate interstitial liver brachytherapy",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43036317/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "Original",
+     "o": "Acta Radiol",
+     "t": "Personalized prostate MRI protocol: Selective contrast enhancement for PI-RADS 3 lesions to optimize diagnostic accuracy and resource utilization",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43055275/",
+     "p": ""
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-11",
+     "k": "RCT",
+     "o": "Radiology",
+     "t": "Low-Dose CT Lung-RADS 2022 for the Management of Screening- and Non-Screening-detected Lung Cancer Associated with Cystic Airspaces",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43007081/",
+     "p": "",
+     "f": "17.6",
+     "fy": "2025"
+    },
+    {
+     "w": "2026-11-23",
+     "d": "2026-08",
+     "k": "Original",
+     "o": "Cancer Imaging",
+     "t": "Revealing hidden vascular patterns: a modified CEUS LI-RADS framework for HCC using super-resolution ultrasound",
+     "u": "https://pubmed.ncbi.nlm.nih.gov/43058947/",
+     "p": ""
+    },
     {
      "w": "2026-11-19",
      "d": "2024",
