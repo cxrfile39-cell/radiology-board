@@ -38,9 +38,62 @@ IMG = ('(imaging[tiab] OR radiolog*[tiab] OR CT[tiab] OR "computed tomography"[t
        'OR "magnetic resonance"[tiab] OR ultrasound[tiab] OR ultrasonograph*[tiab] OR PET[tiab] '
        'OR SPECT[tiab] OR angiograph*[tiab] OR mammograph*[tiab] OR "image-guided"[tiab])')
 KIND = ('(guideline[pt] OR practice guideline[pt] OR consensus statement[pt] OR consensus[ti] '
-        'OR "appropriateness criteria"[ti] OR recommendation*[ti] OR "practice parameter"[ti] '
-        'OR "position statement"[ti] OR "standards of practice"[ti] OR "practice guidance"[ti] '
-        'OR "reporting and data system"[ti] OR RADS[ti] OR "white paper"[ti])')
+        'OR "appropriateness criteria"[ti] OR recommendations[ti] OR guideline*[ti] OR "practice parameter"[ti] '
+        'OR "position statement"[ti] OR "position paper"[ti] OR "standards of practice"[ti] OR "practice guidance"[ti] '
+        'OR "white paper"[ti] OR (("reporting and data system"[ti] OR RADS[ti]) AND (version[ti] OR update*[ti] OR lexicon[ti])))')
+# Title must look like a guideline / consensus document (unless PubMed already tags it Guideline / Consensus Statement)
+STRONG = re.compile(r"guideline|consensus|recommendations|appropriateness criteria|practice parameter|position (statement|paper)|"
+                    r"standards? of practice|practice guidance|white paper|delphi|statement", re.I)
+# Studies that merely compare against "consensus" / test tools against guidelines
+NOISE = re.compile(r"consensus (clustering|graph|morpholog)|physician-consensus|agreement between|diagnostic agreement|"
+                   r"accuracy|performance of|large language model|chatgpt|gpt-|readability|adherence|concordan|"
+                   r"guideline-(directed|based|concordant)|survey|trial endpoints|preclinical|canine|feline|veterinar|"
+                   r"recommendation (system|performance)|framework for|parcellation|nutrition|\bendoscop", re.I)
+
+# Extra title words per panel (besides the panel's own keywords) that count as "this panel's topic".
+EXTRA = {
+    "neuro": r"head injur|intracranial|skull|spinal|glioma|epilep|dementia|alzheimer|neuroimaging|cns\b",
+    "chest": r"thorac|mediastin|asthma|nsclc|bronch|lung cancer|interstitial",
+    "abd": r"colon|colorectal|rect(al|um)|esophag|oesophag|stomach|spleen|cholangio|bile|gallbladder|steato|cirrho",
+    "gu": r"testic|penile|urotheli|urinary|nephr|scrot",
+    "breast": r"mammar",
+    "women": r"gynec|gynaec|cervical cancer|fetal|fetus",
+    "er": r"injur|acute|polytrauma",
+    "vasc": r"arter|vein|venous|aneurysm|embol|thromb",
+    "vir": r"embolization|percutaneous|catheter|stent|venous|arterial|ischemi",
+    "io": r"liver tumou?r|hepatocellular|hcc\b|metasta|brachytherapy|radioembol|chemoembol",
+    "nir": r"aneurysm|stroke|intracranial|cerebr|carotid",
+    "nm": r"nuclear|scintig|radionuclide|radiopharm|psma|fdg",
+    "mol": r"pet\b|psma|fdg|radiotracer|nuclear",
+    "cvi": r"cardiac|heart|valv",
+    "info": r"report(ing)?\b|workflow|structured",
+    "ai": r"machine learning|algorithm",
+    "safety": r"contrast|radiation|safety|radiation dose|gadolinium|iodinated",
+}
+
+
+def topic_re(s):
+    """Regex built from the panel's (first) keyword group + EXTRA, matched against the title."""
+    q = s["q"]
+    m = re.match(r"\(\((.*?)\)", q)          # compound query: use the topic group only
+    group = m.group(1) if m else q
+    terms = [t.strip() for t in re.split(r"\s+OR\s+|\s+AND\s+|[()]", group) if t.strip()]
+    pats = [r"\b" + re.escape(t).replace(r"\*", r"\w*").replace(r"\ ", r"\s+") for t in terms]
+    if s["id"] in EXTRA:
+        pats.append(EXTRA[s["id"]])
+    return re.compile("|".join(pats), re.I)
+
+
+def tiab(q):
+    """Restrict a panel's keyword query to title/abstract so affiliations or MeSH explosion don't match."""
+    out = []
+    for p in re.split(r"(\(|\)|\s+OR\s+|\s+AND\s+)", q):
+        t = p.strip()
+        if not t or t in "()" or t in ("OR", "AND"):
+            out.append(p)
+        else:
+            out.append(f'"{t}"[tiab]' if " " in t else f"{t}[tiab]")
+    return "".join(out)
 EXCLUDE = '(animals[mh] NOT humans[mh]) OR "published erratum"[pt] OR retracted publication[pt]'
 
 TZ = timezone(timedelta(hours=8))  # Asia/Taipei
@@ -108,7 +161,7 @@ def main():
 
     hits, fails = {}, 0
     for s in D["panels"]:
-        term = f"{s['q']} AND {IMG} AND {KIND} NOT ({EXCLUDE})"
+        term = f"{tiab(s['q'])} AND {IMG} AND {KIND} NOT ({EXCLUDE})"
         try:
             hits[s["id"]] = esearch(term)
             print(f"{s['id']}: {len(hits[s['id']])} hits")
@@ -123,8 +176,13 @@ def main():
     for s in D["panels"]:
         g = s.get("g", [])
         before = len(g)
+        # re-running on the same day replaces that day's automatic items; also clears the
+        # untagged automatic items from the first (unfiltered) run on 2026-11-23
+        g = [x for x in g if not ((x.get("a") and x.get("w") == today) or
+                                  (not x.get("a") and not x.get("p") and (x.get("w") or "") >= "2026-11-23"))]
         g = [x for x in g if (x.get("w") or today) >= cutoff]
         removed += before - len(g)
+        topic = topic_re(s)
         seen_t = {norm(x["t"]) for x in g}
         seen_u = {x["u"] for x in g}
         new = []
@@ -136,8 +194,13 @@ def main():
             u = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
             if u in seen_u or norm(title) in seen_t:
                 continue
-            item = {"w": today, "d": ym(a), "k": cat_of(a.get("pubtype", []), title),
-                    "o": a.get("source", ""), "t": title, "u": u, "p": ""}
+            k = cat_of(a.get("pubtype", []), title)
+            if NOISE.search(title) or not (k in ("Guideline", "Consensus") or STRONG.search(title)):
+                continue
+            if not topic.search(re.sub(r"\bjoint (position|statement|guideline|consensus|recommendation)", "", title, flags=re.I)):
+                # title must be about this panel's topic ("Joint Position Statement" is not about joints)
+                continue
+            item = {"w": today, "d": ym(a), "k": k, "o": a.get("source", ""), "t": title, "u": u, "p": "", "a": 1}
             if a.get("source") in IF:
                 item["f"], item["fy"] = IF[a["source"]]
             new.append(item)
