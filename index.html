@@ -87,6 +87,13 @@ footer{color:var(--dim);font-size:11.5px;padding:0 18px 30px;max-width:900px}
 .art a{color:var(--ink);text-decoration:none;font-weight:500;font-size:13.5px}
 .art a:hover{color:var(--acc);text-decoration:underline}
 .art .meta{margin-top:2px}
+.ab{margin-top:3px;font-size:12.5px}
+.ab summary{cursor:pointer;color:var(--acc);font:600 11.5px "IBM Plex Mono",monospace;width:max-content;list-style:none;padding:2px 0}
+.ab summary::-webkit-details-marker{display:none}
+.ab summary::before{content:"+ "}.ab[open] summary::before{content:"− "}
+.ab .abx{margin-top:4px;padding:8px 10px;border-radius:6px;background:var(--bg);border:1px solid var(--line);color:var(--ink);line-height:1.6}
+.ab .abx p{margin:0 0 6px}.ab .abx p:last-child{margin:0}
+.ab .abx b{color:var(--acc2);font-size:11px;letter-spacing:.02em}
 .ldg{color:var(--dim);font-size:12.5px;padding:10px 0}
 .refresh{background:none;border:0;color:var(--acc);font:11.5px "IBM Plex Mono",monospace;cursor:pointer;padding:0}
 .item.gone a{opacity:.85}
@@ -282,6 +289,10 @@ const PM = t => "https://pubmed.ncbi.nlm.nih.gov/?term=" + encodeURIComponent(t)
 const GUIDE = '(guideline[pt] OR practice guideline[pt] OR consensus[ti] OR "appropriateness criteria"[ti] OR recommendation*[ti] OR "reporting and data system"[ti] OR statement[ti])';
 const IMG = '(imaging OR radiolog* OR CT OR MRI OR ultrasound OR PET)';
 const EU = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/";
+let AB = null;   // abstracts.json：PMID → 摘要（首頁顯示後才在背景載入）
+const absHTML = id => { const t = AB && AB[id]; if(!t) return "";
+  const ps = t.split("\n").map(l => { const m = l.match(/^([A-Z][A-Z &\/,-]{2,40}):\s+(.*)$/); return m ? `<p><b>${esc(m[1])}</b> ${esc(m[2])}</p>` : `<p>${esc(l)}</p>`; }).join("");
+  return `<details class="ab"><summary>摘要</summary><div class="abx">${ps}</div></details>`; };
 let FEED = null; // feed.json：GitHub Actions 每天用 NCBI API key 查好的結果（網頁本身不帶 key）
 let D = {latest:"",groups:[],gen:[],panels:[]};
 const LS = {get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}, set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
@@ -339,7 +350,7 @@ function feedHTML(s){
   const head=`<div class="meta" style="margin:2px 0 4px"><span>${state.win?("近 "+state.win+" 天"):"不限期間"} · 各區最新 10 篇 · 依發表日期 · ${f.src==="feed"?"每日自動更新 · ":"即時查詢 · "}${new Date(f.at).toLocaleString("zh-TW",{hour12:false,month:"numeric",day:"numeric",hour:"2-digit",minute:"2-digit"})} 更新</span><button class="refresh" data-rf="${s.id}">重新整理</button></div>`;
   if(!f.items.length) return head+`<div class="empty">這段期間沒有符合的文章，可把期間放寬。</div>`;
   return head+blocksHTML(s.id+"|n",f.items,a=>({cg:"Guideline",meta:"Meta-analysis",rev:"Review",orig:"Original"})[a.b]||catOf(String(a.pt||"").split(", "),a.t),a=>{const g=/guideline|consensus/i.test(a.pt+" "+a.t);return `<div class="art"><a href="https://pubmed.ncbi.nlm.nih.gov/${a.id}/" target="_blank" rel="noopener">${esc(a.t)}</a>
-    <div class="meta"><span class="d">${esc(a.d)}</span><span>${esc(a.j)}</span>${ifb(jifJ(a.j))}${kb(catOf(String(a.pt||"").split(", "),a.t))}<span>${esc(a.au)}</span></div></div>`});
+    <div class="meta"><span class="d">${esc(a.d)}</span><span>${esc(a.j)}</span>${ifb(jifJ(a.j))}${kb(catOf(String(a.pt||"").split(", "),a.t))}<span>${esc(a.au)}</span></div>${absHTML(a.id)}</div>`});
 }
 
 /* ---------- curated guidelines ---------- */
@@ -428,7 +439,8 @@ document.addEventListener("click",e=>{
 document.addEventListener("change",e=>{if(e.target.id==="wk"){curWeek=e.target.value; render(); return;}const c=e.target.closest("input[data-pin]"); if(!c) return; const s=D.panels.find(p=>p.id===c.dataset.panel); const item=[...(s?.g||[]),...Object.values(pins).map(v=>v.item)].find(x=>x.t===c.dataset.pin); if(item){const {_gone,...clean}=item; togglePin(c.dataset.panel,clean,c.checked);} });
 document.getElementById("kw").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("add").click();});
 try{if(localStorage.getItem("rb_hdr")==="1")document.querySelector("header").classList.add("open")}catch(e){}
-Promise.all([fetch("data.json?v="+Date.now()).then(r=>r.json()), fetch("feed.json?v="+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)]).then(([d,f])=>{D=d; FEED=f; render();}).catch(()=>{document.getElementById("grid").innerHTML='<div class="empty">資料載入失敗，請重新整理。</div>';});
+Promise.all([fetch("data.json?v="+Date.now()).then(r=>r.json()), fetch("feed.json?v="+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)]).then(([d,f])=>{D=d; FEED=f; render();
+  fetch("abstracts.json?v="+Date.now()).then(r=>r.ok?r.json():null).then(a=>{ if(a){ AB=a; render(); } }).catch(()=>{});}).catch(()=>{document.getElementById("grid").innerHTML='<div class="empty">資料載入失敗，請重新整理。</div>';});
 </script>
 </body>
 </html>

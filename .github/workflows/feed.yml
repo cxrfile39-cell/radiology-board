@@ -37,9 +37,9 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add feed.json
+          git add feed.json abstracts.json
           if git diff --cached --quiet; then
-            echo "feed.json 沒有變動"
+            echo "feed.json / abstracts.json 沒有變動"
           else
             git commit -m "Update PubMed feed $(date -u +%Y-%m-%d)"
             git pull --rebase
