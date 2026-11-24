@@ -44,56 +44,6 @@
      "w": "2026-11-23",
      "d": "2026-11",
      "k": "Consensus",
-     "o": "Can J Ophthalmol",
-     "t": "Assessing radiology recommendations on neuroimaging reports for patients with idiopathic intracranial hypertension",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/42998673/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Original",
-     "o": "Blood Adv",
-     "t": "Low Uptake of Guideline-Recommended MRI Screening for Silent Cerebral Infarcts over the Lifespan in Sickle Cell Anemia",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43046963/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Consensus",
-     "o": "Neuro Oncol",
-     "t": "Defining and managing NF1-related peripheral nerve sheath tumors at risk for malignant transformation: Consensus from the Atypical Neurofibroma Symposium",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43021633/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Consensus",
-     "o": "J Neuroendocrinol",
-     "t": "Controversies in NEN: An ENETS position statement on the diagnosis and treatment of mixed neuroendocrine/non-neuroendocrine neoplasms of the digestive system",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43003098/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-10",
-     "k": "Original",
-     "o": "J Pediatr Urol",
-     "t": "Early neuro-urological guideline implementation and long-term outcomes in children with spinal dysraphism",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43014237/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Consensus",
      "o": "Scandinavian Neurotrauma Committee · Lancet Reg Health Eur",
      "t": "The Scandinavian Neurotrauma Committee 2026 guidelines for initial management of minimal, mild and moderate head injuries in adults",
      "u": "https://pubmed.ncbi.nlm.nih.gov/43034829/",
@@ -132,7 +82,7 @@
      "o": "Eur Radiol · ESNR/EAN",
      "t": "Are we ready for ARIA monitoring? European survey",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41493545/",
-     "p": "",
+     "p": "ESNR/EAN 對歐洲 422 位神經科與神經放射科醫師的問卷：多數熟悉 ARIA，但 82% 沒有專用的 ARIA MRI 流程，九成以上希望加強相關訓練。",
      "k": "Original"
     },
     {
@@ -150,7 +100,7 @@
      "o": "JRS/JSNR/JSMRM",
      "t": "Practical Brain MRI Guidelines for Anti-Aβ Antibody Treatment",
      "u": "https://www.jstage.jst.go.jp/article/mrms/advpub/0/advpub_gl.2025-1000/_article",
-     "p": "",
+     "p": "日本放射線、神經放射與磁振學會針對抗 Aβ 抗體治療，整理治療前篩檢與追蹤腦部 MRI 的實務建議，重點在 ARIA 的偵測與判讀。",
      "k": "Guideline"
     },
     {
@@ -199,7 +149,7 @@
      "o": "ATA · Thyroid",
      "t": "2025 ATA Management Guidelines for Adult Patients with Differentiated Thyroid Cancer",
      "u": "https://pubmed.ncbi.nlm.nih.gov/40844370/",
-     "p": "",
+     "p": "ATA 2025 年版成人分化型甲狀腺癌處置指引，首次與甲狀腺結節指引分開，更新診斷、手術、術後風險分層與追蹤（含超音波）建議。",
      "k": "Guideline"
     },
     {
@@ -208,7 +158,7 @@
      "o": "ACR",
      "t": "ACR TI-RADS: White Paper of the ACR TI-RADS Committee（現行）",
      "u": "https://pubmed.ncbi.nlm.nih.gov/28372962/",
-     "p": "",
+     "p": "ACR TI-RADS 原始白皮書：以超音波特徵計分將甲狀腺結節分為 TR1–TR5，並依大小決定細針穿刺或追蹤，是目前臨床使用的版本。",
      "k": "Consensus"
     }
    ]
@@ -224,16 +174,6 @@
    ],
    "g": [
     {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Review",
-     "o": "Bone",
-     "t": "Clinical recommendations on monitoring and management of bone health in adults with Duchenne Muscular Dystrophy and transition to adult care: A national Delphi consensus study",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43044705/",
-     "p": "",
-     "a": 1
-    },
-    {
      "w": "2026-11-19",
      "d": "2026-04",
      "o": "ACR AC",
@@ -248,7 +188,7 @@
      "o": "ACR AC",
      "t": "Chronic Ankle Pain: Update 2025",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41817475/",
-     "p": "",
+     "p": "ACR 適當性準則 2025 更新：慢性踝關節痛先以 X 光為初始檢查，再依懷疑病因（骨軟骨病灶、肌腱韌帶、夾擠、跗骨聯合等）選擇 MRI、CT 或超音波。",
      "k": "Guideline"
     },
     {
@@ -272,66 +212,6 @@
     "Radiol Cardiothorac Imaging"
    ],
    "g": [
-    {
-     "w": "2026-11-23",
-     "d": "2026-09",
-     "k": "Consensus",
-     "o": "JTO Clin Res Rep",
-     "t": "Multidisciplinary Management of Stage III NSCLC in the Immunotherapy Era: An Italian Delphi Consensus from AIOM, SICT, SIAPEC, and AIRO",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43036783/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Consensus",
-     "o": "J Thorac Oncol",
-     "t": "IASLC Multidisciplinary Recommendations for Assessment and Reporting of Lymph Node Treatment Response in Lung Cancer Resection Specimens After Neoadjuvant Therapy",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43064237/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Original",
-     "o": "Respir Investig",
-     "t": "The JRS guideline for the management of drug-induced lung disease",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43057095/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Review",
-     "o": "Int J Radiat Oncol Biol Phys",
-     "t": "Local ablative therapy for oligometastatic non-small cell lung cancer with actionable mutations: A consensus from Hong Kong SBRT Study Group",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43051603/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Original",
-     "o": "Mil Med",
-     "t": "Specialty-Driven Divergence in Cardiac Imaging (Coronary Computed Tomography Angiography and Single-Photon Emission Computed Tomography) Utilization Following the 2021 Chest Pain Guideline at a Large Military Medical Center",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43016047/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Consensus",
-     "o": "Zhonghua Nei Ke Za Zhi",
-     "t": "[Expert consensus on artificial intelligence optical navigation-assisted CT-guided percutaneous for thoracic lesions]",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43035265/",
-     "p": "",
-     "a": 1
-    },
     {
      "w": "2026-11-23",
      "d": "2026-10",
@@ -367,7 +247,7 @@
      "o": "ATS",
      "t": "Approach to the Evaluation and Management of Interstitial Lung Abnormalities",
      "u": "https://pubmed.ncbi.nlm.nih.gov/40387336/",
-     "p": "",
+     "p": "ATS 官方聲明：定義 CT 上的間質性肺異常（ILA）、與間質性肺病的區分標準，並提出篩檢、評估、追蹤與研究優先事項的建議。",
      "k": "Guideline"
     },
     {
@@ -393,36 +273,6 @@
    ],
    "g": [
     {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Consensus",
-     "o": "Turk Kardiyol Dern Ars",
-     "t": "Diastolic Function Classification in Acute Myocardial Infarction: Comparison of the 2016 ASE/EACVI Guideline and the 2025 ASE Recommendations",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43048918/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Original",
-     "o": "Mil Med",
-     "t": "Specialty-Driven Divergence in Cardiac Imaging (Coronary Computed Tomography Angiography and Single-Photon Emission Computed Tomography) Utilization Following the 2021 Chest Pain Guideline at a Large Military Medical Center",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43016047/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Original",
-     "o": "JACC Adv",
-     "t": "Practical Management of Multivessel Coronary Artery Disease: Evidence, Controversies, and the Boundaries of Guidelines",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43014053/",
-     "p": "",
-     "a": 1
-    },
-    {
      "w": "2026-11-19",
      "d": "2026-06",
      "o": "SCCT/SCAI",
@@ -437,7 +287,7 @@
      "o": "SCAI/SCCT",
      "t": "CCTA to Guide PCI: Expert Opinion",
      "u": "https://doi.org/10.1016/j.jscai.2025.103664",
-     "p": "",
+     "p": "SCAI/SCCT 專家意見：說明如何用冠狀動脈 CT 血管攝影在介入前評估病灶、斑塊與血管尺寸，協助規劃經皮冠狀動脈介入（PCI）。",
      "k": "Consensus"
     },
     {
@@ -446,7 +296,7 @@
      "o": "SCCT/ACC/ACR/NASCI",
      "t": "CAD-RADS 2.0 — 2022（現行）",
      "u": "https://pubmed.ncbi.nlm.nih.gov/35864070/",
-     "p": "",
+     "p": "CAD-RADS 2.0 專家共識：冠狀動脈 CT 血管攝影的標準化報告系統，新增斑塊負荷（P 分級）與缺血評估修飾詞，並對應後續處置建議。",
      "k": "Guideline"
     }
    ]
@@ -461,76 +311,6 @@
     "Eur J Radiol"
    ],
    "g": [
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Consensus",
-     "o": "Clin Transl Radiat Oncol",
-     "t": "ESTRO consensus recommendations for high dose rate interstitial liver brachytherapy",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43036317/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Guideline",
-     "o": "Clin Gastroenterol Hepatol",
-     "t": "AGA Clinical Practice Update on the Role of Liver Biopsy: Commentary",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43062379/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Consensus",
-     "o": "Clin Mol Hepatol",
-     "t": "KASL Consensus Statement for Pharmacologic Treatment of Metabolic Dysfunction-Associated Steatohepatitis: Focus on Semaglutide",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43041053/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Commentary",
-     "o": "Br J Anaesth",
-     "t": "Delayed gastric emptying in adolescent patients on glucagon-like peptide-1 receptor agonists with standard preoperative fasting guidelines: separate drug effects from disease effects. Comment on Br J Anaesth 2026; 137: 1507-13",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43009371/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Original",
-     "o": "World J Surg",
-     "t": "Explosive Weapons Trauma Care Collective (EXTRACCT) Blast Injury Clinical Practice Guideline: Abdominal Blast Injuries",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43006222/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Original",
-     "o": "Harefuah",
-     "t": "[Position paper: surveillance for pancreatic cancer in individuals at elevated risk for pancreatic ductal adenocarcinoma]",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43068365/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-10",
-     "k": "Consensus",
-     "o": "Br J Surg",
-     "t": "International expert consensus on radical resection combined with intestinal autotransplantation for locally advanced pancreatic cancer",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43062045/",
-     "p": "",
-     "a": 1
-    },
     {
      "w": "2026-11-23",
      "d": "2026-11",
@@ -579,7 +359,7 @@
      "o": "AJR",
      "t": "LI-RADS Nonradiation TRA v2024 用於 HCC 切除後局部復發",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41190834/",
-     "p": "",
+     "p": "AJR 研究：以 LI-RADS 非放射治療反應評估 v2024 判讀 HCC 切除後邊緣，28% 病人能比 v2018 更早、在更小時偵測到局部復發。",
      "k": "Original"
     },
     {
@@ -588,7 +368,7 @@
      "o": "SAR · AJR",
      "t": "Adult Abdominal Photon-Counting CT Protocols: multi-institutional consensus",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41060190/",
-     "p": "",
+     "p": "SAR 多機構共識：提出成人腹部光子計數 CT 的標準化掃描與重建參數建議，方便跨院比較與多中心研究。",
      "k": "Consensus"
     },
     {
@@ -597,7 +377,7 @@
      "o": "Abdom Radiol",
      "t": "LI-RADS in 2024: recent updates, planned refinements",
      "u": "https://pubmed.ncbi.nlm.nih.gov/39671010/",
-     "p": "",
+     "p": "回顧 LI-RADS CT/MRI 演算法近年的更新、預計的修訂方向（含治療反應評估）與未來發展。",
      "k": "Review"
     },
     {
@@ -606,7 +386,7 @@
      "o": "ACR",
      "t": "LI-RADS CT/MRI Nonradiation TRA v2024 Core",
      "u": "https://ACR.org/-/media/ACR/Files/RADS/LI-RADS/LI-RADS-CTMR-Nonradiation-TRA-v2024-Core.pdf",
-     "p": "",
+     "p": "ACR 官方 LI-RADS 非放射治療（如燒灼、TACE、手術）反應評估 v2024 核心文件，提供存活／非存活腫瘤的判讀類別與準則。",
      "k": "RADS"
     }
    ]
@@ -622,76 +402,6 @@
     "J Urol"
    ],
    "g": [
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Consensus",
-     "o": "Rofo",
-     "t": "Updated Recommendations of the German Radiological Society and the German Professional Association of Radiologists on Prostate MRI in the Context of the New S3 Guideline on Prostate Cancer",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43008744/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Original",
-     "o": "J Clin Med",
-     "t": "Cardiovascular Assessment Before Kidney Transplantation: Bridging the Gap Between Guidelines and Clinical Practice",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43030708/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Guideline",
-     "o": "Fr J Urol",
-     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Upper urinary tract urothelial tumors (UTUC)",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43051710/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Guideline",
-     "o": "Fr J Urol",
-     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Muscle-invasive bladder tumors (MIBC)",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43051709/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Guideline",
-     "o": "Fr J Urol",
-     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Prostate cancer - Diagnosis and management of localized disease",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43051708/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Guideline",
-     "o": "Fr J Urol",
-     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Prostate Cancer - Treatment of relapse and metastatic disease",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43051704/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Guideline",
-     "o": "CA Cancer J Clin",
-     "t": "American Cancer Society guideline for the early detection of prostate cancer, 2026",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43018083/",
-     "p": "",
-     "a": 1
-    },
     {
      "w": "2026-11-23",
      "d": "2026-11",
@@ -764,16 +474,6 @@
     {
      "w": "2026-11-23",
      "d": "2026-11",
-     "k": "Guideline",
-     "o": "Fr J Urol",
-     "t": "French AFU Cancer Committee Guidelines - Update 2026-2028: Prostate Cancer - Treatment of relapse and metastatic disease",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43051704/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
      "k": "Consensus",
      "o": "DRG/BDR · RöFo",
      "t": "Updated Recommendations of the German Radiological Society and the German Professional Association of Radiologists on Prostate MRI in the Context of the New S3 Guideline on Prostate Cancer",
@@ -833,7 +533,7 @@
      "o": "PI-RADS Steering Committee",
      "t": "PI-RADS v2.1: 2019 update of PI-RADS v2（現行）",
      "u": "https://pubmed.ncbi.nlm.nih.gov/30898406/",
-     "p": "",
+     "p": "PI-RADS v2.1：修正 v2 的模糊處，調整轉移區 T2WI 與 DWI 評分、移行區判讀規則及 biparametric 相關說明，為現行版本。",
      "k": "Review"
     }
    ]
@@ -906,7 +606,7 @@
      "o": "SIR",
      "t": "Venous Origin Chronic Pelvic Pain in Women: Practice Guidance",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41786126/",
-     "p": "",
+     "p": "SIR 實務指引：彙整女性靜脈源性慢性骨盆痛的診斷（影像評估）與治療（含栓塞）共識建議。",
      "k": "Guideline"
     }
    ]
@@ -921,26 +621,6 @@
     "Pediatr Blood Cancer"
    ],
    "g": [
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Consensus",
-     "o": "Prehosp Emerg Care",
-     "t": "Prehospital Trauma Compendium: Prehospital Management of Pediatric Traumatic Out-of-Hospital Circulatory Arrest - A Joint Position Statement and Resource Document of NAEMSP, ACS-COT, ACEP, and AAP",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43055685/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-10",
-     "k": "Original",
-     "o": "J Pediatr Urol",
-     "t": "Early neuro-urological guideline implementation and long-term outcomes in children with spinal dysraphism",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43014237/",
-     "p": "",
-     "a": 1
-    },
     {
      "w": "2026-11-23",
      "d": "2026-11",
@@ -969,7 +649,7 @@
      "o": "ACR AC",
      "t": "Joint Pain: Idiopathic Arthritis-Child",
      "u": "https://doi.org/10.1016/j.jacr.2026.02.011",
-     "p": "",
+     "p": "ACR 適當性準則：兒童特發性關節炎疑似或追蹤時，各情境下 X 光、超音波與 MRI 的適用性建議。",
      "k": "Guideline"
     },
     {
@@ -978,7 +658,7 @@
      "o": "ESPR/SPR/…",
      "t": "Pediatric and fetal postmortem imaging：多學會聲明",
      "u": "https://pubmed.ncbi.nlm.nih.gov/42176061/",
-     "p": "",
+     "p": "ESPR/SPR 等多學會聲明：說明胎兒、周產期與兒童死後影像（如死後 MRI、CT）導入臨床的障礙與實施建議，作為傳統解剖的輔助或替代。",
      "k": "Consensus"
     },
     {
@@ -987,7 +667,7 @@
      "o": "SIOPEN",
      "t": "Imaging of High-Risk Neuroblastoma: Recommendations",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41823177/",
-     "p": "",
+     "p": "SIOPEN 放射與核醫委員會共識：高風險神經母細胞瘤在診斷、治療中與追蹤各階段的影像檢查建議。",
      "k": "Guideline"
     },
     {
@@ -996,7 +676,7 @@
      "o": "ACR/ESPR/SPR/…",
      "t": "AI Implementation in Pediatric Radiology for Patient Safety",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41288670/",
-     "p": "",
+     "p": "ACR/ESPR/SPR 等多學會聲明：兒童與成人生理差異大，提出兒童放射科導入 AI 時的驗證、監測與病人安全考量。",
      "k": "Guideline"
     }
    ]
@@ -1011,36 +691,6 @@
     "J Trauma Acute Care Surg"
    ],
    "g": [
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Consensus",
-     "o": "Prehosp Emerg Care",
-     "t": "Prehospital Trauma Compendium: Prehospital Management of Pediatric Traumatic Out-of-Hospital Circulatory Arrest - A Joint Position Statement and Resource Document of NAEMSP, ACS-COT, ACEP, and AAP",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43055685/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Original",
-     "o": "World J Surg",
-     "t": "Explosive Weapons Trauma Care Collective (EXTRACCT) Blast Injury Clinical Practice Guideline: Abdominal Blast Injuries",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43006222/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Consensus",
-     "o": "J Am Coll Surg",
-     "t": "Rapid Endovascular Hemorrhage Control in Trauma: Joint Position Statement from the American College of Surgeons Committee on Trauma and the Society of Interventional Radiology",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43001744/",
-     "p": "",
-     "a": 1
-    },
     {
      "w": "2026-11-23",
      "d": "2026-11",
@@ -1065,7 +715,7 @@
      "o": "ACR AC",
      "t": "Penetrating Trauma-Abdomen and Pelvis: Update 2026",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41863524/",
-     "p": "",
+     "p": "ACR 適當性準則 2026：疑似穿刺傷造成上泌尿道傷害時以顯影 CT 與 CT 泌尿道攝影為首選；下泌尿道則以逆行尿道攝影、CT 與 CT 膀胱攝影互補。",
      "k": "Guideline"
     },
     {
@@ -1083,7 +733,7 @@
      "o": "ACR AC",
      "t": "Major Blunt Trauma",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41758104/",
-     "p": "",
+     "p": "ACR 適當性準則：成人重大鈍傷或多重創傷的初始影像建議，以全身顯影 CT 為核心，並依血行動力學狀態調整。",
      "k": "Guideline"
     },
     {
@@ -1092,7 +742,7 @@
      "o": "CIRSE · Eur Radiol",
      "t": "ESR Essentials: trauma team and the role of IR",
      "u": "https://doi.org/10.1007/s00330-026-12440-8",
-     "p": "",
+     "p": "ESR Essentials 實務建議：說明介入放射科在創傷團隊中的角色，例如出血的緊急栓塞止血與流程整合。",
      "k": "Guideline"
     }
    ]
@@ -1109,16 +759,6 @@
    ],
    "g": [
     {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Review",
-     "o": "Cancers (Basel)",
-     "t": "PET/MRI in Oncology: Real-World Recommendations",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43026867/",
-     "p": "",
-     "a": 1
-    },
-    {
      "w": "2026-11-19",
      "d": "2023",
      "o": "EANM/SNMMI",
@@ -1133,7 +773,7 @@
      "o": "EANM/SNMMI",
      "t": "177Lu-PSMA radioligand therapy procedure guideline",
      "u": "https://pubmed.ncbi.nlm.nih.gov/37246997/",
-     "p": "",
+     "p": "EANM/SNMMI 聯合程序指引：177Lu-PSMA 放射配體治療的適應症、病人選擇（PSMA PET）、給藥、劑量學與副作用監測。",
      "k": "Guideline"
     }
    ]
@@ -1150,16 +790,6 @@
    ],
    "g": [
     {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Original",
-     "o": "Mil Med",
-     "t": "Specialty-Driven Divergence in Cardiac Imaging (Coronary Computed Tomography Angiography and Single-Photon Emission Computed Tomography) Utilization Following the 2021 Chest Pain Guideline at a Large Military Medical Center",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43016047/",
-     "p": "",
-     "a": 1
-    },
-    {
      "w": "2026-11-19",
      "d": "2026",
      "o": "ESVS · EJVES",
@@ -1174,7 +804,7 @@
      "o": "SVS",
      "t": "SVS guideline: Blunt Thoracic Aortic Injury — focused update",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41874481/",
-     "p": "",
+     "p": "SVS 臨床指引：鈍挫性胸主動脈損傷的診斷（以 CTA 為主）、分級、修補時機與血管內治療建議。",
      "k": "Guideline"
     },
     {
@@ -1211,16 +841,6 @@
     {
      "w": "2026-11-23",
      "d": "2026-11",
-     "k": "Consensus",
-     "o": "J Am Coll Surg",
-     "t": "Rapid Endovascular Hemorrhage Control in Trauma: Joint Position Statement from the American College of Surgeons Committee on Trauma and the Society of Interventional Radiology",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43001744/",
-     "p": "",
-     "a": 1
-    },
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
      "k": "Original",
      "o": "CIRSE · CVIR",
      "t": "CIRSE Standards of Practice for the Endovascular Management of Acute Arterial Upper Limb Ischemia",
@@ -1244,7 +864,7 @@
      "o": "SIR",
      "t": "Venous Origin Chronic Pelvic Pain in Women",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41786126/",
-     "p": "",
+     "p": "SIR 實務指引：彙整女性靜脈源性慢性骨盆痛的診斷（影像評估）與治療（含栓塞）共識建議。",
      "k": "Guideline"
     },
     {
@@ -1253,7 +873,7 @@
      "o": "CIRSE",
      "t": "Standards of Practice：24/7 emergency IR",
      "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12868068",
-     "p": "",
+     "p": "CIRSE 實務標準：建立 24 小時緊急介入放射服務所需的人力、設備、流程與品質指標。",
      "k": "Guideline"
     }
    ]
@@ -1269,16 +889,6 @@
     "Int J Hyperthermia"
    ],
    "g": [
-    {
-     "w": "2026-11-23",
-     "d": "2026-11",
-     "k": "Review",
-     "o": "Skeletal Radiol",
-     "t": "Image-guided ablation treatment of Desmoid tumors: an approach for management and integration into the national comprehensive cancer network ® guidelines",
-     "u": "https://pubmed.ncbi.nlm.nih.gov/43033237/",
-     "p": "",
-     "a": 1
-    },
     {
      "w": "2026-11-23",
      "d": "2026-11",
@@ -1314,7 +924,7 @@
      "o": "EORTC/ESGAR",
      "t": "HCC 局部／區域治療的分期、規劃與追蹤影像共識",
      "u": "https://pubmed.ncbi.nlm.nih.gov/40410331/",
-     "p": "",
+     "p": "EORTC/ESGAR 德菲法共識：HCC 接受局部或區域治療時，分期、治療規劃與追蹤的影像檢查與時程建議。",
      "k": "Consensus"
     },
     {
@@ -1332,7 +942,7 @@
      "o": "ACR",
      "t": "LI-RADS CT/MRI Nonradiation TRA v2024",
      "u": "https://ACR.org/-/media/ACR/Files/RADS/LI-RADS/LI-RADS-CTMR-Nonradiation-TRA-v2024-Core.pdf",
-     "p": "",
+     "p": "ACR 官方 LI-RADS 非放射治療（如燒灼、TACE、手術）反應評估 v2024 核心文件，提供存活／非存活腫瘤的判讀類別與準則。",
      "k": "RADS"
     }
    ]
@@ -1405,7 +1015,7 @@
      "o": "Multisociety · RAPM",
      "t": "Consensus on corticosteroid injections for facet joint and SI joint pain",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41571428/",
-     "p": "",
+     "p": "多學會共識：小面關節與薦髂關節類固醇注射的適應症、建議劑量、間隔與重複注射條件。",
      "k": "Consensus"
     },
     {
@@ -1414,7 +1024,7 @@
      "o": "Multisociety",
      "t": "Response to The BMJ publications on interventional spine procedures",
      "u": "https://sirweb.org/media/ksoha0v1/multisociety-statement-on-bmj-articles-3-18-2025.pdf",
-     "p": "",
+     "p": "多學會聯合聲明：回應 BMJ 對介入性脊椎疼痛治療的指引與文章，說明學會對證據解讀與臨床適用性的不同看法。",
      "k": "Statement"
     }
    ]
@@ -1436,7 +1046,7 @@
      "o": "SCCT/SCAI",
      "t": "FFR-CT expert consensus",
      "u": "https://pubmed.ncbi.nlm.nih.gov/42236373/",
-     "p": "",
+     "p": "SCCT/SCAI 專家共識：CT 衍生血流儲備分數（FFR-CT）的適用病人、判讀方式、限制，以及如何整合到冠心病的處置決策。",
      "k": "Guideline"
     },
     {
@@ -1445,7 +1055,7 @@
      "o": "ESVS",
      "t": "2026 Descending Thoracic & Thoraco-Abdominal Aortic Diseases",
      "u": "https://doi.org/10.1016/j.ejvs.2025.12.050",
-     "p": "",
+     "p": "ESVS 2026 臨床指引：降主動脈與胸腹主動脈疾病（動脈瘤、剝離等）的影像評估、治療適應症與追蹤建議。",
      "k": "Guideline"
     },
     {
@@ -1476,7 +1086,7 @@
      "o": "Radiol Adv",
      "t": "Photon-counting CT in vascular imaging",
      "u": "https://doi.org/10.1093/radadv/umag021",
-     "p": "",
+     "p": "回顧光子計數 CT 在血管影像的應用：高空間解析度、能譜影像與較低顯影劑或輻射劑量的優勢與限制。",
      "k": "Review"
     },
     {
@@ -1494,7 +1104,7 @@
      "o": "Abdom Radiol",
      "t": "Standardizing technical parameters and terms for abdominopelvic PCD-CT",
      "u": "https://pubmed.ncbi.nlm.nih.gov/38769199/",
-     "p": "",
+     "p": "整理腹骨盆光子計數 CT 的關鍵技術參數與術語，作為跨廠牌與多中心研究的標準化基礎。",
      "k": "Review"
     }
    ]
@@ -1534,7 +1144,7 @@
      "o": "QIBA · Radiology",
      "t": "QIBA Profile for DSC-MRI in neuro-oncology trials",
      "u": "https://doi.org/10.1148/radiol.232555",
-     "p": "",
+     "p": "QIBA Profile：規範神經腫瘤臨床試驗中 DSC 灌注 MRI 的掃描、分析與品質要求，提高定量數值的可重複性。",
      "k": "Guideline"
     }
    ]
@@ -1578,7 +1188,7 @@
      "o": "EANM/SNMMI",
      "t": "177Lu-PSMA radioligand therapy procedure guideline",
      "u": "https://pubmed.ncbi.nlm.nih.gov/37246997/",
-     "p": "",
+     "p": "EANM/SNMMI 聯合程序指引：177Lu-PSMA 放射配體治療的適應症、病人選擇（PSMA PET）、給藥、劑量學與副作用監測。",
      "k": "Guideline"
     },
     {
@@ -1587,7 +1197,7 @@
      "o": "EANM/SNMMI",
      "t": "PSMA PET/CT procedure guideline 2.0",
      "u": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10027805/",
-     "p": "",
+     "p": "EANM/SNMMI PSMA PET/CT 程序指引 2.0：攝影前準備、造影劑、掃描與判讀報告（含 PROMISE/E-PSMA 標準）的建議。",
      "k": "Guideline"
     }
    ]
@@ -1609,7 +1219,7 @@
      "o": "QIBA/QMIC · Radiology",
      "t": "Liver MR elastography technical guidelines",
      "u": "https://pubs.rsna.org/doi/10.1148/radiol.260974",
-     "p": "",
+     "p": "QIBA/QMIC 技術指引：肝臟 MR 彈性成像的掃描參數、品質控制與硬度量測方式，提升跨機構一致性。",
      "k": "Guideline"
     },
     {
@@ -1627,7 +1237,7 @@
      "o": "QIBA",
      "t": "DWI-ADC Profile",
      "u": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11537247",
-     "p": "",
+     "p": "QIBA DWI-ADC Profile：規範擴散加權 MRI 的掃描與 ADC 量測流程，訂出可重複性要求與品質檢查方法。",
      "k": "Guideline"
     }
    ]
@@ -1657,7 +1267,7 @@
      "o": "ACR/CAR/ESR/RANZCR/RSNA",
      "t": "Developing, Purchasing, Implementing and Monitoring AI Tools in Radiology",
      "u": "https://pubmed.ncbi.nlm.nih.gov/38251882/",
-     "p": "",
+     "p": "ACR、CAR、ESR、RANZCR、RSNA 多學會聲明：放射科 AI 工具在開發、採購、導入與上線後監測各階段的實務考量。",
      "k": "Review"
     }
    ]
@@ -1690,7 +1300,7 @@
      "o": "ACR/ESPR/SPR/…",
      "t": "AI Implementation in Pediatric Radiology for Patient Safety",
      "u": "https://pubmed.ncbi.nlm.nih.gov/41288670/",
-     "p": "",
+     "p": "ACR/ESPR/SPR 等多學會聲明：兒童與成人生理差異大，提出兒童放射科導入 AI 時的驗證、監測與病人安全考量。",
      "k": "Guideline"
     },
     {
