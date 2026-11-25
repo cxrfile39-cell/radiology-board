@@ -51,6 +51,7 @@ main{display:grid;gap:12px;padding:14px 18px 40px;grid-template-columns:repeat(v
 .meta{font:11px "IBM Plex Mono",monospace;color:var(--dim);display:flex;gap:8px;flex-wrap:wrap}
 .meta .d{color:var(--acc)}
 .meta .n{color:var(--new)}
+.meta .wn{color:var(--acc);font-weight:600}
 .item a{color:var(--ink);text-decoration:none;font-weight:500;display:block;margin-top:2px}
 .item a:hover{color:var(--acc);text-decoration:underline}
 .item p{margin:3px 0 0;color:var(--mut);font-size:12.5px}
@@ -209,14 +210,14 @@ header:not(.open) #chips{display:none}
   <div class="bar" id="chips"></div>
   <div class="ctrl">
     <span>期間 <span class="seg" id="win"></span></span>
-    <span>週次 <select id="wk"></select></span>
+    <span>範圍 <select id="wk"></select></span>
     <span class="colsw">欄數 <span class="seg" id="cols"></span></span>
     <span class="custom"><input id="kw" placeholder="自訂主題，如 photon-counting CT"><button id="add">+ 面板</button></span>
   </div>
 </header>
 <main id="grid"></main>
 <footer><h3>搜尋邏輯說明</h3><ul>
-<li><b>重點指引</b>：每週一 06:33（台北時間）由 Claude 自動搜尋各科近兩週新發布的 guideline、consensus、practice parameter、ACR Appropriateness Criteria、RADS 新版本與 FDA 影像安全通報。每條須在 PubMed 查到文章編號並核對標題，或有 DOI／學會官網，查不到不收。勾選「保留」的項目一直留在本週畫面（存在你的瀏覽器）；預設只顯示本週新項目與已保留項目，前幾週的項目可用上方「週次」選單切換查看（保留最近 12 週）。</li>
+<li><b>重點指引</b>：每週一 06:33（台北時間）由 Claude 自動搜尋各科近兩週新發布的 guideline、consensus、practice parameter、ACR Appropriateness Criteria、RADS 新版本與 FDA 影像安全通報。每條須在 PubMed 查到文章編號並核對標題，或有 DOI／學會官網，查不到不收。每週更新，但面板預設顯示近一個月（31 天）內整理的所有項目，本週新加的標示「本週新增」；勾選「保留」的項目超過一個月也會一直留著（存在你的瀏覽器）。更早的月份可用上方「範圍」選單切換查看（保留最近 12 週）。</li>
 <li><b>最新文章</b>：每天 05:17（台北時間）由 GitHub Actions 以 NCBI API key 向 PubMed 查詢並存成 feed.json，網頁直接讀取（網頁本身不含 key）；分四區各取最新 10 篇，依發表日期排序：
 <br>· Consensus / Guideline：科別關鍵字 + 影像關鍵字 + 文獻類型為 guideline／practice guideline／consensus statement，或標題含 consensus、recommendation、appropriateness criteria、reporting and data system、statement；不限期刊。
 <br>· Meta-analysis：科別關鍵字 + 影像關鍵字 + 文獻類型為 meta-analysis 或 systematic review；不限期刊。
@@ -262,13 +263,13 @@ JALIAS.push(["Stroke","Stroke"],["Thyroid","Thyroid"],["EJVES","Eur J Vasc Endov
 const jifJ = j => JIF[j] ? {f:JIF[j][0], fy:JIF[j][1]} : {};
 const jifOf = x => { if(x.f) return x; const o=String(x.o||""); for(const [k,j] of JALIAS){ if(new RegExp("(^|[^A-Za-z])"+k+"([^A-Za-z]|$)").test(o)) return jifJ(j); } return {}; };
 const ifb = x0 => { const x=jifOf(x0||{}), t=+x.f>=10?" t3":+x.f>=5?" t2":""; return !x.f ? "" : x.f==="none" ? `<span class="if" title="無 Clarivate JCR 影響係數">無 IF</span>` : `<span class="if${t}" title="Clarivate JCR Journal Impact Factor${x.fy?" "+x.fy:""}">IF ${esc(x.f)}${x.fy&&x.fy!=="2025"?` (${esc(x.fy||"年份未註明")})`:(x.fy?"":" (年份未註明)")}</span>`; };
-let curWeek = null;
-const WEEKS = () => [...new Set(D.panels.flatMap(s=>(s.g||[]).map(x=>x.w||D.latest)))].sort().reverse();
-function weekLabel(w,i,arr){
-  const md=s=>{const [y,m,d]=s.split("-").map(Number);return `${m}/${d}`;};
-  const prev=(()=>{const t=new Date(w+"T00:00:00Z");t.setUTCDate(t.getUTCDate()-7);return t.toISOString().slice(0,10);})();
-  const name=i===0?"本週":i===1?"上一週":`${i} 週前`;
-  return `${name} ${md(prev)}–${md(w)}${i===0?"（含已保留）":""}`;
+let curWeek = null;   // "cur" = 近一個月（滾動 31 天）；"YYYY-MM" = 該月份
+const WEEKS = () => ["cur", ...[...new Set(D.panels.flatMap(s=>(s.g||[]).map(x=>(x.w||D.latest).slice(0,7))))].sort().reverse()];
+const ageDays = w => Math.round((Date.parse(D.latest)-Date.parse(w||D.latest))/864e5);
+const inMonth = x => ageDays(x.w) < 31;
+function weekLabel(w){
+  if(w==="cur"){ const e=new Date(D.latest+"T00:00:00Z"), s=new Date(e); s.setUTCDate(s.getUTCDate()-30); const md=d=>`${d.getUTCMonth()+1}/${d.getUTCDate()}`; return `近一個月 ${md(s)}–${md(e)}（含已保留）`; }
+  const [y,m]=w.split("-"); return `${y} 年 ${+m} 月`;
 }
 
 const BLK=[["orig","Original"],["rev","Review"],["meta","Meta-analysis"],["cg","Consensus / Guideline"]];
@@ -357,17 +358,17 @@ function feedHTML(s){
 const isPinned = t => !!pins[keyOf(t)];
 function togglePin(panel, item, on){ const k=keyOf(item.t); if(on) pins[k]={panel,item}; else delete pins[k]; LS.set("rb_pins",pins); render(); }
 function curatedFor(s){
-  const wk=curWeek||D.latest;
-  if(wk!==D.latest) return (s.g||[]).filter(x=>(x.w||D.latest)===wk);
-  const cur = (s.g||[]).filter(x=>(x.w||D.latest)===D.latest || isPinned(x.t));
+  const wk=curWeek||"cur";
+  if(wk!=="cur") return (s.g||[]).filter(x=>(x.w||D.latest).slice(0,7)===wk);
+  const cur = (s.g||[]).filter(x=>inMonth(x) || isPinned(x.t));
   const inData = new Set((s.g||[]).map(x=>keyOf(x.t)));
   const kept = Object.entries(pins).filter(([k,v])=>v.panel===s.id && !inData.has(k)).map(([k,v])=>Object.assign({_gone:1},v.item));
   return [...cur, ...kept];
 }
 function guideHTML(s){
   const list=curatedFor(s);
-  if(!list.length) return `<div class="empty">${(curWeek||D.latest)===D.latest?"本週此科別沒有新整理的指引，請看「最新文章」或用「週次」看前幾週。":"這一週此科別沒有項目。"}</div>`;
-  return blocksHTML(s.id+"|g",list,x=>x.k,x=>{const on=isPinned(x.t);return `<div class="item ${on?'pinned':''} ${x._gone?'gone':''}"><div class="meta"><span class="d">${esc(x.d)}</span>${kb(x.k)}<span>${esc(x.o)}</span>${ifb(x)}${recent(x.d)?'<span class="n">● NEW</span>':''}
+  if(!list.length) return `<div class="empty">${(curWeek||"cur")==="cur"?"近一個月此科別沒有新整理的指引，請看「最新文章」或用「範圍」選單看更早的月份。":"這個月此科別沒有項目。"}</div>`;
+  return blocksHTML(s.id+"|g",list,x=>x.k,x=>{const on=isPinned(x.t);return `<div class="item ${on?'pinned':''} ${x._gone?'gone':''}"><div class="meta"><span class="d">${esc(x.d)}</span>${kb(x.k)}<span>${esc(x.o)}</span>${ifb(x)}${(x.w||D.latest)===D.latest?'<span class="wn">本週新增</span>':''}${recent(x.d)?'<span class="n">● NEW</span>':''}
     <label class="keep"><input type="checkbox" data-pin="${esc(x.t)}" data-panel="${s.id}" ${on?'checked':''}>保留</label></div>
     <a href="${esc(x.u)}" target="_blank" rel="noopener">${esc(x.t)}</a>${x.p?`<p>${esc(x.p)}</p>`:""}</div>`});
 }
@@ -407,7 +408,7 @@ function render(){
   document.getElementById("sub").textContent = `${D.groups.length} groups · ${D.panels.length} panels · 上次更新 ${D.updated||D.latest} · 下次更新 ${nextRun()}（台北時間）`;
   document.getElementById("chips").innerHTML = `<div class="grp"><button class="chip none" id="selNone">✕ 全不選</button></div>` + D.groups.map(([k,l])=>`<div class="grp g-${k}"><span class="gl">${esc(l)}</span><button class="chip all" data-g="${k}">全選</button>${D.panels.filter(s=>s.grp===k).map(s=>`<button class="chip ${state.sel.includes(s.id)?'on':''}" data-id="${s.id}">${esc(s.name)}</button>`).join("")}</div>`).join("")
     + (state.custom.length?`<div class="grp"><span class="gl">Custom</span>${state.custom.map(k=>`<button class="chip on" data-c="${esc(k)}">★ ${esc(k)}</button>`).join("")}</div>`:"");
-  {const ws=WEEKS(); if(!curWeek) curWeek=D.latest; document.getElementById("wk").innerHTML=ws.map((w,i)=>`<option value="${w}" ${w===curWeek?"selected":""}>${weekLabel(w,i,ws)}</option>`).join("");}
+  {const ws=WEEKS(); if(!curWeek) curWeek="cur"; document.getElementById("wk").innerHTML=ws.map((w,i)=>`<option value="${w}" ${w===curWeek?"selected":""}>${weekLabel(w,i,ws)}</option>`).join("");}
   document.getElementById("win").innerHTML = [7,30,90,365,0].map(w=>`<button class="${state.win===w?'on':''}" data-w="${w}">${w?w+'d':'all'}</button>`).join("");
   document.getElementById("cols").innerHTML = [1,2,3,4].map(c=>`<button class="${state.cols===c?'on':''}" data-c="${c}">${c}</button>`).join("");
   const g=document.getElementById("grid"); g.style.setProperty("--cols",state.cols);
