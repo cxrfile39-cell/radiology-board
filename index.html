@@ -205,7 +205,7 @@ header:not(.open) #chips{display:none}
 <body>
 <header>
   <div class="topband"><svg class="gantry" viewBox="0 0 32 28" aria-hidden="true"><circle cx="16" cy="12" r="10.5"/><circle cx="16" cy="12" r="5"/><path d="M1.5 15.5H30.5M1.5 18.5H30.5M9 18.5V25M23 18.5V25M6 25H26"/><path d="M16 1.5V4M16 20V22.5M5.5 12H8M24 12H26.5" class="tk"/></svg><div class="tb-main"><h1><span class="t1">Radiology</span> <span class="t2">Guideline & Journal Board</span><small id="sub">loading…</small></h1>
-  <div class="credit">製作者：JH CHIU MD · Claude Opus 5.5</div></div><div class="dcm" aria-hidden="true"><div>WW 400 · WL 40</div><div>120 kVp · 1.25 mm</div><div class="lutrow"><span class="lut"></span><span id="seim">Se 4 · Im 26</span></div><div class="scale"><span class="ticks"></span>5 cm</div></div></div>
+  <div class="credit">製作者：JH CHIU MD · Claude Opus 5.5</div><div class="credit views" id="views" hidden></div></div><div class="dcm" aria-hidden="true"><div>WW 400 · WL 40</div><div>120 kVp · 1.25 mm</div><div class="lutrow"><span class="lut"></span><span id="seim">Se 4 · Im 26</span></div><div class="scale"><span class="ticks"></span>5 cm</div></div></div>
   <button id="chipToggle" type="button"></button>
   <div class="bar" id="chips"></div>
   <div class="ctrl">
@@ -440,6 +440,18 @@ document.addEventListener("click",e=>{
 document.addEventListener("change",e=>{if(e.target.id==="wk"){curWeek=e.target.value; render(); return;}const c=e.target.closest("input[data-pin]"); if(!c) return; const s=D.panels.find(p=>p.id===c.dataset.panel); const item=[...(s?.g||[]),...Object.values(pins).map(v=>v.item)].find(x=>x.t===c.dataset.pin); if(item){const {_gone,...clean}=item; togglePin(c.dataset.panel,clean,c.checked);} });
 document.getElementById("kw").addEventListener("keydown",e=>{if(e.key==="Enter")document.getElementById("add").click();});
 try{if(localStorage.getItem("rb_hdr")==="1")document.querySelector("header").classList.add("open")}catch(e){}
+/* ---------- 瀏覽人次（countapi.mileshilliard.com，免註冊；同一瀏覽器分頁工作階段只算一次） ---------- */
+(()=>{
+  const API="https://countapi.mileshilliard.com/api/v1/", K="cxrfile39-radiology-board-views";
+  const day=new Date(Date.now()+8*3600e3).toISOString().slice(0,10);   // 台北日期
+  let first=false; try{ first=!sessionStorage.getItem("rb_seen"); sessionStorage.setItem("rb_seen","1"); }catch(e){}
+  const op=first?"hit/":"get/";
+  const num=r=>r.ok?r.json().then(j=>+j.value||0):0;
+  const ctl=new AbortController(); setTimeout(()=>ctl.abort(),6000);
+  Promise.all([fetch(API+op+K,{signal:ctl.signal}).then(num), fetch(API+op+K+"-"+day,{signal:ctl.signal}).then(num)])
+    .then(([t,d])=>{ if(!t) return; const el=document.getElementById("views"); el.textContent=`瀏覽人次 ${t.toLocaleString()} · 今日 ${d.toLocaleString()}`; el.hidden=false; })
+    .catch(()=>{});
+})();
 Promise.all([fetch("data.json?v="+Date.now()).then(r=>r.json()), fetch("feed.json?v="+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)]).then(([d,f])=>{D=d; FEED=f; render();
   fetch("abstracts.json?v="+Date.now()).then(r=>r.ok?r.json():null).then(a=>{ if(a){ AB=a; render(); } }).catch(()=>{});}).catch(()=>{document.getElementById("grid").innerHTML='<div class="empty">資料載入失敗，請重新整理。</div>';});
 </script>
